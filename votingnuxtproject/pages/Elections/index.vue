@@ -1,14 +1,13 @@
 <template>
   <div>
+    <ElectionNavbar/>
   </div>
 
 </template>
 
 <script>
-
 export default {
-  name: "App-Header",
-
+  name: "Elections",
 }
 </script>
 

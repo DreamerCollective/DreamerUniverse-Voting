@@ -9,6 +9,7 @@
     <NuxtLink to="/">
       Home page
     </NuxtLink>
+    <Nuxt />
   </v-app>
 </template>
 

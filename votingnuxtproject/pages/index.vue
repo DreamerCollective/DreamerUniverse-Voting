@@ -1,22 +1,21 @@
 <template>
   <div>
-    <h2>Welcome to the best corny dad jokes app on the web</h2>
+    <app-header/>
+    <Navbar />
+
   </div>
 </template>
 
 <script>
+import AppHeader from "~/components/AppHeader";
 export default {
+  name: "index",
   head() {
-    return {
-      title: "Welcome To Dad Jokes",
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Best place for corny dad jokes"
-        }
-      ]
-    };
+
   }
-};
+}
 </script>
+
+<style scoped>
+
+</style>

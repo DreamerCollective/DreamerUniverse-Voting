@@ -1,17 +1,16 @@
 <template>
   <div>
+    <Nuxt />
   </div>
-
 </template>
 
 <script>
-
-export default {
-  name: "App-Header",
+export default
+{
 
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

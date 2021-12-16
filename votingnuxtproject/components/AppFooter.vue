@@ -1,14 +1,10 @@
 <template>
-  <div>
-  </div>
 
 </template>
 
 <script>
-
 export default {
-  name: "App-Header",
-
+  name: "App-Footer",
 }
 </script>
 
