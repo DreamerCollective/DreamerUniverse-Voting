@@ -1,42 +1,45 @@
 <template>
-  <v-app id="voting">
-    <v-card>
-      <v-tabs
-        v-model="tab"
-        background-color="red lighten-2"
-        dark
-      >
-        <v-tab
-          v-for="n in length"
-          :key="n"
+  <v-app id="app">
+    <v-container>
+      <v-card app>
+        <v-tabs
+          app
+          v-model="tab"
+          background-color="red lighten-2"
+          dark
         >
-          Item {{ n }}
-        </v-tab>
-      </v-tabs>
-    </v-card>
-    <v-card>
-      <v-tabs
-        background-color="red lighten-2"
-        dark
-      >
-        <v-tab>
-          Election Creation
-        </v-tab>
-        <v-tab>
-          Election Events
-        </v-tab>
-        <v-tab>
-          Election Management
-        </v-tab>
-        <v-tab>
-          Elections Results
-        </v-tab>
-      </v-tabs>
-    </v-card>
-
-    <v-main>
-      <!--  -->
-    </v-main>
+          <v-tab
+            v-for="n in length"
+            :key="n"
+          >
+            Item {{ n }}
+          </v-tab>
+        </v-tabs>
+      </v-card>
+      <v-card app>
+        <v-tabs
+          app
+          background-color="red lighten-2"
+          dark
+        >
+          <v-tab>
+            Election Creation
+          </v-tab>
+          <v-tab>
+            Election Events
+          </v-tab>
+          <v-tab>
+            Election Management
+          </v-tab>
+          <v-tab>
+            Elections Results
+          </v-tab>
+        </v-tabs>
+      </v-card>
+      <v-main>
+        <!--  -->
+      </v-main>
+    </v-container>
   </v-app>
 </template>
 

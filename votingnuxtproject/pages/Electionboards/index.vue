@@ -1,18 +1,13 @@
 <template>
-  <div>
-    <h1>About</h1>
-  </div>
+
 </template>
 
 <script>
 export default {
-  name: "index"
+  layout: 'Election',
 }
 </script>
 
 <style scoped>
-h1{
-  size: 100px;
-}
 
 </style>

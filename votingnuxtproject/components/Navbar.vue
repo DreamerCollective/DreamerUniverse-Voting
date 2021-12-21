@@ -1,17 +1,15 @@
 <template>
-  <v-app id="inspire">
-    <div>
+  <v-app id="app" light>
+    <v-container>
       <v-navigation-drawer
         app
         class="pt-4"
         color="grey lighten-3"
         mini-variant
+        mini-variant-width="50px"
       >
       </v-navigation-drawer>
-    </div>
-    <v-main>
-      <!--  -->
-    </v-main>
+    </v-container>
   </v-app>
 </template>
 
@@ -25,4 +23,5 @@ export default
 </script>
 
 <style>
+
 </style>
