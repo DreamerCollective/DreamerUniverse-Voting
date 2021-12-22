@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Navbar />
+    <ElectionCards />
     <nuxt />
   </div>
 </template>

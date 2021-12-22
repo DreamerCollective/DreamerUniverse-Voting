@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ElectionNavbar />
+
     <Nuxt />
   </div>
 </template>
