@@ -22,7 +22,6 @@
                 </v-list-item-title>
                 <v-list-item-subtitle>{{ card.subtitle}}</v-list-item-subtitle>
               </v-list-item-content>
-
               <v-list-item-avatar
                 size="80"
                 color="grey"
@@ -89,14 +88,48 @@
                     subheader
                   >
                     <v-subheader>Election Options</v-subheader>
+                    <v-list>
+                      <v-list-group
+                      v-for="options in card.electionOptions"
+                      :key="options.title"
+                      >
+                        <template v-slot:activator >
+                          <v-list-item-content>
+                            <v-list-item-title v-text="options.title"></v-list-item-title>
+                            <v-checkbox v-model="options.selected" ></v-checkbox>
+                          </v-list-item-content>
+                        </template>
+                        <v-list-item v-for="optionChild in options.SystemOptions"
+                                     :key="optionChild.title"
+                                     v-model="optionChild.selected"
+                        >
+                          <v-list-item-title v-text="optionChild.title"></v-list-item-title>
+                          <v-checkbox v-model="optionChild.selected"></v-checkbox>
+                        </v-list-item>
+                      </v-list-group>
+                    </v-list>
+                  </v-list>
 
+                  <v-divider></v-divider>
+                  <v-list
+                    three-line
+                    subheader
+                  >
+                    <v-subheader>Election Candidates</v-subheader>
                   </v-list>
                   <v-divider></v-divider>
                   <v-list
                     three-line
                     subheader
                   >
-                    <v-subheader>Election</v-subheader>
+                    <v-subheader>Election Events</v-subheader>
+                  </v-list>
+                  <v-divider></v-divider>
+                  <v-list
+                    three-line
+                    subheader
+                  >
+                    <v-subheader>Election Results</v-subheader>
                   </v-list>
                 </v-card>
               </v-dialog>
@@ -137,12 +170,49 @@
 export default {
 name: "ElectionCards",
     data: () => ({
-      electionCards:[
-        {id: 1, author: "Example User", title: "Example Election", subtitle: "Example Subtitle", textInformation: "Example text to so the underlying example long text information",
-          reveal: false, dialog: false, notification: false, sound: false, widgets: false
-
-        }
-      ]
+      electionCards:
+        [{
+          id: 1,
+          author: "Example User",
+          title: "Example Election",
+          subtitle: "Example Subtitle",
+          textInformation: "Example text to so the underlying example long text information",
+          reveal: false,
+          dialog: false,
+          electionOptions: [
+            {
+              title: "Plurality System", selected: false,
+              SystemOptions: [
+                {title: "Vote For One", selected: false, },
+                {title: "Vote For Many", selected: false, },
+                {title: "Vote For Few", selected: false, },
+                {title: "Vote For One Of Many", selected: false, }
+              ]
+            },
+            {
+              title: "Majority System", selected: false,
+              SystemOptions: [
+                {title: "Two Rounds Voting", selected: false, },
+                {title: "Many Rounds Voting", selected: false, },
+                {title: "Instant Rounds Voting", selected: false, }
+              ]
+            },
+            {
+              title: "Proportional System", selected: false,
+              SystemOptions: [
+                {title: "Party-List Open Voting", selected: false, },
+                {title: "Party-List Closed Voting", selected: false, },
+                {title: "Transferable Voting", selected: false, },
+              ]
+            },
+            {
+              title: "Mixed System", selected: false,
+              SystemOptions: [
+                {title: "...", selected: false},
+              ]
+            },
+          ],
+        }]
     }),
 }
 </script>
