@@ -119,7 +119,7 @@
                   >
                     <v-subheader>Election Candidates</v-subheader>
                     <v-row dense>
-                      <v-col  v-for="candidate in card.electionCandidates"
+                      <v-col  v-for="candidate in $data.electionCandidates"
                               :key="candidate.id"
                               :cols="3">
 
@@ -137,7 +137,7 @@
                                            :key="issue.id"
                               >
                                 <v-list-item-content>
-                                  <v-list-item-title>Issue: {{issue.id}} {{issue.issueName}}</v-list-item-title>
+                                  <v-list-item-title>Issue: {{issue.id + 1}} {{issue.issueName}}</v-list-item-title>
                                   <v-list-item-subtitle>{{issue.issueDescription}}</v-list-item-subtitle>
                                 </v-list-item-content>
                               </v-list-item>
@@ -211,6 +211,8 @@ export default
   data() {
     return {
       electionCards: this.$store.state.electionCards,
+      electionCandidates: this.$store.state.electionCandidates,
+      users: this.$store.state.users,
     }
   },
   computed: {

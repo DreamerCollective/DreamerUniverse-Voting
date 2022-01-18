@@ -9,7 +9,7 @@ export default () => ({
   electionCards: [
     {
       id: 0,
-      author: "Example User",
+      authorId: 0,
       title: "Example Election",
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
@@ -52,6 +52,12 @@ export default () => ({
             {id: 1, title: "...", selected: false,  hide: false,},
             {id: 2, title: "...", selected: false,  hide: false,},
           ]
+        },
+      ],
+      specificElectionCandidates: [
+        {
+          electionCandidatesId: 0,
+          votedFor: false,
         },
       ],
     }],
