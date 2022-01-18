@@ -2,7 +2,7 @@
   <v-app id="app">
     <v-container>
       <v-row dense>
-        <v-col  v-for="card in electionCards"
+        <v-col  v-for="card in $data.electionCards"
               :key="card.id"
               :cols="3">
 
@@ -91,20 +91,22 @@
                     <v-list>
                       <v-list-group
                       v-for="options in card.electionOptions"
-                      :key="options.title"
-                      >
+                      :key="options.id"
+                      :disabled="options.hide">
+
                         <template v-slot:activator >
                           <v-list-item-content>
-                            <v-list-item-title v-text="options.title"></v-list-item-title>
-                            <v-checkbox v-model="options.selected" ></v-checkbox>
+                            <v-list-item-title v-text="options.title" ></v-list-item-title>
+                            <v-checkbox v-model="options.selected"></v-checkbox>
                           </v-list-item-content>
                         </template>
                         <v-list-item v-for="optionChild in options.SystemOptions"
                                      :key="optionChild.title"
                                      v-model="optionChild.selected"
+                                     :disabled="optionChild.hide"
                         >
                           <v-list-item-title v-text="optionChild.title"></v-list-item-title>
-                          <v-checkbox v-model="optionChild.selected"></v-checkbox>
+                          <v-checkbox v-model="optionChild.selected" $Click="FlipHideElectionOptions()"></v-checkbox>
                         </v-list-item>
                       </v-list-group>
                     </v-list>
@@ -116,6 +118,41 @@
                     subheader
                   >
                     <v-subheader>Election Candidates</v-subheader>
+                    <v-row dense>
+                      <v-col  v-for="candidate in card.electionCandidates"
+                              :key="candidate.id"
+                              :cols="3">
+
+                        <v-card
+                          class="mx-auto"
+                          max-width="500"
+                          outlined
+                          color="red lighten-1"
+                        >
+                          <v-list-item>
+                            <v-list-item-content>
+                              <v-list-item-title class="text-h5 mb-1">{{candidate.candidateName}}</v-list-item-title>
+                              <v-list-item-subtitle>{{candidate.candidateDescription}}</v-list-item-subtitle>
+                              <v-list-item v-for="issue in candidate.issues"
+                                           :key="issue.id"
+                              >
+                                <v-list-item-content>
+                                  <v-list-item-title>Issue: {{issue.id}} {{issue.issueName}}</v-list-item-title>
+                                  <v-list-item-subtitle>{{issue.issueDescription}}</v-list-item-subtitle>
+                                </v-list-item-content>
+                              </v-list-item>
+                              <v-list-item-title>Vote For</v-list-item-title>
+                              <v-checkbox v-model="candidate.votedFor">
+                              </v-checkbox>
+                            </v-list-item-content>
+                            <v-list-item-avatar
+                              size="80"
+                              color="grey"
+                            ></v-list-item-avatar>
+                          </v-list-item>
+                        </v-card>
+                      </v-col>
+                    </v-row>
                   </v-list>
                   <v-divider></v-divider>
                   <v-list
@@ -167,53 +204,26 @@
 </template>
 
 <script>
-export default {
-name: "ElectionCards",
-    data: () => ({
-      electionCards:
-        [{
-          id: 1,
-          author: "Example User",
-          title: "Example Election",
-          subtitle: "Example Subtitle",
-          textInformation: "Example text to so the underlying example long text information",
-          reveal: false,
-          dialog: false,
-          electionOptions: [
-            {
-              title: "Plurality System", selected: false,
-              SystemOptions: [
-                {title: "Vote For One", selected: false, },
-                {title: "Vote For Many", selected: false, },
-                {title: "Vote For Few", selected: false, },
-                {title: "Vote For One Of Many", selected: false, }
-              ]
-            },
-            {
-              title: "Majority System", selected: false,
-              SystemOptions: [
-                {title: "Two Rounds Voting", selected: false, },
-                {title: "Many Rounds Voting", selected: false, },
-                {title: "Instant Rounds Voting", selected: false, }
-              ]
-            },
-            {
-              title: "Proportional System", selected: false,
-              SystemOptions: [
-                {title: "Party-List Open Voting", selected: false, },
-                {title: "Party-List Closed Voting", selected: false, },
-                {title: "Transferable Voting", selected: false, },
-              ]
-            },
-            {
-              title: "Mixed System", selected: false,
-              SystemOptions: [
-                {title: "...", selected: false},
-              ]
-            },
-          ],
-        }]
-    }),
+import axios from "axios"
+export default
+{
+  name: "ElectionCards",
+  data() {
+    return {
+      electionCards: this.$store.state.electionCards,
+    }
+  },
+  computed: {
+    ReturnElectionCardId(id)
+    {
+      return this.$store.getters.GetElectionCardOptionSelectedState(id)
+    },
+    ReturnElectionCardOptionSelectedStateById()
+    {
+
+    }
+  }
+
 }
 </script>
 
