@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    <ElectionCards />
+  </div>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "App-Footer",
+  name: "Election-Voters"
 }
 </script>
 

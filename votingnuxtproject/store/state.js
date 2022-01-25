@@ -14,7 +14,6 @@ export default () => ({
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
       reveal: false,
-      dialog: false,
       electionOptions: [
         {
           id: 0,

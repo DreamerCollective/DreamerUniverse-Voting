@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ElectionCards />
+
     <nuxt />
   </div>
 </template>
