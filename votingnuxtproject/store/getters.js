@@ -1,6 +1,7 @@
 
 
-export default{
+export default
+{
   GetElectionCardOptionSelectedState: (state) => (payload) =>
   {
     return state.electionCards.find(electionOptions => electionOptions.electionOptions.selected === payload)
@@ -8,5 +9,9 @@ export default{
   GetElectionCardsById: (state) => (payload) =>
   {
     return state.electionCards.find(electionCards => electionCards.id === payload)
+  },
+  GetUserAuthorOfElectionCardsById: (state) => (payload) =>
+  {
+    return state.users.find(users => users.id === payload)
   }
 }

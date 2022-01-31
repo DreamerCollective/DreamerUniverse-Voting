@@ -16,7 +16,7 @@
               <v-list-item three-line>
                 <v-list-item-content>
                   <div class="text-overline mb-4">
-                    By {{card.authorId}}
+                    By {{ReturnUserAuthorOfElectionCardsById}}
                   </div>
                   <v-list-item-title class="text-h5 mb-1">
                     {{card.title}}
@@ -34,7 +34,7 @@
                     outlined
                     rounded
                     text
-                    @click="card.reveal = true"
+                    @click="RevealCardAction()"
                   >
                     More
                   </v-btn>
@@ -69,7 +69,7 @@
                         text
                         @click="card = true"
                       >
-                        <Nuxt-link :to="`/Elections/_id/${card.id}`">
+                        <Nuxt-link :to="`/ElectionCard/${card.id}`">
                           Edit
                         </Nuxt-link>
                       </v-btn>
@@ -86,7 +86,6 @@
 </template>
 
 <script>
-import axios from "axios"
 export default
 {
   name: "ElectionCards",
@@ -98,13 +97,21 @@ export default
     }
   },
   computed: {
-    ReturnElectionCardId(id)
+    ReturnElectionCardId()
     {
-      return this.$store.getters.GetElectionCardsById(id)
+      return this.$store.getters.GetElectionCardsById
     },
-    ReturnElectionCardOptionSelectedStateById(id)
+    ReturnElectionCardOptionSelectedStateById()
     {
-      return this.$store.getters.GetElectionCardOptionSelectedState(id)
+      return this.$store.getters.GetElectionCardOptionSelectedState
+    },
+    ReturnUserAuthorOfElectionCardsById()
+    {
+      return this.$store.getters.GetUserAuthorOfElectionCardsById[this.$data.electionCards.authorId]
+    },
+    RevealCardAction()
+    {
+      return this.$store.dispatch("RevealCardAction")
     }
   }
 
