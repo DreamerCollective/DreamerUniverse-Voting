@@ -6,59 +6,6 @@ export default () => ({
       fullName: "David Lawson"
     }
   ],
-  electionCard: {
-    id: 0,
-    authorId: 0,
-    title: "Example Election",
-    subtitle: "Example Subtitle",
-    textInformation: "Example text to so the underlying example long text information",
-    reveal: false,
-    electionOptions: [
-      {
-        id: 0,
-        title: "Plurality System", selected: false, hide: false,
-        SystemOptions: [
-          {id: 0, title: "Vote For One", selected: false,  hide: false,},
-          {id: 1, title: "Vote For Many", selected: false,  hide: false,},
-          {id: 2, title: "Vote For Few", selected: false,  hide: false,},
-          {id: 3, title: "Vote For One Of Many", selected: false,  hide: false,}
-        ]
-      },
-      {
-        id: 1,
-        title: "Majority System", selected: false,  hide: false,
-        SystemOptions: [
-          {id: 0, title: "Two Rounds Voting", selected: false,  hide: false,},
-          {id: 1, title: "Many Rounds Voting", selected: false,  hide: false,},
-          {id: 2, title: "Instant Rounds Voting", selected: false,  hide: false,}
-        ]
-      },
-      {
-        id: 2,
-        title: "Proportional System", selected: false,  hide: false,
-        SystemOptions: [
-          {id: 0, title: "Party-List Open Voting", selected: false,  hide: false,},
-          {id: 1, title: "Party-List Closed Voting", selected: false,  hide: false,},
-          {id: 2, title: "Transferable Voting", selected: false,  hide: false,},
-        ]
-      },
-      {
-        id: 3,
-        title: "Mixed System", selected: false,  hide: false,
-        SystemOptions: [
-          {id: 0, title: "...", selected: false,  hide: false,},
-          {id: 1, title: "...", selected: false,  hide: false,},
-          {id: 2, title: "...", selected: false,  hide: false,},
-        ]
-      },
-    ],
-    specificElectionCandidates: [
-      {
-        electionCandidatesId: 0,
-        votedFor: false,
-      },
-    ],
-  },
   electionCards: [
     {
       id: 0,
@@ -67,98 +14,27 @@ export default () => ({
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
       reveal: false,
-      electionOptions: [
-        {
-          id: 0,
-          title: "Plurality System", selected: false, hide: false,
-          SystemOptions: [
-            {id: 0, title: "Vote For One", selected: false, hide: false,},
-            {id: 1, title: "Vote For Many", selected: false, hide: false,},
-            {id: 2, title: "Vote For Few", selected: false, hide: false,},
-            {id: 3, title: "Vote For One Of Many", selected: false, hide: false,}
-          ]
-        },
-        {
-          id: 1,
-          title: "Majority System", selected: false, hide: false,
-          SystemOptions: [
-            {id: 0, title: "Two Rounds Voting", selected: false, hide: false,},
-            {id: 1, title: "Many Rounds Voting", selected: false, hide: false,},
-            {id: 2, title: "Instant Rounds Voting", selected: false, hide: false,}
-          ]
-        },
-        {
-          id: 2,
-          title: "Proportional System", selected: false, hide: false,
-          SystemOptions: [
-            {id: 0, title: "Party-List Open Voting", selected: false, hide: false,},
-            {id: 1, title: "Party-List Closed Voting", selected: false, hide: false,},
-            {id: 2, title: "Transferable Voting", selected: false, hide: false,},
-          ]
-        },
-        {
-          id: 3,
-          title: "Mixed System", selected: false, hide: false,
-          SystemOptions: [
-            {id: 0, title: "...", selected: false, hide: false,},
-            {id: 1, title: "...", selected: false, hide: false,},
-            {id: 2, title: "...", selected: false, hide: false,},
-          ]
-        },
-      ],
-      specificElectionCandidates: [
-        {
-          electionCandidatesId: 0,
-          votedFor: false,
-        },
-      ],
-    },
-    {
-      id: 1,
-      authorId: 0,
-      title: "Example Election",
-      subtitle: "Example Subtitle",
-      textInformation: "Example text to so the underlying example long text information",
-      reveal: false,
-      electionOptions: [
-        {
-          id: 0,
-          title: "Plurality System", selected: false, hide: false,
-          SystemOptions: [
-            {id: 0, title: "Vote For One", selected: false,  hide: false,},
-            {id: 1, title: "Vote For Many", selected: false,  hide: false,},
-            {id: 2, title: "Vote For Few", selected: false,  hide: false,},
-            {id: 3, title: "Vote For One Of Many", selected: false,  hide: false,}
-          ]
-        },
-        {
-          id: 1,
-          title: "Majority System", selected: false,  hide: false,
-          SystemOptions: [
-            {id: 0, title: "Two Rounds Voting", selected: false,  hide: false,},
-            {id: 1, title: "Many Rounds Voting", selected: false,  hide: false,},
-            {id: 2, title: "Instant Rounds Voting", selected: false,  hide: false,}
-          ]
-        },
-        {
-          id: 2,
-          title: "Proportional System", selected: false,  hide: false,
-          SystemOptions: [
-            {id: 0, title: "Party-List Open Voting", selected: false,  hide: false,},
-            {id: 1, title: "Party-List Closed Voting", selected: false,  hide: false,},
-            {id: 2, title: "Transferable Voting", selected: false,  hide: false,},
-          ]
-        },
-        {
-          id: 3,
-          title: "Mixed System", selected: false,  hide: false,
-          SystemOptions: [
-            {id: 0, title: "...", selected: false,  hide: false,},
-            {id: 1, title: "...", selected: false,  hide: false,},
-            {id: 2, title: "...", selected: false,  hide: false,},
-          ]
-        },
-      ],
+      PluralitySystemSelected: false, PluralitySystemHide: false,
+      VoteForOneSelected: false, VoteForOneHide: false,
+      VoteForManySelected: false, VoteForManyHide: false,
+      VoteForFewSelected: false, VoteForFewHide: false,
+      VoteForOneOfManySelected: false, VoteForOneOfManyHide: false,
+
+      MajoritySystemSelected: false, MajoritySystemHide: false,
+      TwoRoundsVotingSelected: false, TwoRoundsVotingHide: false,
+      ManyRoundsVotingSelected: false, ManyRoundsVotingHide: false,
+      InstantRoundsVotingSelected: false, InstantRoundsVotingHide: false,
+
+      ProportionalSystemSelected: false, ProportionalSystemHide: false,
+      PartyListOpenVotingSelected: false, PartyListOpenVotingHide: false,
+      PartyListClosedVotingSelected: false, PartyListClosedVotingHide: false,
+      TransferableVotingSelected: false, TransferableVotingHide: false,
+
+      MixedSystemSelected: false, MixedSystemHide: false,
+      TBD1Selected: false, TBD1Hide: false,
+      TBD2Selected: false, TBD2Hide: false,
+      TBD3Selected: false, TBD3Hide: false,
+
       specificElectionCandidates: [
         {
           electionCandidatesId: 0,
@@ -170,7 +46,6 @@ export default () => ({
   electionCandidates: [
     {
       id: 0,
-      electionId: 0,
       partyId: 0,
       candidateName: "Bob",
       candidateDescription: "Bob likes ice-cream, bob will give everyone ice-cream if elected",

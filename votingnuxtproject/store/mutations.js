@@ -2,9 +2,9 @@ export default
 {
   ChangeOptionSelectedStateMutation(state, OptionId, electionCardId)
   {
-    let changedElectionOptionsState = state.electionCards[electionCardId].electionOptions.id
+    let changedElectionOptionsState = state.electionCards[electionCardId].id
     changedElectionOptionsState = !changedElectionOptionsState
-    state.electionCards[OptionId].electionOptions.push(changedElectionOptionsState)
+    state.electionCards[OptionId].push(changedElectionOptionsState)
   },
   RevealCardStateMutation(state, electionCardId)
   {

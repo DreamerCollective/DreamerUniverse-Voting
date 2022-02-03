@@ -33,7 +33,7 @@
                            :disabled="optionChild.hide"
               >
                 <v-list-item-title v-text="optionChild.title"></v-list-item-title>
-                <v-checkbox v-model="optionChild.selected" $Click="FlipHideElectionOptions()"></v-checkbox>
+                <v-checkbox v-model="optionChild.selected" $Click='ReturnElectionCardOptionSelectedStateById()'></v-checkbox>
               </v-list-item>
             </v-list-group>
           </v-list>
@@ -61,6 +61,13 @@ export default {
       electionCards: this.$store.state.electionCards,
     }
   },
+  computed:
+  {
+    ReturnElectionCardOptionSelectedStateById()
+    {
+      return this.$store.getters.GetElectionCardOptionSelectedState
+    }
+  }
 }
 </script>
 

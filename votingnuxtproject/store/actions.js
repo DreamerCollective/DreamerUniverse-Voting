@@ -1,11 +1,11 @@
 export default
 {
-  ChangeOptionSelectedStateAction(context, OptionId)
+  ChangeOptionSelectedStateAction({commit}, OptionId)
   {
-      context.commit('ChangeOptionSelectedStateMutation', OptionId)
+    commit('ChangeOptionSelectedStateMutation', OptionId)
   },
-  RevealCardAction(context, electionCardId)
+  RevealCardAction({commit}, electionCardId)
   {
-    context.commit('RevealCardStateMutation', electionCardId)
+    commit('RevealCardStateMutation', electionCardId)
   }
 }
