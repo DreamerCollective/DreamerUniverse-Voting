@@ -4,8 +4,4 @@ export default
   {
     commit('ChangeOptionSelectedStateMutation', OptionId)
   },
-  RevealCardAction({commit}, electionCardId)
-  {
-    commit('RevealCardStateMutation', electionCardId)
-  }
 }

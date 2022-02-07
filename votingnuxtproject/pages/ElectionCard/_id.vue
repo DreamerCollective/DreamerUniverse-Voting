@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ ReturnElectionCardId($route.params.id)}}
+    {{ GetElectionCardsById($route.params.id)}}
     <ElectionsCreation />
     <ElectionCandidates />
 
@@ -8,14 +8,12 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
 export default {
   name: "index",
-  data() {
-    return {
-      ReturnElectionCardId(id) {
-        return this.$store.getters.GetElectionCardsById(id)
-      },
-    }
+
+  computed: {
+    ...mapGetters(["GetElectionCardsById"])
   }
 }
 </script>

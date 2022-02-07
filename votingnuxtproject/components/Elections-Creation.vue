@@ -15,28 +15,15 @@
           subheader
         >
           <v-subheader>Election Options</v-subheader>
-          <v-list>
-            <v-list-group
-              v-for="options in electionCards.electionOptions"
-              :key="options.id"
-              :disabled="options.hide">
-
-              <template v-slot:activator >
-                <v-list-item-content>
-                  <v-list-item-title v-text="options.title" ></v-list-item-title>
-                  <v-checkbox v-model="options.selected"></v-checkbox>
-                </v-list-item-content>
-              </template>
-              <v-list-item v-for="optionChild in options.SystemOptions"
-                           :key="optionChild.title"
-                           v-model="optionChild.selected"
-                           :disabled="optionChild.hide"
-              >
-                <v-list-item-title v-text="optionChild.title"></v-list-item-title>
-                <v-checkbox v-model="optionChild.selected" $Click='ReturnElectionCardOptionSelectedStateById()'></v-checkbox>
-              </v-list-item>
-            </v-list-group>
-          </v-list>
+          <v-list-item>
+            <v-list-item-title>
+              Plurality System
+            </v-list-item-title>
+            <v-list-item-subtitle>
+              VoteForOne
+            </v-list-item-subtitle>
+            <v-btn></v-btn>
+          </v-list-item>
         </v-list>
 
 

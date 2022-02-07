@@ -13,27 +13,54 @@ export default () => ({
       title: "Example Election",
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
-      reveal: false,
-      PluralitySystemSelected: false, PluralitySystemHide: false,
-      VoteForOneSelected: false, VoteForOneHide: false,
-      VoteForManySelected: false, VoteForManyHide: false,
-      VoteForFewSelected: false, VoteForFewHide: false,
-      VoteForOneOfManySelected: false, VoteForOneOfManyHide: false,
 
-      MajoritySystemSelected: false, MajoritySystemHide: false,
-      TwoRoundsVotingSelected: false, TwoRoundsVotingHide: false,
-      ManyRoundsVotingSelected: false, ManyRoundsVotingHide: false,
-      InstantRoundsVotingSelected: false, InstantRoundsVotingHide: false,
+      PluralitySystemVoteForOneSelected: false, PluralitySystemVoteForOneHide: false,
+      PluralitySystemVoteForManySelected: false, PluralitySystemVoteForManyHide: false,
+      PluralitySystemVoteForFewSelected: false, PluralitySystemVoteForFewHide: false,
+      PluralitySystemVoteForOneOfManySelected: false, PluralitySystemVoteForOneOfManyHide: false,
 
-      ProportionalSystemSelected: false, ProportionalSystemHide: false,
-      PartyListOpenVotingSelected: false, PartyListOpenVotingHide: false,
-      PartyListClosedVotingSelected: false, PartyListClosedVotingHide: false,
-      TransferableVotingSelected: false, TransferableVotingHide: false,
+      MajoritySystemTwoRoundsVotingSelected: false, MajoritySystemTwoRoundsVotingHide: false,
+      MajoritySystemManyRoundsVotingSelected: false, MajoritySystemManyRoundsVotingHide: false,
+      MajoritySystemInstantRoundsVotingSelected: false, MajoritySystemInstantRoundsVotingHide: false,
 
-      MixedSystemSelected: false, MixedSystemHide: false,
-      TBD1Selected: false, TBD1Hide: false,
-      TBD2Selected: false, TBD2Hide: false,
-      TBD3Selected: false, TBD3Hide: false,
+      ProportionalSystemPartyListOpenVotingSelected: false, ProportionalSystemPartyListOpenVotingHide: false,
+      ProportionalSystemPartyListClosedVotingSelected: false, ProportionalSystemPartyListClosedVotingHide: false,
+      ProportionalSystemTransferableVotingSelected: false, ProportionalSystemTransferableVotingHide: false,
+
+      MixedSystemTBD1Selected: false, MixedSystemTBD1Hide: false,
+      MixedSystemTBD2Selected: false, MixedSystemTBD2Hide: false,
+      MixedSystemTBD3Selected: false, MixedSystemTBD3Hide: false,
+
+      specificElectionCandidates: [
+        {
+          electionCandidatesId: 0,
+          votedFor: false,
+        },
+      ],
+    },
+    {
+      id: 1,
+      authorId: 0,
+      title: "Example Election",
+      subtitle: "Example Subtitle",
+      textInformation: "Example text to so the underlying example long text information",
+
+      PluralitySystemVoteForOneSelected: false, PluralitySystemVoteForOneHide: false,
+      PluralitySystemVoteForManySelected: false, PluralitySystemVoteForManyHide: false,
+      PluralitySystemVoteForFewSelected: false, PluralitySystemVoteForFewHide: false,
+      PluralitySystemVoteForOneOfManySelected: false, PluralitySystemVoteForOneOfManyHide: false,
+
+      MajoritySystemTwoRoundsVotingSelected: false, MajoritySystemTwoRoundsVotingHide: false,
+      MajoritySystemManyRoundsVotingSelected: false, MajoritySystemManyRoundsVotingHide: false,
+      MajoritySystemInstantRoundsVotingSelected: false, MajoritySystemInstantRoundsVotingHide: false,
+
+      ProportionalSystemPartyListOpenVotingSelected: false, ProportionalSystemPartyListOpenVotingHide: false,
+      ProportionalSystemPartyListClosedVotingSelected: false, ProportionalSystemPartyListClosedVotingHide: false,
+      ProportionalSystemTransferableVotingSelected: false, ProportionalSystemTransferableVotingHide: false,
+
+      MixedSystemTBD1Selected: false, MixedSystemTBD1Hide: false,
+      MixedSystemTBD2Selected: false, MixedSystemTBD2Hide: false,
+      MixedSystemTBD3Selected: false, MixedSystemTBD3Hide: false,
 
       specificElectionCandidates: [
         {
