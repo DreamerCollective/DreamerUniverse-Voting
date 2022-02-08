@@ -2,14 +2,7 @@
   <div>
     <v-app>
       <v-main>
-        <v-row>
-          <v-col>
-            <ElectionCards v-for="card in electionCards"
-                           :key="card.id"
-                           :cols="3"
-                           :id="card.id"/>
-          </v-col>
-        </v-row>
+        <ElectionCards/>
       </v-main>
     </v-app>
   </div>

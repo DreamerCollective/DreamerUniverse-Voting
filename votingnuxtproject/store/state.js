@@ -1,4 +1,60 @@
 export default () => ({
+  electionMetaOptions: {
+    HowManyCandidatesRange: [
+      {
+        minRange: 1,
+      },
+      {
+        maxRange: 20,
+      }
+    ],
+    HowManyCandidatesCanWinRange: [
+      {
+        minRange: 1,
+      },
+      {
+        maxRange: 10,
+      }
+    ],
+    HowManyVotesDoVotersHaveRange: [
+      {
+        minRange: 1,
+      },
+      {
+        maxRange: 10,
+      }
+    ],
+    HowMuchOfAPercentageMustCandidatesNeedToWinRange: [
+      {
+        minRange: 20,
+      },
+      {
+        maxRange: 70,
+      }
+    ],
+    HowManyElectionRoundsRange: [
+      {
+        minRange: 1,
+      },
+      {
+        maxRange: 10,
+      },
+      {
+        infinite: true,
+      },
+    ],
+    DoVotesTransferRange: [
+      {
+        minRange: 1,
+      },
+      {
+        maxRange: 10,
+      },
+      {
+        infinite: true,
+      },
+    ],
+  },
   users: [
     {
       id: 0,
@@ -14,22 +70,14 @@ export default () => ({
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
 
-      PluralitySystemVoteForOneSelected: false, PluralitySystemVoteForOneHide: false,
-      PluralitySystemVoteForManySelected: false, PluralitySystemVoteForManyHide: false,
-      PluralitySystemVoteForFewSelected: false, PluralitySystemVoteForFewHide: false,
-      PluralitySystemVoteForOneOfManySelected: false, PluralitySystemVoteForOneOfManyHide: false,
-
-      MajoritySystemTwoRoundsVotingSelected: false, MajoritySystemTwoRoundsVotingHide: false,
-      MajoritySystemManyRoundsVotingSelected: false, MajoritySystemManyRoundsVotingHide: false,
-      MajoritySystemInstantRoundsVotingSelected: false, MajoritySystemInstantRoundsVotingHide: false,
-
-      ProportionalSystemPartyListOpenVotingSelected: false, ProportionalSystemPartyListOpenVotingHide: false,
-      ProportionalSystemPartyListClosedVotingSelected: false, ProportionalSystemPartyListClosedVotingHide: false,
-      ProportionalSystemTransferableVotingSelected: false, ProportionalSystemTransferableVotingHide: false,
-
-      MixedSystemTBD1Selected: false, MixedSystemTBD1Hide: false,
-      MixedSystemTBD2Selected: false, MixedSystemTBD2Hide: false,
-      MixedSystemTBD3Selected: false, MixedSystemTBD3Hide: false,
+      HowManyCandidates: 1,
+      HowManyCandidatesCanWin: 1,
+      HowManyVotesDoVotersHave: 1,
+      DoVotesTransfer: false,
+      HowManyElectionRounds: 1,
+      HowManyVotesCandidatesNeedToWin: 51,
+      CanYouVoteForParties: false,
+      HowManyVoters: 1,
 
       specificElectionCandidates: [
         {
@@ -37,6 +85,12 @@ export default () => ({
           votedFor: false,
         },
       ],
+      voters: [
+        {
+          UserId: 0,
+          hasVoted: false,
+        }
+      ]
     },
     {
       id: 1,
@@ -45,22 +99,7 @@ export default () => ({
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
 
-      PluralitySystemVoteForOneSelected: false, PluralitySystemVoteForOneHide: false,
-      PluralitySystemVoteForManySelected: false, PluralitySystemVoteForManyHide: false,
-      PluralitySystemVoteForFewSelected: false, PluralitySystemVoteForFewHide: false,
-      PluralitySystemVoteForOneOfManySelected: false, PluralitySystemVoteForOneOfManyHide: false,
 
-      MajoritySystemTwoRoundsVotingSelected: false, MajoritySystemTwoRoundsVotingHide: false,
-      MajoritySystemManyRoundsVotingSelected: false, MajoritySystemManyRoundsVotingHide: false,
-      MajoritySystemInstantRoundsVotingSelected: false, MajoritySystemInstantRoundsVotingHide: false,
-
-      ProportionalSystemPartyListOpenVotingSelected: false, ProportionalSystemPartyListOpenVotingHide: false,
-      ProportionalSystemPartyListClosedVotingSelected: false, ProportionalSystemPartyListClosedVotingHide: false,
-      ProportionalSystemTransferableVotingSelected: false, ProportionalSystemTransferableVotingHide: false,
-
-      MixedSystemTBD1Selected: false, MixedSystemTBD1Hide: false,
-      MixedSystemTBD2Selected: false, MixedSystemTBD2Hide: false,
-      MixedSystemTBD3Selected: false, MixedSystemTBD3Hide: false,
 
       specificElectionCandidates: [
         {
@@ -68,6 +107,12 @@ export default () => ({
           votedFor: false,
         },
       ],
+      voters: [
+        {
+          UserId: 0,
+          hasVoted: false,
+        }
+      ]
     },
   ],
   electionCandidates: [
