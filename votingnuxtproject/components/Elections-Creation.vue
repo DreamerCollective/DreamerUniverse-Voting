@@ -23,16 +23,8 @@
               min="1"
               max="20"
               thumb-label
-            ><template v-slot:append>
-              <v-text-field
-                :value="range[0]"
-                hide-details
-                single-line
-                type="number"
-                style="width: 60px"
-                @change="$set(range, 0, $event)"
-              ></v-text-field>
-            </template></v-slider>
+            >
+            </v-slider>
           </v-list-item>
           <v-list-item>
             <v-slider
@@ -56,28 +48,26 @@
           </v-list-item>
           <v-list-item>
             <v-range-slider
-              v-model="range"
               color="red"
               label="How Much Of A Percentage Must Candidates Need To Win?"
               hint="Be honest"
-              min="min"
-              max="max"
-            ><template v-slot:prepend>
-              <v-text-field
-                :value="range[0]"
-                single-line
-                type="number"
-                @change="$set(range, 0, $event)"
-              ></v-text-field>
-            </template>
-            <template v-slot:append>
-              <v-text-field
-                :value="range[1]"
-                single-line
-                type="number"
-                @change="$set(range, 1, $event)"
-              ></v-text-field>
-            </template></v-range-slider>
+              min="20"
+              max="70"
+              thumb-label
+            >
+              <template v-slot:prepend>
+                <v-text-field
+                  type="number"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+              <template v-slot:append>
+                <v-text-field
+                  type="number"
+                  style="width: 60px"
+                ></v-text-field>
+              </template>
+            </v-range-slider>
           </v-list-item>
           <v-list-item>
             <v-slider
@@ -120,21 +110,30 @@ import {mapActions, mapGetters, mapState} from "vuex";
 
 export default {
   name: "Elections-Creation",
-  data() {
-    return {
-      electionCards: this.$store.state.electionCards,
-      min: 20,
-      max: 70,
-      range: [20, 70],
-    }
+  data: () => ({
+    ChangeState: 0,
+    max: 70,
+    range: [20, 70],
 
-  },
+  }),
   computed: {
     ...mapState(["electionCards", "electionCandidates", "users"]),
     ...mapGetters(["GetElectionCardsById", "GetUserAuthorOfElectionCardsById",])
   },
   methods: {
-    ...mapActions([""]),
+    ...mapActions({
+      HowManyCandidates: "ChangeElectionOptionStateOfHowManyCandidatesAction",
+      HowManyCandidatesCanWin: "ChangeOptionSelectedStateHowManyCandidatesCanWinAction",
+      HowManyVotesDoVotersHave: "ChangeOptionSelectedStateHowManyVotesDoVotersHaveAction",
+      HowMuchOfAPercentageMustCandidatesNeedToWin: "ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinAction",
+      StateHowManyElectionRounds: "ChangeOptionSelectedStateHowManyElectionRoundsAction",
+      StateHowManyVoters: "ChangeOptionSelectedStateHowManyVotersAction",
+    }),
+    ChangeElectionOptionStateOfHowManyCandidatesNumber(Number, ElectionId)
+    {
+      this.HowManyCandidates({Number, ElectionId})
+    }
+
   }
 }
 </script>

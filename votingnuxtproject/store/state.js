@@ -75,7 +75,7 @@ export default () => ({
       HowManyVotesDoVotersHave: 1,
       DoVotesTransfer: false,
       HowManyElectionRounds: 1,
-      HowManyVotesCandidatesNeedToWin: 51,
+      HowManyVotesCandidatesNeedToWin:[1,2],
       CanYouVoteForParties: false,
       HowManyVoters: 1,
 
@@ -99,6 +99,14 @@ export default () => ({
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
 
+      HowManyCandidates: 1,
+      HowManyCandidatesCanWin: 1,
+      HowManyVotesDoVotersHave: 1,
+      DoVotesTransfer: false,
+      HowManyElectionRounds: 1,
+      HowManyVotesCandidatesNeedToWin:[1,2],
+      CanYouVoteForParties: false,
+      HowManyVoters: 1,
 
 
       specificElectionCandidates: [
