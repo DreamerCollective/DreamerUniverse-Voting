@@ -14,7 +14,8 @@ export default
   },
   ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowMuchOfAPercentageMustCandidatesNeedToWin = Number
+    state.electionCards[electionCardId].HowManyVotesCandidatesNeedToWin[0] = Number[0]
+    state.electionCards[electionCardId].HowManyVotesCandidatesNeedToWin[1] = Number[1]
   },
   ChangeOptionSelectedStateHowManyElectionRoundsMutation(state, {Number, electionCardId})
   {

@@ -1,9 +1,16 @@
 <template>
   <div>
-    {{ GetElectionCardsById($route.params.id)}}
-    <ElectionsCreation />
-    <ElectionCandidates />
+    <v-main>
+      <v-app>
+        {{ GetElectionCardsById($route.params.id)}}
 
+        <ElectionsCreation />
+        <ElectionCandidates />
+        <ElectionVoters />
+        <ElectionsEvents />
+        <ElectionsResults />
+      </v-app>
+    </v-main>
   </div>
 </template>
 

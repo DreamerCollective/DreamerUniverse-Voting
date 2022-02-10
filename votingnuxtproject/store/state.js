@@ -1,60 +1,32 @@
 export default () => ({
-  electionMetaOptions: {
-    HowManyCandidatesRange: [
-      {
-        minRange: 1,
-      },
-      {
-        maxRange: 20,
-      }
-    ],
-    HowManyCandidatesCanWinRange: [
-      {
-        minRange: 1,
-      },
-      {
-        maxRange: 10,
-      }
-    ],
-    HowManyVotesDoVotersHaveRange: [
-      {
-        minRange: 1,
-      },
-      {
-        maxRange: 10,
-      }
-    ],
-    HowMuchOfAPercentageMustCandidatesNeedToWinRange: [
-      {
-        minRange: 20,
-      },
-      {
-        maxRange: 70,
-      }
-    ],
-    HowManyElectionRoundsRange: [
-      {
-        minRange: 1,
-      },
-      {
-        maxRange: 10,
-      },
-      {
-        infinite: true,
-      },
-    ],
-    DoVotesTransferRange: [
-      {
-        minRange: 1,
-      },
-      {
-        maxRange: 10,
-      },
-      {
-        infinite: true,
-      },
-    ],
-  },
+  electionMetaOptions: [
+    {
+      minRange: 1,
+      maxRange: 20,
+    },
+    {
+      minRange: 1,
+      maxRange: 10,
+    },
+    {
+      minRange: 1,
+      maxRange: 10,
+    },
+    {
+      minRange: 20,
+      maxRange: 70,
+    },
+    {
+      minRange: 1,
+      maxRange: 10,
+      infinite: true,
+    },
+    {
+      minRange: 1,
+      maxRange: 10,
+      infinite: true,
+    },
+  ],
   users: [
     {
       id: 0,
@@ -72,12 +44,13 @@ export default () => ({
 
       HowManyCandidates: 1,
       HowManyCandidatesCanWin: 1,
+      HowManyVotesCandidatesNeedToWin:[20,20],
       HowManyVotesDoVotersHave: 1,
-      DoVotesTransfer: false,
       HowManyElectionRounds: 1,
-      HowManyVotesCandidatesNeedToWin:[1,2],
-      CanYouVoteForParties: false,
       HowManyVoters: 1,
+      CanYouVoteForParties: false,
+      DoVotesTransfer: false,
+
 
       specificElectionCandidates: [
         {
@@ -101,12 +74,12 @@ export default () => ({
 
       HowManyCandidates: 1,
       HowManyCandidatesCanWin: 1,
+      HowManyVotesCandidatesNeedToWin:[20,20],
       HowManyVotesDoVotersHave: 1,
-      DoVotesTransfer: false,
       HowManyElectionRounds: 1,
-      HowManyVotesCandidatesNeedToWin:[1,2],
-      CanYouVoteForParties: false,
       HowManyVoters: 1,
+      CanYouVoteForParties: false,
+      DoVotesTransfer: false,
 
 
       specificElectionCandidates: [
