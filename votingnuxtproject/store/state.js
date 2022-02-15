@@ -13,7 +13,7 @@ export default () => ({
       maxRange: 10,
     },
     {
-      minRange: 20,
+      minRange: 10,
       maxRange: 70,
     },
     {
@@ -23,7 +23,7 @@ export default () => ({
     },
     {
       minRange: 1,
-      maxRange: 10,
+      maxRange: 1000,
       infinite: true,
     },
   ],
@@ -41,17 +41,14 @@ export default () => ({
       title: "Example Election",
       subtitle: "Example Subtitle",
       textInformation: "Example text to so the underlying example long text information",
-
       HowManyCandidates: 1,
       HowManyCandidatesCanWin: 1,
-      HowManyVotesCandidatesNeedToWin:[20,20],
+      HowManyVotesCandidatesNeedToWin:10,
       HowManyVotesDoVotersHave: 1,
       HowManyElectionRounds: 1,
       HowManyVoters: 1,
       CanYouVoteForParties: false,
       DoVotesTransfer: false,
-
-
       specificElectionCandidates: [
         {
           electionCandidatesId: 0,
@@ -74,7 +71,7 @@ export default () => ({
 
       HowManyCandidates: 1,
       HowManyCandidatesCanWin: 1,
-      HowManyVotesCandidatesNeedToWin:[20,20],
+      HowManyVotesCandidatesNeedToWin:10,
       HowManyVotesDoVotersHave: 1,
       HowManyElectionRounds: 1,
       HowManyVoters: 1,

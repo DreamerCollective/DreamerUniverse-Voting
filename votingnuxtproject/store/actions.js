@@ -1,44 +1,14 @@
 export default
 {
-  ChangeElectionOptionsStateAction({commit}, {
-    HowManyCandidates,
-    HowManyCandidatesCanWin,
-    HowManyVotesDoVotersHave,
-    HowMuchOfAPercentageMustCandidatesNeedToWin,
-    HowManyElectionRounds,
-    HowManyVoters,
-    electionCardId})
+  ChangeElectionOptionsStateAction({commit},{
+    electionCard})
   {
-    commit('ChangeOptionSelectedStateHowManyCandidatesMutation', HowManyCandidates, electionCardId)
-    commit('ChangeOptionSelectedStateHowManyCandidatesCanWinMutation', HowManyCandidatesCanWin, electionCardId)
-    commit('ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation', HowManyVotesDoVotersHave, electionCardId)
-    commit('ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation', HowMuchOfAPercentageMustCandidatesNeedToWin, electionCardId)
-    commit('ChangeOptionSelectedStateHowManyElectionRoundsMutation', HowManyElectionRounds, electionCardId)
-    commit('ChangeOptionSelectedStateHowManyVotersMutation', HowManyVoters, electionCardId)
+    commit('ChangeOptionSelectedStateHowManyCandidatesMutation', {electionCard})
+    commit('ChangeOptionSelectedStateHowManyCandidatesCanWinMutation', {electionCard})
+    commit('ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation', {electionCard})
+    commit('ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation', {electionCard})
+    commit('ChangeOptionSelectedStateHowManyElectionRoundsMutation', {electionCard})
+    commit('ChangeOptionSelectedStateHowManyVotersMutation', {electionCard})
   },
 
-  ChangeElectionOptionStateOfHowManyCandidatesAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowManyCandidatesMutation', Number, electionCardId)
-  },
-  ChangeOptionSelectedStateHowManyCandidatesCanWinAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowManyCandidatesCanWinMutation', {Number, electionCardId})
-  },
-  ChangeOptionSelectedStateHowManyVotesDoVotersHaveAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation', Number, electionCardId)
-  },
-  ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation', Number, electionCardId)
-  },
-  ChangeOptionSelectedStateHowManyElectionRoundsAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowManyElectionRoundsMutation', Number, electionCardId)
-  },
-  ChangeOptionSelectedStateHowManyVotersAction({commit}, {Number, electionCardId})
-  {
-    commit('ChangeOptionSelectedStateHowManyVotersMutation', Number, electionCardId)
-  },
 }

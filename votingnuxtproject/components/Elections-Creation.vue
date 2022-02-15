@@ -10,7 +10,7 @@
           <v-subheader>Election Options</v-subheader>
           <v-list-item>
             <v-slider
-              v-model="ChangeState.ChangeState1"
+              v-model="HowManyCandidates"
               color="red"
               label="How Many Candidates?"
               hint="Be honest"
@@ -20,7 +20,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState1"
+                  v-model="HowManyCandidates"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -29,7 +29,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="ChangeState.ChangeState2"
+              v-model="HowManyCandidatesCanWin"
               color="red"
               label="How Many Candidates Can Win?"
               hint="Be honest"
@@ -39,7 +39,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState2"
+                  v-model="HowManyCandidatesCanWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -48,7 +48,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="ChangeState.ChangeState3"
+              v-model="HowManyVotesDoVotersHave"
               color="red"
               label="How Many Votes Do Voters Have?"
               hint="Be honest"
@@ -58,7 +58,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState3"
+                  v-model="HowManyVotesDoVotersHave"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -66,8 +66,8 @@
             </v-slider>
           </v-list-item>
           <v-list-item>
-            <v-range-slider
-              v-model="ChangeState.ChangeState4"
+            <v-slider
+              v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
               color="red"
               label="How Much Of A Percentage Must Candidates Need To Win?"
               hint="Be honest"
@@ -75,25 +75,18 @@
               :max="electionMetaOptions[3].maxRange"
               thumb-label
             >
-              <template v-slot:prepend>
-                <v-text-field
-                  v-model="ChangeState.ChangeState4[0]"
-                  type="number"
-                  style="width: 60px"
-                ></v-text-field>
-              </template>
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState4[1]"
+                  v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
               </template>
-            </v-range-slider>
+            </v-slider>
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="ChangeState.ChangeState5"
+              v-model="HowManyElectionRounds"
               color="red"
               label="How Many Election Rounds?"
               hint="Be honest"
@@ -103,7 +96,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState5"
+                  v-model="HowManyElectionRounds"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -112,7 +105,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="ChangeState.ChangeState6"
+              v-model="HowManyVoters"
               color="red"
               label="How Many Voters?"
               hint="Be honest"
@@ -122,7 +115,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="ChangeState.ChangeState6"
+                  v-model="HowManyVoters"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -131,13 +124,13 @@
           </v-list-item>
           <v-list-item>
             <v-checkbox
-              v-model="ChangeState.ChangeState7"
+              v-model="ChangeState7"
               label="Do Votes Transfer?"></v-checkbox>
           </v-list-item>
           <v-list-item>
             <v-btn
               label="Save"
-              @click="this.ChangeElectionOptionsStateAction(ChangeState)"
+              @click="SaveElectionOptions"
             >Save</v-btn>
           </v-list-item>
         </v-list>
@@ -152,16 +145,20 @@ import {mapActions, mapGetters, mapState} from "vuex";
 export default {
   name: "Elections-Creation",
   data: () => ({
-    ChangeState:
-      {
-        ChangeState1: 1,
-        ChangeState2: 1,
-        ChangeState3: 1,
-        ChangeState4: [20,20],
-        ChangeState5: 1,
-        ChangeState6: 1,
-        ElectionId: 0,
-      },
+    electionCard: {
+      id: this.electionCards[this.$route.params.id].id,
+      authorId: this.electionCards[this.$route.params.id].authorId,
+      title: this.electionCards[this.$route.params.id].title,
+      subtitle: this.electionCards[this.$route.params.id].subtitle,
+      textInformation: this.electionCards[this.$route.params.id].textInformation,
+      HowManyCandidates: 1,
+      HowManyCandidatesCanWin: 1,
+      HowManyVotesDoVotersHave: 1,
+      HowMuchOfAPercentageMustCandidatesNeedToWin: 20,
+      HowManyElectionRounds: 1,
+      HowManyVoters: 1,
+    },
+
     ChangeState7: false,
   }),
   computed: {
@@ -172,7 +169,24 @@ export default {
     ...mapActions([
       "ChangeElectionOptionsStateAction",
     ]),
-  }
+    SaveElectionOptions(e)
+    {
+      e.preventDefault();
+      this.ChangeElectionOptionsStateAction({
+        HowManyCandidates: 1,
+        HowManyCandidatesCanWin: 1,
+        HowManyVotesDoVotersHave: 1,
+        HowMuchOfAPercentageMustCandidatesNeedToWin: 20,
+        HowManyElectionRounds: 1,
+        HowManyVoters: 1,
+        ElectionId: 1,
+      })
+    }
+  },
+  created:
+    {
+
+    }
 }
 </script>
 

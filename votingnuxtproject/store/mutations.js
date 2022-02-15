@@ -1,29 +1,35 @@
+import ElectionCards from "@/components/ElectionCards";
+
 export default
 {
   ChangeOptionSelectedStateHowManyCandidatesMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowManyCandidates = Number
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
-  ChangeOptionSelectedStateHowManyCandidatesCanWinMutation(state, {Number, electionCardId})
-  {
-    state.electionCards[electionCardId].HowManyCandidatesCanWin= Number
+  ChangeOptionSelectedStateHowManyCandidatesCanWinMutation(state, {Number, electionCardId}) {
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
   ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowManyVotesDoVotersHave = Number
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
   ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowManyVotesCandidatesNeedToWin[0] = Number[0]
-    state.electionCards[electionCardId].HowManyVotesCandidatesNeedToWin[1] = Number[1]
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
   ChangeOptionSelectedStateHowManyElectionRoundsMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowManyElectionRounds = Number
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
   ChangeOptionSelectedStateHowManyVotersMutation(state, {Number, electionCardId})
   {
-    state.electionCards[electionCardId].HowManyVoters = Number
+    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
+    state.electionCards.splice(index,1,Number)
   },
 
 }
