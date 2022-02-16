@@ -1,35 +1,14 @@
-import ElectionCards from "@/components/ElectionCards";
+import axios from "axios"
 
 export default
 {
-  ChangeOptionSelectedStateHowManyCandidatesMutation(state, {Number, electionCardId})
+  ChangeOptionSelectedStateMutation: (state) => (updatedElectionCard) =>
   {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
+    const index = state.electionCards.findIndex(electionCard => electionCard.id === updatedElectionCard.id)
+    Window.console.log(index);
+    //if (index !== -1) {
+      //state.electionCards.splice(index,1,updatedElectionCard)
+    //}
+    state.electionCards.splice(index,1,updatedElectionCard)
   },
-  ChangeOptionSelectedStateHowManyCandidatesCanWinMutation(state, {Number, electionCardId}) {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
-  },
-  ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation(state, {Number, electionCardId})
-  {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
-  },
-  ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation(state, {Number, electionCardId})
-  {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
-  },
-  ChangeOptionSelectedStateHowManyElectionRoundsMutation(state, {Number, electionCardId})
-  {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
-  },
-  ChangeOptionSelectedStateHowManyVotersMutation(state, {Number, electionCardId})
-  {
-    const index = state.electionCards.findIndex(electionCards => electionCards.id === electionCardId)
-    state.electionCards.splice(index,1,Number)
-  },
-
 }

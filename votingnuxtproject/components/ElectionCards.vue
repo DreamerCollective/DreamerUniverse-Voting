@@ -63,7 +63,10 @@ export default
   },
   methods:{
     ...mapActions([""]),
-  }
+  },
+  created: {
+
+    }
 
 }
 </script>

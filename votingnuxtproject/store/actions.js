@@ -1,14 +1,15 @@
+import axios from "axios"
+
 export default
 {
-  ChangeElectionOptionsStateAction({commit},{
-    electionCard})
+  async FetchElectionCards({commit})
   {
-    commit('ChangeOptionSelectedStateHowManyCandidatesMutation', {electionCard})
-    commit('ChangeOptionSelectedStateHowManyCandidatesCanWinMutation', {electionCard})
-    commit('ChangeOptionSelectedStateHowManyVotesDoVotersHaveMutation', {electionCard})
-    commit('ChangeOptionSelectedStateHowMuchOfAPercentageMustCandidatesNeedToWinMutation', {electionCard})
-    commit('ChangeOptionSelectedStateHowManyElectionRoundsMutation', {electionCard})
-    commit('ChangeOptionSelectedStateHowManyVotersMutation', {electionCard})
+    const response = await axios.get();
+  },
+  ChangeOptionSelectedStateAction({commit},
+                                    updatedElectionCard)
+  {
+    commit('ChangeOptionSelectedStateMutation', updatedElectionCard)
   },
 
 }

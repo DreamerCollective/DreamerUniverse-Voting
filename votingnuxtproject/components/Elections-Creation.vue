@@ -10,7 +10,7 @@
           <v-subheader>Election Options</v-subheader>
           <v-list-item>
             <v-slider
-              v-model="HowManyCandidates"
+              v-model="electionCard.HowManyCandidates"
               color="red"
               label="How Many Candidates?"
               hint="Be honest"
@@ -20,7 +20,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowManyCandidates"
+                  v-model="electionCard.HowManyCandidates"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -29,7 +29,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="HowManyCandidatesCanWin"
+              v-model="electionCard.HowManyCandidatesCanWin"
               color="red"
               label="How Many Candidates Can Win?"
               hint="Be honest"
@@ -39,7 +39,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowManyCandidatesCanWin"
+                  v-model="electionCard.HowManyCandidatesCanWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -48,7 +48,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="HowManyVotesDoVotersHave"
+              v-model="electionCard.HowManyVotesDoVotersHave"
               color="red"
               label="How Many Votes Do Voters Have?"
               hint="Be honest"
@@ -58,7 +58,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowManyVotesDoVotersHave"
+                  v-model="electionCard.HowManyVotesDoVotersHave"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -67,7 +67,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
+              v-model="electionCard.HowMuchOfAPercentageMustCandidatesNeedToWin"
               color="red"
               label="How Much Of A Percentage Must Candidates Need To Win?"
               hint="Be honest"
@@ -77,7 +77,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
+                  v-model="electionCard.HowMuchOfAPercentageMustCandidatesNeedToWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -86,7 +86,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="HowManyElectionRounds"
+              v-model="electionCard.HowManyElectionRounds"
               color="red"
               label="How Many Election Rounds?"
               hint="Be honest"
@@ -96,7 +96,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowManyElectionRounds"
+                  v-model="electionCard.HowManyElectionRounds"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -105,7 +105,7 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="HowManyVoters"
+              v-model="electionCard.HowManyVoters"
               color="red"
               label="How Many Voters?"
               hint="Be honest"
@@ -115,7 +115,7 @@
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="HowManyVoters"
+                  v-model="electionCard.HowManyVoters"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -124,7 +124,12 @@
           </v-list-item>
           <v-list-item>
             <v-checkbox
-              v-model="ChangeState7"
+              v-model="electionCard.CanYouVoteForParties"
+              label="Can You Vote For Parties?"></v-checkbox>
+          </v-list-item>
+          <v-list-item>
+            <v-checkbox
+              v-model="electionCard.DoVotesTransfer"
               label="Do Votes Transfer?"></v-checkbox>
           </v-list-item>
           <v-list-item>
@@ -146,20 +151,32 @@ export default {
   name: "Elections-Creation",
   data: () => ({
     electionCard: {
-      id: this.electionCards[this.$route.params.id].id,
-      authorId: this.electionCards[this.$route.params.id].authorId,
-      title: this.electionCards[this.$route.params.id].title,
-      subtitle: this.electionCards[this.$route.params.id].subtitle,
-      textInformation: this.electionCards[this.$route.params.id].textInformation,
+      id: 0,
+      authorId: 0,
+      title: "",
+      subtitle: "",
+      textInformation: "",
       HowManyCandidates: 1,
       HowManyCandidatesCanWin: 1,
       HowManyVotesDoVotersHave: 1,
-      HowMuchOfAPercentageMustCandidatesNeedToWin: 20,
+      HowMuchOfAPercentageMustCandidatesNeedToWin: 10,
       HowManyElectionRounds: 1,
       HowManyVoters: 1,
+      CanYouVoteForParties: false,
+      DoVotesTransfer: false,
+      specificElectionCandidates: [
+        {
+          electionCandidatesId: 0,
+          votedFor: false,
+        },
+      ],
+      voters: [
+        {
+          UserId: 0,
+          hasVoted: false,
+        }
+      ]
     },
-
-    ChangeState7: false,
   }),
   computed: {
     ...mapState(["electionMetaOptions", "electionCards", "electionCandidates", "users"]),
@@ -167,26 +184,21 @@ export default {
   },
   methods: {
     ...mapActions([
-      "ChangeElectionOptionsStateAction",
+      "ChangeOptionSelectedStateAction",
     ]),
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      this.ChangeElectionOptionsStateAction({
-        HowManyCandidates: 1,
-        HowManyCandidatesCanWin: 1,
-        HowManyVotesDoVotersHave: 1,
-        HowMuchOfAPercentageMustCandidatesNeedToWin: 20,
-        HowManyElectionRounds: 1,
-        HowManyVoters: 1,
-        ElectionId: 1,
-      })
+      const electionCard =
+        {
+
+        }
+      this.ChangeOptionSelectedStateAction(this.$data.electionCard)
     }
   },
-  created:
-    {
-
-    }
+  props: {
+    electionCardId: String,
+  },
 }
 </script>
 
