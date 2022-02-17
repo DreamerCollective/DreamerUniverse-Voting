@@ -15,7 +15,9 @@ export default
   name: "index",
   computed: {
     ...mapState(['electionCards'])
+
   }
+
 
 }
 </script>

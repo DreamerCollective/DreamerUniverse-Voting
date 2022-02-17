@@ -1,6 +1,6 @@
 export default () => ({
   electionMetaOptions: [
-    {
+    /*{
       minRange: 1,
       maxRange: 20,
     },
@@ -25,17 +25,17 @@ export default () => ({
       minRange: 1,
       maxRange: 1000,
       infinite: true,
-    },
+    },*/
   ],
   users: [
-    {
+    /*{
       id: 0,
       username: "Zalron",
       fullName: "David Lawson"
-    }
+    }*/
   ],
   electionCards: [
-    {
+    /*{
       id: 0,
       authorId: 0,
       title: "Example Election",
@@ -91,10 +91,10 @@ export default () => ({
           hasVoted: false,
         }
       ]
-    },
+    },*/
   ],
   electionCandidates: [
-    {
+    /*{
       id: 0,
       partyId: 0,
       candidateName: "Bob",
@@ -112,10 +112,10 @@ export default () => ({
           issueDescription: "Bob likes Lamas"
         },
       ],
-    },
+    },*/
   ],
   Party: [
-    {
+    /*{
       id: 0,
       electionIds: [
         {
@@ -124,6 +124,6 @@ export default () => ({
       ],
       PartyName: "Ice Cream Party",
       PartyDescription: "The Party for more Ice Creams"
-    }
+    }*/
   ],
 })

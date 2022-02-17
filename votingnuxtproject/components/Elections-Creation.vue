@@ -14,8 +14,8 @@
               color="red"
               label="How Many Candidates?"
               hint="Be honest"
-              :min="electionMetaOptions[0].minRange"
-              :max="electionMetaOptions[0].maxRange"
+              :min="this.GetElectionMetaOptions(0).minRange"
+              :max="this.GetElectionMetaOptions(0).maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -151,7 +151,7 @@ export default {
   name: "Elections-Creation",
   data: () => ({
     electionCard: {
-      id: 0,
+      id: this.electionCardId,
       authorId: 0,
       title: "",
       subtitle: "",
@@ -180,25 +180,27 @@ export default {
   }),
   computed: {
     ...mapState(["electionMetaOptions", "electionCards", "electionCandidates", "users"]),
-    ...mapGetters(["GetElectionCardsById", "GetUserAuthorOfElectionCardsById",])
+    ...mapGetters(["GetElectionMetaOptions"])
   },
   methods: {
     ...mapActions([
-      "ChangeOptionSelectedStateAction",
+      "ChangeOptionSelectedStateAction", "FetchSiteOptions"
     ]),
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      const electionCard =
-        {
-
-        }
       this.ChangeOptionSelectedStateAction(this.$data.electionCard)
     }
+
   },
   props: {
-    electionCardId: String,
+    electionCardId: Number,
   },
+  created()
+  {
+    this.FetchElectionCards()
+    this.FetchSiteOptions()
+  }
 }
 </script>
 

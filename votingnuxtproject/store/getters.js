@@ -2,16 +2,20 @@ import axios from "axios"
 
 export default
 {
-  GetElectionCardOptionSelectedState: (state) => (payload) =>
-  {
-    return state.electionCards.find(electionOptions => electionOptions.selected === payload)
-  },
   GetElectionCardsById: (state) => (id) =>
   {
     return state.electionCards.find(electionCards => electionCards.id === id)
   },
-  GetUserAuthorOfElectionCardsById: (state) => (payload) =>
+  GetElectionMetaOptions: (state) => (index) =>
   {
-    return state.users.find(users => users.id === payload)
+    return state.electionMetaOptions.find(electionMetaOptions => electionMetaOptions.id === index)
+  },
+  GetElectionCards: (state) => (id) =>
+  {
+    return state.electionCards
+  },
+  GetUserAuthorOfElectionCardsById: (state) => (id) =>
+  {
+    return state.users.find(users => users.id === id)
   }
 }
