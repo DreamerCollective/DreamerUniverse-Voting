@@ -3,28 +3,29 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in GetElectionCards(0)"
+          <v-col v-for="card in electionCards"
                  :key="card.id"
                  :cols="3">
             <v-card
               class="mx-auto"
               max-width="500"
+              max-height="200"
               outlined
               color="red lighten-1"
             >
               <v-list-item three-line>
                 <v-list-item-content>
                   <div>
-                    Id {{GetElectionCardsById(card.id).id}}
+                    Id {{card.id}}
                   </div>
                   <div class="text-overline mb-4">
-                    By {{GetUserAuthorOfElectionCardsById(card.authorId).username}}
+                    By {{/*this.GetUserAuthorOfElectionCardsById(card.authorId).username*/}}
                   </div>
                   <v-list-item-title class="text-h5 mb-1">
-                    {{GetElectionCardsById(card.id).title}}
+                    {{card.title}}
                   </v-list-item-title>
-                  <v-list-item-subtitle>{{GetElectionCardsById(card.id).subtitle}}</v-list-item-subtitle>
-                  <v-list-item-subtitle>{{GetElectionCardsById(card.id).textInformation}}</v-list-item-subtitle>
+                  <v-list-item-subtitle> {{card.subtitle}}</v-list-item-subtitle>
+                  <v-list-item-subtitle> {{card.description}}</v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-avatar
                   size="80"
@@ -62,7 +63,7 @@ export default
     ...mapGetters(["GetElectionCardsById", "GetElectionCards", "GetUserAuthorOfElectionCardsById",])
   },
   methods:{
-    ...mapActions(["FetchElectionCards"]),
+    ...mapActions(["FetchElectionCards"])
   },
   created() {
     this.FetchElectionCards()

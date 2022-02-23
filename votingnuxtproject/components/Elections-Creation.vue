@@ -14,8 +14,8 @@
               color="red"
               label="How Many Candidates?"
               hint="Be honest"
-              :min="this.GetElectionMetaOptions(0).minRange"
-              :max="this.GetElectionMetaOptions(0).maxRange"
+              :min="this.electionMetaOptions[0].minRange"
+              :max="this.electionMetaOptions[0].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -33,8 +33,8 @@
               color="red"
               label="How Many Candidates Can Win?"
               hint="Be honest"
-              :min="electionMetaOptions[1].minRange"
-              :max="electionMetaOptions[1].maxRange"
+              :min="this.electionMetaOptions[1].minRange"
+              :max="this.electionMetaOptions[1].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -52,8 +52,8 @@
               color="red"
               label="How Many Votes Do Voters Have?"
               hint="Be honest"
-              :min="electionMetaOptions[2].minRange"
-              :max="electionMetaOptions[2].maxRange"
+              :min="this.electionMetaOptions[2].minRange"
+              :max="this.electionMetaOptions[2].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -71,8 +71,8 @@
               color="red"
               label="How Much Of A Percentage Must Candidates Need To Win?"
               hint="Be honest"
-              :min="electionMetaOptions[3].minRange"
-              :max="electionMetaOptions[3].maxRange"
+              :min="this.electionMetaOptions[3].minRange"
+              :max="this.electionMetaOptions[3].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -90,8 +90,8 @@
               color="red"
               label="How Many Election Rounds?"
               hint="Be honest"
-              :min="electionMetaOptions[4].minRange"
-              :max="electionMetaOptions[4].maxRange"
+              :min="this.electionMetaOptions[4].minRange"
+              :max="this.electionMetaOptions[4].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -109,8 +109,8 @@
               color="red"
               label="How Many Voters?"
               hint="Be honest"
-              :min="electionMetaOptions[5].minRange"
-              :max="electionMetaOptions[5].maxRange"
+              :min="this.electionMetaOptions[5].minRange"
+              :max="this.electionMetaOptions[5].maxRange"
               thumb-label
             >
               <template v-slot:append>
@@ -151,7 +151,7 @@ export default {
   name: "Elections-Creation",
   data: () => ({
     electionCard: {
-      id: this.electionCardId,
+      id: null,
       authorId: 0,
       title: "",
       subtitle: "",
@@ -184,7 +184,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      "ChangeOptionSelectedStateAction", "FetchSiteOptions"
+      "ChangeOptionSelectedStateAction", "FetchElectionCards", "FetchSiteOptions"
     ]),
     SaveElectionOptions(e)
     {
@@ -194,7 +194,7 @@ export default {
 
   },
   props: {
-    electionCardId: Number,
+    electionCardId: String,
   },
   created()
   {

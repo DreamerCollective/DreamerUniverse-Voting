@@ -4,18 +4,18 @@ export default
 {
   GetElectionCardsById: (state) => (id) =>
   {
-    return state.electionCards.find(electionCards => electionCards.id === id)
+    return state.electionCards.find(electionCard => electionCard.id === id)
   },
   GetElectionMetaOptions: (state) => (index) =>
   {
-    return state.electionMetaOptions.find(electionMetaOptions => electionMetaOptions.id === index)
+    return state.electionMetaOptions.find(electionMetaOption => electionMetaOption.id === index)
   },
-  GetElectionCards: (state) => (id) =>
+  GetElectionCards: (state) =>
   {
     return state.electionCards
   },
-  GetUserAuthorOfElectionCardsById: (state) => (id) =>
+  GetUserAuthorOfElectionCardsById: (state) => (cardId) =>
   {
-    return state.users.find(users => users.id === id)
+    return state.users.find(user => user.id === cardId)
   }
 }

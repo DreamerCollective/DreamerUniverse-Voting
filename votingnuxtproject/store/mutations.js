@@ -2,25 +2,26 @@ import axios from "axios"
 
 export default
 {
-  PopulateElectionCardsStateMutation: (state) => (ElectionCardResponse) =>
+  PopulateElectionCardsStateMutation(state, ElectionCardResponse)
   {
+    //state.electionCards.push(ElectionCardResponse);
     state.electionCards = ElectionCardResponse;
   },
-  PopulateElectionCandidatesStateMutation: (state) => (ElectionCardResponse) =>
+  PopulateElectionCandidatesStateMutation: (state) => (ElectionCandidatesResponse) =>
   {
-    state.electionCandidates = ElectionCardResponse;
+    state.electionCandidates.push(ElectionCandidatesResponse);
   },
-  PopulateUsersStateMutation: (state) => (ElectionCardResponse) =>
+  PopulateUsersStateMutation: (state) => (UserResponse) =>
   {
-    state.users = ElectionCardResponse;
+    state.users.push(UserResponse);
   },
-  PopulateElectionMetaOptionsStateMutation: (state) => (ElectionCardResponse) =>
+  PopulateElectionMetaOptionsStateMutation: (state) => (ElectionMetaResponse) =>
   {
-    state.electionMetaOptions = ElectionCardResponse;
+    state.electionMetaOptions.push(ElectionMetaResponse);
   },
-  PopulatePartiesStateMutation: (state) => (ElectionCardResponse) =>
+  PopulatePartiesStateMutation: (state) => (Parties) =>
   {
-    state.Party = ElectionCardResponse;
+    state.Party.push(Parties);
   },
   ChangeOptionSelectedStateMutation: (state) => (updatedElectionCard) =>
   {

@@ -14,11 +14,19 @@ export default
 {
   name: "index",
   computed: {
-    ...mapState(['electionCards'])
-
+    ...mapState(['electionCards']),
+  },
+  methods: {
+    ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions'])
+  },
+  created()
+  {
+    this.FetchElectionCards();
+    this.FetchParty();
+    this.FetchElectionCandidates();
+    this.FetchUsers();
+    this.FetchSiteOptions();
   }
-
-
 }
 </script>
 <style scoped>

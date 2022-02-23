@@ -4,28 +4,29 @@ export default
 {
   async FetchElectionCards({commit})
   {
-    const response = await axios.get("http://localhost:8000/electionCards");
-    commit("PopulateElectionCardsStateMutation", response.data)
+    await axios.get("http://localhost:8000/electionCards")
+      .then(data=>(commit("PopulateElectionCardsStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
   },
   async FetchParty({commit})
   {
     const response = await axios.get("http://localhost:8000/Party");
-    commit("PopulateElectionCardsStateMutation", response.data)
+    commit("PopulateElectionCandidatesStateMutation", response.data)
   },
   async FetchElectionCandidates({commit})
   {
     const response = await axios.get("http://localhost:8000/electionCandidates");
-    commit("PopulateElectionCardsStateMutation", response.data)
+    commit("PopulateUsersStateMutation", response.data)
   },
   async FetchUsers({commit})
   {
     const response = await axios.get("http://localhost:8000/users");
-    commit("PopulateElectionCardsStateMutation", response.data)
+    commit("PopulateElectionMetaOptionsStateMutation", response.data)
   },
   async FetchSiteOptions({commit})
   {
     const response = await axios.get("http://localhost:8000/electionMetaOptions");
-    commit("PopulateElectionCardsStateMutation", response.data)
+    commit("PopulatePartiesStateMutation", response.data)
   },
   async ChangeOptionSelectedStateAction({commit}, updatedElectionCard)
   {
