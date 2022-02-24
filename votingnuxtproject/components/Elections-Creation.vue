@@ -10,17 +10,17 @@
           <v-subheader>Election Options</v-subheader>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowManyCandidates"
+              v-model="HowManyCandidates"
               color="red"
               label="How Many Candidates?"
               hint="Be honest"
-              :min="this.electionMetaOptions[0].minRange"
-              :max="this.electionMetaOptions[0].maxRange"
+              :min="1"
+              :max="20"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowManyCandidates"
+                  v-model="HowManyCandidates"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -29,17 +29,17 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowManyCandidatesCanWin"
+              v-model="HowManyCandidatesCanWin"
               color="red"
               label="How Many Candidates Can Win?"
               hint="Be honest"
-              :min="this.electionMetaOptions[1].minRange"
-              :max="this.electionMetaOptions[1].maxRange"
+              :min="1"
+              :max="10"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowManyCandidatesCanWin"
+                  v-model="HowManyCandidatesCanWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -48,17 +48,17 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowManyVotesDoVotersHave"
+              v-model="HowManyVotesDoVotersHave"
               color="red"
               label="How Many Votes Do Voters Have?"
               hint="Be honest"
-              :min="this.electionMetaOptions[2].minRange"
-              :max="this.electionMetaOptions[2].maxRange"
+              :min="1"
+              :max="10"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowManyVotesDoVotersHave"
+                  v-model="HowManyVotesDoVotersHave"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -67,17 +67,17 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowMuchOfAPercentageMustCandidatesNeedToWin"
+              v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
               color="red"
               label="How Much Of A Percentage Must Candidates Need To Win?"
               hint="Be honest"
-              :min="this.electionMetaOptions[3].minRange"
-              :max="this.electionMetaOptions[3].maxRange"
+              :min="10"
+              :max="70"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowMuchOfAPercentageMustCandidatesNeedToWin"
+                  v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -86,17 +86,17 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowManyElectionRounds"
+              v-model="HowManyElectionRounds"
               color="red"
               label="How Many Election Rounds?"
               hint="Be honest"
-              :min="this.electionMetaOptions[4].minRange"
-              :max="this.electionMetaOptions[4].maxRange"
+              :min="1"
+              :max="10"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowManyElectionRounds"
+                  v-model="HowManyElectionRounds"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -105,17 +105,17 @@
           </v-list-item>
           <v-list-item>
             <v-slider
-              v-model="electionCard.HowManyVoters"
+              v-model="HowManyVoters"
               color="red"
               label="How Many Voters?"
               hint="Be honest"
-              :min="this.electionMetaOptions[5].minRange"
-              :max="this.electionMetaOptions[5].maxRange"
+              :min="1"
+              :max="1000"
               thumb-label
             >
               <template v-slot:append>
                 <v-text-field
-                  v-model="electionCard.HowManyVoters"
+                  v-model="HowManyVoters"
                   type="number"
                   style="width: 60px"
                 ></v-text-field>
@@ -124,12 +124,12 @@
           </v-list-item>
           <v-list-item>
             <v-checkbox
-              v-model="electionCard.CanYouVoteForParties"
+              v-model="CanYouVoteForParties"
               label="Can You Vote For Parties?"></v-checkbox>
           </v-list-item>
           <v-list-item>
             <v-checkbox
-              v-model="electionCard.DoVotesTransfer"
+              v-model="DoVotesTransfer"
               label="Do Votes Transfer?"></v-checkbox>
           </v-list-item>
           <v-list-item>
@@ -150,33 +150,17 @@ import {mapActions, mapGetters, mapState} from "vuex";
 export default {
   name: "Elections-Creation",
   data: () => ({
-    electionCard: {
-      id: null,
-      authorId: 0,
-      title: "",
-      subtitle: "",
-      textInformation: "",
-      HowManyCandidates: 1,
-      HowManyCandidatesCanWin: 1,
-      HowManyVotesDoVotersHave: 1,
-      HowMuchOfAPercentageMustCandidatesNeedToWin: 10,
-      HowManyElectionRounds: 1,
-      HowManyVoters: 1,
-      CanYouVoteForParties: false,
-      DoVotesTransfer: false,
-      specificElectionCandidates: [
-        {
-          electionCandidatesId: 0,
-          votedFor: false,
-        },
-      ],
-      voters: [
-        {
-          UserId: 0,
-          hasVoted: false,
-        }
-      ]
-    },
+    title: "",
+    subtitle: "",
+    textInformation: "",
+    HowManyCandidates: 1,
+    HowManyCandidatesCanWin: 1,
+    HowManyVotesDoVotersHave: 1,
+    HowMuchOfAPercentageMustCandidatesNeedToWin: 10,
+    HowManyElectionRounds: 1,
+    HowManyVoters: 1,
+    CanYouVoteForParties: false,
+    DoVotesTransfer: false,
   }),
   computed: {
     ...mapState(["electionMetaOptions", "electionCards", "electionCandidates", "users"]),
@@ -189,17 +173,41 @@ export default {
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      this.ChangeOptionSelectedStateAction(this.$data.electionCard)
+      const electionCardRouteId = this.$route.params.id.toString()
+      const electionCard = {
+        id: parseInt(electionCardRouteId),
+        authorId: 0,
+        title: "",
+        subtitle: "",
+        textInformation: "",
+        HowManyCandidates: this.$data.HowManyCandidates,
+        HowManyCandidatesCanWin: this.$data.HowManyCandidatesCanWin,
+        HowManyVotesDoVotersHave: this.$data.HowManyVotesDoVotersHave,
+        HowMuchOfAPercentageMustCandidatesNeedToWin: this.$data.HowMuchOfAPercentageMustCandidatesNeedToWin,
+        HowManyElectionRounds: this.$data.HowManyElectionRounds,
+        HowManyVoters: this.$data.HowManyVoters,
+        CanYouVoteForParties: this.$data.CanYouVoteForParties,
+        DoVotesTransfer: this.$data.DoVotesTransfer,
+        specificElectionCandidates: [
+          {
+            electionCandidatesId: 0,
+            votedFor: false,
+          },
+        ],
+        voters: [
+          {
+            UserId: 0,
+            hasVoted: false,
+          }
+        ]
+      }
+      this.ChangeOptionSelectedStateAction(electionCard)
     }
 
   },
-  props: {
-    electionCardId: String,
-  },
   created()
   {
-    this.FetchElectionCards()
-    this.FetchSiteOptions()
+
   }
 }
 </script>

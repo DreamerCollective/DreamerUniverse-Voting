@@ -18,13 +18,11 @@
     },
     {
       "minRange": 1,
-      "maxRange": 10,
-      "infinite": true
+      "maxRange": 10
     },
     {
       "minRange": 1,
-      "maxRange": 1000,
-      "infinite": true
+      "maxRange": 1000
     }
   ],
   "users": [
@@ -36,31 +34,34 @@
   ],
   "electionCards": [
     {
-      "id": 0,
-      "authorId": 0,
-      "title": "Example Election",
-      "subtitle": "Example Subtitle",
-      "textInformation": "Example text to so the underlying example long text information",
-      "HowManyCandidates": 1,
-      "HowManyCandidatesCanWin": 1,
-      "HowManyVotesCandidatesNeedToWin": 10,
-      "HowManyVotesDoVotersHave": 1,
-      "HowManyElectionRounds": 1,
-      "HowManyVoters": 1,
-      "CanYouVoteForParties": false,
-      "DoVotesTransfer": false,
-      "specificElectionCandidates": [
-        {
-          "electionCandidatesId": 0,
-          "votedFor": false
-        }
-      ],
-      "voters": [
-        {
-          "UserId": 0,
-          "hasVoted": false
-        }
-      ]
+      "updatedElectionCard": {
+        "id": 0,
+        "authorId": 0,
+        "title": "",
+        "subtitle": "",
+        "textInformation": "",
+        "HowManyCandidates": 11,
+        "HowManyCandidatesCanWin": 2,
+        "HowManyVotesDoVotersHave": 4,
+        "HowMuchOfAPercentageMustCandidatesNeedToWin": 23,
+        "HowManyElectionRounds": 1,
+        "HowManyVoters": 1,
+        "CanYouVoteForParties": false,
+        "DoVotesTransfer": false,
+        "specificElectionCandidates": [
+          {
+            "electionCandidatesId": 0,
+            "votedFor": false
+          }
+        ],
+        "voters": [
+          {
+            "UserId": 0,
+            "hasVoted": false
+          }
+        ]
+      },
+      "id": 0
     },
     {
       "id": 1,

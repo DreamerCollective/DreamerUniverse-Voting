@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in electionCards"
+          <v-col v-for="card in this.electionCards"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -19,7 +19,7 @@
                     Id {{card.id}}
                   </div>
                   <div class="text-overline mb-4">
-                    By {{/*this.GetUserAuthorOfElectionCardsById(card.authorId).username*/}}
+                    By {{this.GetUserAuthorForElection(card.authorId).username}}
                   </div>
                   <v-list-item-title class="text-h5 mb-1">
                     {{card.title}}
@@ -59,14 +59,22 @@ export default
 {
   name: "ElectionCards",
   computed: {
-    ...mapState(["electionCards", "electionCandidates"]),
-    ...mapGetters(["GetElectionCardsById", "GetElectionCards", "GetUserAuthorOfElectionCardsById",])
+    ...mapState(["Elections/electionCards", "Candidates/electionCandidates"]),
+    ...mapGetters(["Users/GetUserAuthorOfElectionCardsById"]),
   },
   methods:{
-    ...mapActions(["FetchElectionCards"])
+    ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
+    GetUserAuthorForElection(AuthorId) {
+      return this.GetUserAuthorOfElectionCardsById(AuthorId)
+    },
   },
-  created() {
-    this.FetchElectionCards()
+  created()
+  {
+    this.FetchElectionCards();
+    this.FetchParty();
+    this.FetchElectionCandidates();
+    this.FetchUsers();
+    this.FetchSiteOptions();
   }
 
 }

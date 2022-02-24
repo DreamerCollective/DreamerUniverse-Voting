@@ -4,31 +4,29 @@ export default
 {
   PopulateElectionCardsStateMutation(state, ElectionCardResponse)
   {
-    //state.electionCards.push(ElectionCardResponse);
-    state.electionCards = ElectionCardResponse;
+    state.Elections.electionCards = ElectionCardResponse;
   },
-  PopulateElectionCandidatesStateMutation: (state) => (ElectionCandidatesResponse) =>
+  PopulateElectionCandidatesStateMutation(state , ElectionCandidatesResponse)
   {
-    state.electionCandidates.push(ElectionCandidatesResponse);
+    state.Candidates.electionCandidates = ElectionCandidatesResponse;
   },
-  PopulateUsersStateMutation: (state) => (UserResponse) =>
+  PopulateUsersStateMutation(state, UserResponse)
   {
-    state.users.push(UserResponse);
+    state.Users.users = UserResponse;
   },
-  PopulateElectionMetaOptionsStateMutation: (state) => (ElectionMetaResponse) =>
+  PopulateElectionMetaOptionsStateMutation(state, ElectionMetaResponse)
   {
-    state.electionMetaOptions.push(ElectionMetaResponse);
+    state.Options.electionMetaOptions = ElectionMetaResponse;
   },
-  PopulatePartiesStateMutation: (state) => (Parties) =>
+  PopulatePartiesStateMutation(state, Parties)
   {
-    state.Party.push(Parties);
+    state.Parties.Party = Parties;
   },
-  ChangeOptionSelectedStateMutation: (state) => (updatedElectionCard) =>
+  ChangeOptionSelectedStateMutation(state, updatedElectionCard)
   {
-    const index = state.electionCards.findIndex(electionCard => electionCard.id === updatedElectionCard.id)
-    Window.console.log(index);
+    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === updatedElectionCard.id)
     if (index !== -1) {
-      state.electionCards.splice(index,1,updatedElectionCard)
+      state.Elections.electionCards.splice(index,1,updatedElectionCard)
     }
   },
 }

@@ -4,7 +4,7 @@
       <v-app>
         {{ /*GetElectionCardsById($route.params.)*/}}
 
-        <ElectionsCreation :election-card-id="$route.params.id"/>
+        <ElectionsCreation/>
         <ElectionCandidates />
         <ElectionVoters />
         <ElectionsEvents />
