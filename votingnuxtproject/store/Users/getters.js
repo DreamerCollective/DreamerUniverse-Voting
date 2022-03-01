@@ -4,6 +4,7 @@ export default
 {
   GetUserAuthorOfElectionCardsById: (state) => (cardId) =>
   {
-    return state.users.find(user => parseInt(user.id) === cardId)
+    const username = state.users.find(user => user.id === cardId)
+    return username.username
   }
 }

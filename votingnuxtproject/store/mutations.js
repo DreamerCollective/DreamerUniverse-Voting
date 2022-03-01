@@ -25,8 +25,9 @@ export default
   ChangeOptionSelectedStateMutation(state, updatedElectionCard)
   {
     const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === updatedElectionCard.id)
+    const object = updatedElectionCard
     if (index !== -1) {
-      state.Elections.electionCards.splice(index,1,updatedElectionCard)
+      state.Elections.electionCards.splice(index,1, object)
     }
   },
 }

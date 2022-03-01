@@ -3,13 +3,11 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in this.electionCards"
+          <v-col v-for="card in electionCards"
                  :key="card.id"
                  :cols="3">
             <v-card
               class="mx-auto"
-              max-width="500"
-              max-height="200"
               outlined
               color="red lighten-1"
             >
@@ -19,13 +17,13 @@
                     Id {{card.id}}
                   </div>
                   <div class="text-overline mb-4">
-                    By {{this.GetUserAuthorForElection(card.authorId).username}}
+                    By {{GetAuthor(card.authorId)}}
                   </div>
                   <v-list-item-title class="text-h5 mb-1">
                     {{card.title}}
                   </v-list-item-title>
                   <v-list-item-subtitle> {{card.subtitle}}</v-list-item-subtitle>
-                  <v-list-item-subtitle> {{card.description}}</v-list-item-subtitle>
+                  <v-list-item-subtitle> {{card.textInformation}}</v-list-item-subtitle>
                 </v-list-item-content>
                 <v-list-item-avatar
                   size="80"
@@ -59,12 +57,13 @@ export default
 {
   name: "ElectionCards",
   computed: {
-    ...mapState(["Elections/electionCards", "Candidates/electionCandidates"]),
-    ...mapGetters(["Users/GetUserAuthorOfElectionCardsById"]),
+    ...mapState("Elections",["electionCards"]),
+    ...mapGetters( {GetAuthor: "Users/GetUserAuthorOfElectionCardsById"}),
   },
   methods:{
     ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
-    GetUserAuthorForElection(AuthorId) {
+    GetUserAuthorForElection(AuthorId)
+    {
       return this.GetUserAuthorOfElectionCardsById(AuthorId)
     },
   },
@@ -73,8 +72,8 @@ export default
     this.FetchElectionCards();
     this.FetchParty();
     this.FetchElectionCandidates();
-    this.FetchUsers();
     this.FetchSiteOptions();
+    this.FetchUsers();
   }
 
 }

@@ -9,6 +9,27 @@
         >
           <v-subheader>Election Options</v-subheader>
           <v-list-item>
+            <v-text-field
+              label="Election Name"
+              placeholder="Please type the name of the election"
+              v-model="title"
+            ></v-text-field>
+          </v-list-item>
+          <v-list-item>
+            <v-text-field
+              label="Election Subtitle"
+              placeholder="Please type the election subtitles"
+              v-model="subtitle"
+            ></v-text-field>
+          </v-list-item>
+          <v-list-item>
+            <v-text-field
+              label="Election Information"
+              placeholder="Please type any election information"
+              v-model="textInformation"
+            ></v-text-field>
+          </v-list-item>
+          <v-list-item>
             <v-slider
               v-model="HowManyCandidates"
               color="red"
@@ -177,9 +198,9 @@ export default {
       const electionCard = {
         id: parseInt(electionCardRouteId),
         authorId: 0,
-        title: "",
-        subtitle: "",
-        textInformation: "",
+        title: this.$data.title,
+        subtitle: this.$data.subtitle,
+        textInformation: this.$data.textInformation,
         HowManyCandidates: this.$data.HowManyCandidates,
         HowManyCandidatesCanWin: this.$data.HowManyCandidatesCanWin,
         HowManyVotesDoVotersHave: this.$data.HowManyVotesDoVotersHave,
