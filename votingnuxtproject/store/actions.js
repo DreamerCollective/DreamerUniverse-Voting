@@ -32,10 +32,22 @@ export default
       .then(data=>(commit("PopulateElectionMetaOptionsStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
-  async ChangeOptionSelectedStateAction({commit}, updatedElectionCard)
+  async ChangeOptionSelectedStateAction({commit}, ElectionCard)
   {
-    await axios.put(`http://localhost:8000/electionCards/${updatedElectionCard.id}`, {updatedElectionCard})
+    await axios.put(`http://localhost:8000/electionCards/${ElectionCard.id}`, {ElectionCard})
       .then(data=>(commit("ChangeOptionSelectedStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+  },
+  async AddElectionAction({commit}, ElectionCard)
+  {
+    await axios.post("http://localhost:8000/electionCards", {ElectionCard})
+      .then(data=>(commit("AddOptionSelectedStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+  },
+  async DeleteElectionAction({commit}, ElectionCard)
+  {
+    await axios.delete(`http://localhost:8000/electionCards/${ElectionCard.id}`)
+      .then(data=>(commit("AddOptionSelectedStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
 

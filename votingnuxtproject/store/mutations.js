@@ -22,12 +22,22 @@ export default
   {
     state.Parties.Party = Parties;
   },
-  ChangeOptionSelectedStateMutation(state, updatedElectionCard)
+  ChangeOptionSelectedStateMutation(state, ElectionCard)
   {
-    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === updatedElectionCard.id)
-    const object = updatedElectionCard
+    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === ElectionCard.id)
     if (index !== -1) {
-      state.Elections.electionCards.splice(index,1, object)
+      state.Elections.electionCards.splice(index,1, ElectionCard)
+    }
+  },
+  AddOptionSelectedStateMutation(state, ElectionCard)
+  {
+    state.Elections.electionCards.push(ElectionCard)
+  },
+  DeleteOptionSelectedStateMutation(state, ElectionCard)
+  {
+    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === ElectionCard.id)
+    if (index !== -1) {
+      state.Elections.electionCards.splice(index,1)
     }
   },
 }

@@ -5,10 +5,6 @@
         {{ /*GetElectionCardsById($route.params.)*/}}
 
         <ElectionsCreation/>
-        <ElectionCandidates />
-        <ElectionVoters />
-        <ElectionsEvents />
-        <ElectionsResults />
       </v-app>
     </v-main>
   </div>
