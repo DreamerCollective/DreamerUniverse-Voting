@@ -5,9 +5,7 @@
         <v-app-bar
           color="red lighten-1"
         >
-          <v-app-bar-nav-icon>
-
-          </v-app-bar-nav-icon>
+          <v-app-bar-nav-icon></v-app-bar-nav-icon>
           <v-toolbar-title>Voting</v-toolbar-title>
           <v-spacer></v-spacer>
 

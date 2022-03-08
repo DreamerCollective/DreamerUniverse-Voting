@@ -15,7 +15,7 @@ export default
 {
   name: "index",
   methods:{
-    ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
+    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
   },
   created() {
     this.FetchUsers()

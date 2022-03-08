@@ -2,8 +2,8 @@ import axios from "axios"
 
 export default
 {
-  GetElectionsFromId: (state) => (Id) =>
+  GetElectionsCandidatesFromId: (state) => (Id) =>
   {
-    return state.electionCards.find(cards => cards.id === Id)
+    return state.CandidatesForSpecificElections.find(CandidatesForSpecificElection => CandidatesForSpecificElection.id === Id)
   }
 }

@@ -1,3 +1,5 @@
 export default () => ({
-  electionCards: [],
+  ElectionsVariables: [],
+  CandidatesForSpecificElections: [],
+  VotersForSpecificElections: [],
 })

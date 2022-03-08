@@ -1,5 +1,5 @@
 export default () => ({
-  users: [
+  VotingUsers: [
     /*{
     ElectionUsers: {
       id: 0,

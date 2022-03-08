@@ -2,42 +2,50 @@ import axios from "axios"
 
 export default
 {
-  PopulateElectionCardsStateMutation(state, ElectionCardResponse)
+  PopulateVotersForSpecificElectionsStateMutation(state, ElectionCardResponse)
   {
-    state.Elections.electionCards = ElectionCardResponse;
+    state.Elections.VotersForSpecificElections = ElectionCardResponse;
+  },
+  PopulateCandidatesForSpecificElectionsStateMutation(state, ElectionCardResponse)
+  {
+    state.Elections.CandidatesForSpecificElections = ElectionCardResponse;
+  },
+  PopulateElectionStateMutation(state, ElectionCardResponse)
+  {
+    state.Elections.ElectionsVariables = ElectionCardResponse;
   },
   PopulateElectionCandidatesStateMutation(state , ElectionCandidatesResponse)
   {
-    state.Candidates.electionCandidates = ElectionCandidatesResponse;
+    state.Candidates.ElectionCandidates = ElectionCandidatesResponse;
   },
   PopulateUsersStateMutation(state, UserResponse)
   {
-    state.Users.users = UserResponse;
+    state.Users.VotingUsers = UserResponse;
   },
-  PopulateElectionMetaOptionsStateMutation(state, ElectionMetaResponse)
+  PopulateElectionMetaOptionsStateMutation(state, ElectionOptions)
   {
-    state.Options.electionMetaOptions = ElectionMetaResponse;
+    state.Options.ElectionOptions = ElectionOptions;
   },
   PopulatePartiesStateMutation(state, Parties)
   {
-    state.Parties.Party = Parties;
+    state.Parties.ElectionParties = Parties;
   },
-  ChangeOptionSelectedStateMutation(state, ElectionCard)
+  ChangeOptionSelectedStateMutation(state, Elections)
   {
-    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === ElectionCard.id)
+    const index = state.Elections.ElectionsVariables.findIndex(ElectionVariable => ElectionVariable.id === Elections.id)
     if (index !== -1) {
-      state.Elections.electionCards.splice(index,1, ElectionCard)
+      state.Elections.ElectionsVariables.splice(index,1, Elections)
     }
   },
-  AddOptionSelectedStateMutation(state, ElectionCard)
+  AddOptionSelectedStateMutation(state, Elections)
   {
-    state.Elections.electionCards.push(ElectionCard)
+    state.Elections.ElectionsVariables.push(Elections)
   },
-  DeleteOptionSelectedStateMutation(state, ElectionCard)
+  DeleteOptionSelectedStateMutation(state, Elections)
   {
-    const index = state.Elections.electionCards.findIndex(electionCard => electionCard.id === ElectionCard.id)
+    const index = state.Elections.ElectionsVariables.findIndex(electionCard => electionCard.id === Elections.id)
     if (index !== -1) {
-      state.Elections.electionCards.splice(index,1)
+      state.Elections.ElectionsVariables.splice(index,1)
     }
   },
 }

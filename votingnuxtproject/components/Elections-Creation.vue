@@ -33,7 +33,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowManyCandidates"
-                  color="red"
+                  color="white"
                   label="How Many Candidates?"
                   hint="Be honest"
                   :min="1"
@@ -52,7 +52,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowManyCandidatesCanWin"
-                  color="red"
+                  color="white"
                   label="How Many Candidates Can Win?"
                   hint="Be honest"
                   :min="1"
@@ -71,7 +71,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowManyVotesDoVotersHave"
-                  color="red"
+                  color="white"
                   label="How Many Votes Do Voters Have?"
                   hint="Be honest"
                   :min="1"
@@ -90,7 +90,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
-                  color="red"
+                  color="white"
                   label="How Much Of A Percentage Must Candidates Need To Win?"
                   hint="Be honest"
                   :min="1"
@@ -109,7 +109,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowManyElectionRounds"
-                  color="red"
+                  color="white"
                   label="How Many Election Rounds?"
                   hint="Be honest"
                   :min="1"
@@ -128,7 +128,7 @@
               <v-list-item>
                 <v-slider
                   v-model="HowManyVoters"
-                  color="red"
+                  color="white"
                   label="How Many Voters?"
                   hint="Be honest"
                   :min="1"
@@ -170,7 +170,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in GetCandidatesForElections(GetCandidates(parseInt(this.$route.params.id)))"
+              <v-col  v-for="candidate in GetCandidatesForElections(parseInt(this.$route.params.id))"
                       :key="candidate.id"
                       :cols="3">
 
@@ -247,14 +247,14 @@ export default {
     DoVotesTransfer: false,
   }),
   computed: {
-    ...mapState("Candidates",["electionCandidates"]),
-    ...mapState("Options",["electionMetaOptions"]),
-    ...mapState("Elections",["electionCards"]),
+    ...mapState("Candidates",["ElectionCandidates"]),
+    ...mapState("Options",["ElectionOptions"]),
+    ...mapState("Elections",["ElectionsVariables","CandidatesForSpecificElections","VotersForSpecificElections"]),
     ...mapGetters({GetCandidates:'Candidates/GetCandidatesOfElectionCardsById'}),
-    ...mapGetters({GetCandidatesForElections: "Elections/GetElectionsFromId"})
+    ...mapGetters({GetCandidatesForElections: "Elections/GetElectionsCandidatesFromId"})
   },
   methods: {
-    ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),
+    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),
     findCardId()
     {
       const electionCardRouteId = this.$route.params.id.toString()
@@ -263,9 +263,8 @@ export default {
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      const electionCardRouteId = this.$route.params.id.toString()
       const electionCard = {
-        id: parseInt(electionCardRouteId),
+        id: parseInt(this.$route.params.id.toString()),
         authorId: 0,
         title: this.$data.title,
         subtitle: this.$data.subtitle,
@@ -296,7 +295,7 @@ export default {
   },
   created()
   {
-    this.FetchElectionCards();
+    this.FetchElections();
     this.FetchParty();
     this.FetchElectionCandidates();
     this.FetchSiteOptions();

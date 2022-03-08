@@ -4,6 +4,6 @@ export default
 {
   GetUserAuthorOfElectionCardsById: (state) => (cardId) =>
   {
-    return state.users.find(users => users.id === cardId)
+    return state.VotingUsers.find(users => users.id === cardId)
   }
 }

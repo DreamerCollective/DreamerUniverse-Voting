@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in electionCards"
+          <v-col v-for="card in ElectionsVariables"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -19,8 +19,9 @@
                     <div>
                       Id {{card.id}}
                     </div>
-                    <div class="text-overline mb-4">
-                      By {{GetAuthor(card.ElectionCard.authorId)}}
+                    <div class="text-overline mb-4"
+                    v-for="Author in GetAuthor(card.ElectionCard.authorId)">
+                      By {{Author.username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
                       {{card.ElectionCard.title}}
@@ -63,7 +64,7 @@
                 <v-list-item three-line>
                   <v-list-item-content>
                     <div>
-                      Id {{electionCards.length}}
+                      Id {{ElectionsVariables.length}}
                     </div>
                     <div class="text-overline mb-4">
                       By Unknown
@@ -127,16 +128,16 @@ export default
     textInformation: "",
   }),
   computed: {
-    ...mapState("Elections",["electionCards"]),
+    ...mapState("Elections",["ElectionsVariables"]),
     ...mapGetters({GetAuthor: 'Users/GetUserAuthorOfElectionCardsById'}),
   },
   methods:{
-    ...mapActions(['FetchElectionCards','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction']),
+    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction']),
     AddElectionOptions(e)
     {
       e.preventDefault();
       const electionCard = {
-        id: this.electionCards.length,
+        id: this.ElectionsVariables.length,
         authorId: 0,
         title: this.$data.title,
         subtitle: this.$data.subtitle,
@@ -149,25 +150,13 @@ export default
         HowManyVoters: 1,
         CanYouVoteForParties: false,
         DoVotesTransfer: false,
-        specificElectionCandidates: [
-          {
-            electionCandidatesId: 0,
-            votedFor: false,
-          },
-        ],
-        voters: [
-          {
-            UserId: 0,
-            hasVoted: false,
-          }
-        ]
       }
       this.AddElectionAction(electionCard)
     },
   },
   created()
   {
-    this.FetchElectionCards();
+    this.FetchElections();
     this.FetchParty();
     this.FetchElectionCandidates();
     this.FetchSiteOptions();

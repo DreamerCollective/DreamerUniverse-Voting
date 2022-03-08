@@ -1,5 +1,5 @@
 {
-  "electionMetaOptions": [
+  "ElectionOptions": [
     {
       "minRange": 1,
       "maxRange": 20
@@ -25,7 +25,7 @@
       "maxRange": 1000
     }
   ],
-  "users": [
+  "VotingUsers": [
     {
       "ElectionUsers": {
         "id": 0,
@@ -34,7 +34,7 @@
       "id": 0
     }
   ],
-  "electionCards": [
+  "ElectionsVariables": [
     {
       "ElectionCard": {
         "id": 0,
@@ -49,17 +49,7 @@
         "HowManyElectionRounds": 2,
         "HowManyVoters": 842,
         "CanYouVoteForParties": false,
-        "DoVotesTransfer": false,
-        "specificElectionCandidates": [
-          {
-            "electionCandidatesId": 0
-          }
-        ],
-        "voters": [
-          {
-            "UserId": 0
-          }
-        ]
+        "DoVotesTransfer": false
       },
       "id": 0
     },
@@ -77,17 +67,7 @@
         "HowManyElectionRounds": 4,
         "HowManyVoters": 189,
         "CanYouVoteForParties": false,
-        "DoVotesTransfer": false,
-        "specificElectionCandidates": [
-          {
-            "electionCandidatesId": 0
-          }
-        ],
-        "voters": [
-          {
-            "UserId": 0
-          }
-        ]
+        "DoVotesTransfer": false
       },
       "id": 1
     },
@@ -101,29 +81,16 @@
         "HowManyCandidates": 1,
         "HowManyCandidatesCanWin": 1,
         "HowManyVotesDoVotersHave": 1,
-        "HowMuchOfAPercentageMustCandidatesNeedToWin": 10,
+        "HowMuchOfAPercentageMustCandidatesNeedToWin": 1,
         "HowManyElectionRounds": 1,
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
-        "DoVotesTransfer": false,
-        "specificElectionCandidates": [
-          {
-            "electionCandidatesId": 0
-          },
-          {
-            "electionCandidatesId": 1
-          }
-        ],
-        "voters": [
-          {
-            "UserId": 0
-          }
-        ]
+        "DoVotesTransfer": false
       },
       "id": 2
     }
   ],
-  "electionCandidates": [
+  "ElectionCandidates": [
     {
       "ElectionCandidate": {
         "id": 0,
@@ -169,16 +136,73 @@
       "id": 1
     }
   ],
-  "Party": [
+  "ElectionParties": [{
+    "Party": {
+        "id": 0,
+        "electionIds": [
+          {
+            "electionId": 0
+          }
+        ],
+        "PartyName": "Ice Cream Party",
+        "PartyDescription": "The Party for more Ice Creams"
+      },
+      "id": 0
+    }
+  ],
+  "CandidatesForSpecificElections": [
     {
-      "id": 0,
-      "electionIds": [
+      "CandidatesForSpecificElection": [
         {
-          "electionId": 0
+          "electionCandidatesId": 0
         }
       ],
-      "PartyName": "Ice Cream Party",
-      "PartyDescription": "The Party for more Ice Creams"
+      "id": 0
+    },
+    {
+      "CandidatesForSpecificElection": [
+        {
+          "electionCandidatesId": 0
+        }
+      ],
+      "id": 1
+    },
+    {
+      "CandidatesForSpecificElection": [
+        {
+          "electionCandidatesId": 0
+        },
+        {
+          "electionCandidatesId": 1
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "VotersForSpecificElections": [
+    {
+      "VotersForSpecificElection": [
+        {
+          "UserId": 0
+        }
+      ],
+      "id": 0
+    },
+    {
+      "VotersForSpecificElection": [
+        {
+          "UserId": 0
+        }
+      ],
+      "id": 1
+    },
+    {
+      "VotersForSpecificElection": [
+        {
+          "UserId": 0
+        }
+      ],
+      "id": 2
     }
   ]
 }
