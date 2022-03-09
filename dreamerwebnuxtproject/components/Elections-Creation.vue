@@ -249,9 +249,9 @@ export default {
   computed: {
     ...mapState("Candidates",["ElectionCandidates"]),
     ...mapState("Options",["ElectionOptions"]),
-    ...mapState("Elections",["ElectionsVariables","CandidatesForSpecificElections","VotersForSpecificElections"]),
-    ...mapGetters({GetCandidates:'Candidates/GetCandidatesOfElectionCardsById'}),
-    ...mapGetters({GetCandidatesForElections: "Elections/GetElectionsCandidatesFromId"})
+    ...mapState("Elections",["ElectionsVariables"]),
+    ...mapState("Users",["Users"]),
+    ...mapGetters({GetCandidatesForElections: "Candidates/GetElectionsCandidatesFromElectionId"})
   },
   methods: {
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),

@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in ElectionsVariables"
+          <v-col v-for="card in GetAllElections"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -19,17 +19,16 @@
                     <div>
                       Id {{card.id}}
                     </div>
-                    <div class="text-overline mb-4"
-                    v-for="Author in GetAuthor(card.ElectionCard.authorId)">
+                    <div class="text-overline mb-4" v-for="Author in GetAuthor(GetOneElection(card.authorId))">
                       By {{Author.username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
-                      {{card.ElectionCard.title}}
+                      {{card.title}}
                     </v-list-item-title>
                     <v-list-item-subtitle class="text-h7 mb-1">
-                      {{card.ElectionCard.subtitle}}
+                      {{card.subtitle}}
                     </v-list-item-subtitle>
-                    <v-list-item-subtitle> {{card.ElectionCard.textInformation}}</v-list-item-subtitle>
+                    <v-list-item-subtitle> {{card.textInformation}}</v-list-item-subtitle>
                   </v-list-item-content>
                   <v-list-item-avatar
                     size="80"
@@ -130,6 +129,8 @@ export default
   computed: {
     ...mapState("Elections",["ElectionsVariables"]),
     ...mapGetters({GetAuthor: 'Users/GetUserAuthorOfElectionCardsById'}),
+    ...mapGetters({GetAllElections: 'Elections/GetElections'}),
+    ...mapGetters({GetOneElection: 'Elections/GetSingleElection'})
   },
   methods:{
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction']),
@@ -145,11 +146,12 @@ export default
         HowManyCandidates: 1,
         HowManyCandidatesCanWin: 1,
         HowManyVotesDoVotersHave: 1,
-        HowMuchOfAPercentageMustCandidatesNeedToWin: 10,
+        HowMuchOfAPercentageMustCandidatesNeedToWin: 1,
         HowManyElectionRounds: 1,
         HowManyVoters: 1,
         CanYouVoteForParties: false,
         DoVotesTransfer: false,
+        Candidates:[]
       }
       this.AddElectionAction(electionCard)
     },

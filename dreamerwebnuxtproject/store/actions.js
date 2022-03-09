@@ -7,11 +7,8 @@ export default
     await axios.get("http://localhost:8000/ElectionsVariables")
       .then(data=>(commit("PopulateElectionStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
-    await axios.get("http://localhost:8000/CandidatesForSpecificElections")
-      .then(data=>(commit("PopulateCandidatesForSpecificElectionsStateMutation", data.data)))
-      .catch (error=>{ console.log(error)});
-    await axios.get("http://localhost:8000/VotersForSpecificElections")
-      .then(data=>(commit("PopulateVotersForSpecificElectionsStateMutation", data.data)))
+    await axios.get("http://localhost:8000/ElectionsMap")
+      .then(data=>(commit("PopulateElectionMapStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
   async FetchParty({commit})
@@ -25,11 +22,17 @@ export default
     await axios.get("http://localhost:8000/ElectionCandidates")
       .then(data=>(commit("PopulateElectionCandidatesStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
+    await axios.get("http://localhost:8000/CandidateIssues")
+      .then(data=>(commit("PopulateCandidateIssuesStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
   },
   async FetchUsers({commit})
   {
-    await axios.get("http://localhost:8000/VotingUsers")
+    await axios.get("http://localhost:8000/Users")
       .then(data=>(commit("PopulateUsersStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+    await axios.get("http://localhost:8000/Voters")
+      .then(data=>(commit("PopulateVotersStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
   async FetchSiteOptions({commit})

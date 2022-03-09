@@ -1,0 +1,126 @@
+{
+  "ElectionOptions": [
+    {
+      "minRange": 1,
+      "maxRange": 20
+    },
+    {
+      "minRange": 1,
+      "maxRange": 10
+    },
+    {
+      "minRange": 1,
+      "maxRange": 10
+    },
+    {
+      "minRange": 10,
+      "maxRange": 70
+    },
+    {
+      "minRange": 1,
+      "maxRange": 10
+    },
+    {
+      "minRange": 1,
+      "maxRange": 1000
+    }
+  ],
+  "Users": {
+    "0": {
+      "Username": "Zalron",
+      "Voter": [0]
+    }
+  },
+  "Voters": {
+    "0": {
+      "Id": 0,
+      "Election": [0,1,2]
+    }
+  },
+  "ElectionsMap": [0,1,2],
+  "ElectionsVariables": {
+    "0": {
+      "id": 0,
+      "authorId": [0],
+      "title": "bla",
+      "subtitle": "bla bla",
+      "textInformation": "bla bla bla",
+      "HowManyCandidates": 2,
+      "HowManyCandidatesCanWin": 6,
+      "HowManyVotesDoVotersHave": 2,
+      "HowMuchOfAPercentageMustCandidatesNeedToWin": 16,
+      "HowManyElectionRounds": 2,
+      "HowManyVoters": 842,
+      "CanYouVoteForParties": false,
+      "DoVotesTransfer": false,
+      "Candidates": [0,1,2]
+    },
+    "1": {
+      "id": 1,
+      "authorId": [0],
+      "title": "bla bla",
+      "subtitle": "bla bla bla bla",
+      "textInformation": "bla",
+      "HowManyCandidates": 1,
+      "HowManyCandidatesCanWin": 6,
+      "HowManyVotesDoVotersHave": 2,
+      "HowMuchOfAPercentageMustCandidatesNeedToWin": 14,
+      "HowManyElectionRounds": 4,
+      "HowManyVoters": 189,
+      "CanYouVoteForParties": false,
+      "DoVotesTransfer": false,
+      "Candidates": [0,1,2]
+    },
+    "2": {
+      "id": 2,
+      "authorId": [0],
+      "title": "bla",
+      "subtitle": "bla",
+      "textInformation": "bla",
+      "HowManyCandidates": 1,
+      "HowManyCandidatesCanWin": 1,
+      "HowManyVotesDoVotersHave": 1,
+      "HowMuchOfAPercentageMustCandidatesNeedToWin": 1,
+      "HowManyElectionRounds": 1,
+      "HowManyVoters": 1,
+      "CanYouVoteForParties": false,
+      "DoVotesTransfer": false,
+      "Candidates": [0,1,2]
+    }
+  },
+  "ElectionCandidates": {
+    "0": {
+      "id": 1,
+      "candidateName": "Bob",
+      "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
+      "Party": 0,
+      "Issues": [0,1]
+    },
+    "1": {
+      "id": 1,
+      "candidateName": "Bob",
+      "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
+      "Party": 0,
+      "Issues": [0,1]
+    }
+  },
+  "CandidateIssues": {
+    "0": {
+      "id": 0,
+      "issueName": "ICE-CREAM",
+      "issueDescription": "Bob really likes ice-cream"
+    },
+    "1":{
+      "id": 1,
+      "issueName": "Lamas",
+      "issueDescription": "Bob likes Lamas"
+      }
+  },
+  "ElectionParties": {
+    "0": {
+      "id": 0,
+      "PartyName": "Ice Cream Party",
+      "PartyDescription": "The Party for more Ice Creams for everyone"
+    }
+  }
+}
