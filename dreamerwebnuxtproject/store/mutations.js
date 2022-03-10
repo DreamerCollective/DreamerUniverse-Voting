@@ -10,13 +10,17 @@ export default
   {
     state.Users.Voters = Voters;
   },
+  PopulateUsersMapStateMutation(state, UsersMap)
+  {
+    state.Users.UsersMap = UsersMap;
+  },
   PopulateElectionStateMutation(state, ElectionVariables)
   {
     state.Elections.ElectionsVariables = ElectionVariables;
   },
   PopulateElectionMapStateMutation(state, ElectionMap)
   {
-    state.Elections.ElectionMap = ElectionMap;
+    state.Elections.ElectionsMap = ElectionMap;
   },
   PopulateElectionCandidatesStateMutation(state , ElectionCandidates)
   {
@@ -36,16 +40,23 @@ export default
   },
   ChangeOptionSelectedStateMutation(state, Elections)
   {
-    const index = Elections.id
-    state.Elections.ElectionsVariables.splice(index,1, Elections)
+    state.Elections.ElectionsVariables = Elections
   },
-  AddOptionSelectedStateMutation(state, Elections)
+  AddElectionStateMutation(state, Elections)
   {
-    state.Elections.ElectionsVariables.push(Elections)
+    state.Elections.ElectionsVariables = Elections
   },
-  DeleteOptionSelectedStateMutation(state, Elections)
+  AddElectionMapStateMutation(state, Elections)
+  {
+    state.Elections.ElectionsMap.push(Elections)
+  },
+  DeleteElectionStateMutation(state, Elections)
+  {
+    state.Elections.ElectionsVariables = Elections
+  },
+  DeleteElectionMapStateMutation(state, Elections)
   {
     const index = Elections.id
-    state.Elections.ElectionsVariables.splice(index,1)
+    state.Elections.ElectionsMap.splice(index,1)
   },
 }

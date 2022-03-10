@@ -1,4 +1,5 @@
 export default () => ({
+  UsersMap: [],
   Users: {},
-  Voters:{}
+  Voters: {}
 })

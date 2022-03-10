@@ -19,8 +19,8 @@
                     <div>
                       Id {{card.id}}
                     </div>
-                    <div class="text-overline mb-4" v-for="Author in GetAuthor(GetOneElection(card.authorId))">
-                      By {{Author.username}}
+                    <div class="text-overline mb-4" v-for="Author in GetAuthor(card)">
+                      By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
                       {{card.title}}
@@ -47,6 +47,16 @@
                       </Nuxt-link>
                     </v-btn>
                   </v-card-actions>
+                  <v-card-actions>
+                    <v-btn
+                      outlined
+                      rounded
+                      text
+                      @click="DeleteElectionAction(card)"
+                    >
+                      Delete
+                    </v-btn>
+                  </v-card-actions>
                 </v-row>
               </v-list>
             </v-card>
@@ -63,7 +73,7 @@
                 <v-list-item three-line>
                   <v-list-item-content>
                     <div>
-                      Id {{ElectionsVariables.length}}
+                      Id {{ElectionsMap.length}}
                     </div>
                     <div class="text-overline mb-4">
                       By Unknown
@@ -101,7 +111,7 @@
                       outlined
                       rounded
                       text
-                      @click="AddElectionOptions"
+                      @click="AddElectionAction"
                     >
                         Add
                     </v-btn>
@@ -127,13 +137,12 @@ export default
     textInformation: "",
   }),
   computed: {
-    ...mapState("Elections",["ElectionsVariables"]),
+    ...mapState("Elections",["ElectionsVariables", "ElectionsMap"]),
     ...mapGetters({GetAuthor: 'Users/GetUserAuthorOfElectionCardsById'}),
     ...mapGetters({GetAllElections: 'Elections/GetElections'}),
-    ...mapGetters({GetOneElection: 'Elections/GetSingleElection'})
   },
   methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction']),
+    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "DeleteElectionAction"]),
     AddElectionOptions(e)
     {
       e.preventDefault();

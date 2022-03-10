@@ -28,6 +28,9 @@ export default
   },
   async FetchUsers({commit})
   {
+    await axios.get("http://localhost:8000/UsersMap")
+      .then(data=>(commit("PopulateUsersMapStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
     await axios.get("http://localhost:8000/Users")
       .then(data=>(commit("PopulateUsersStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
@@ -43,20 +46,27 @@ export default
   },
   async ChangeOptionSelectedStateAction({commit}, ElectionCard)
   {
-    await axios.put(`http://localhost:8000/Elections/${ElectionCard.id}`, {ElectionCard})
+    await axios.put(`http://localhost:8000/ElectionsVariables/${ElectionCard.id}`, {ElectionCard})
       .then(data=>(commit("ChangeOptionSelectedStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
   async AddElectionAction({commit}, ElectionCard)
   {
-    await axios.post("http://localhost:8000/Elections", {ElectionCard})
-      .then(data=>(commit("AddOptionSelectedStateMutation", data.data)))
+    await axios.post("http://localhost:8000/ElectionsVariables", {ElectionCard})
+      .then(data=>(commit("AddElectionStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+    const ElectionCardId = ElectionCard.id
+    await axios.post("http://localhost:8000/ElectionsMap", {ElectionCardId})
+      .then(data=>(commit("AddElectionMapStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
   async DeleteElectionAction({commit}, ElectionCard)
   {
-    await axios.delete(`http://localhost:8000/Elections/${ElectionCard.id}`)
-      .then(data=>(commit("AddOptionSelectedStateMutation", data.data)))
+    await axios.delete("http://localhost:8000/ElectionsVariables/", {data: ElectionCard})
+      .then(data=>(commit("DeleteElectionStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+    await axios.delete(`http://localhost:8000/ElectionsMap/${ElectionCard.id}`)
+      .then(data=>(commit("DeleteElectionMapStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },
 

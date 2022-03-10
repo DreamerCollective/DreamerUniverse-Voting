@@ -25,23 +25,39 @@
       "maxRange": 1000
     }
   ],
+  "UsersMap": [
+    0
+  ],
   "Users": {
     "0": {
+      "Id": 0,
       "Username": "Zalron",
-      "Voter": [0]
+      "Voter": [
+        0
+      ]
     }
   },
   "Voters": {
     "0": {
       "Id": 0,
-      "Election": [0,1,2]
+      "Election": [
+        0,
+        1,
+        2
+      ]
     }
   },
-  "ElectionsMap": [0,1,2],
+  "ElectionsMap": [
+    0,
+    1,
+    2
+  ],
   "ElectionsVariables": {
     "0": {
       "id": 0,
-      "authorId": [0],
+      "authorId": [
+        0
+      ],
       "title": "bla",
       "subtitle": "bla bla",
       "textInformation": "bla bla bla",
@@ -53,11 +69,17 @@
       "HowManyVoters": 842,
       "CanYouVoteForParties": false,
       "DoVotesTransfer": false,
-      "Candidates": [0,1,2]
+      "Candidates": [
+        0,
+        1,
+        2
+      ]
     },
     "1": {
       "id": 1,
-      "authorId": [0],
+      "authorId": [
+        0
+      ],
       "title": "bla bla",
       "subtitle": "bla bla bla bla",
       "textInformation": "bla",
@@ -69,11 +91,17 @@
       "HowManyVoters": 189,
       "CanYouVoteForParties": false,
       "DoVotesTransfer": false,
-      "Candidates": [0,1,2]
+      "Candidates": [
+        0,
+        1,
+        2
+      ]
     },
     "2": {
       "id": 2,
-      "authorId": [0],
+      "authorId": [
+        0
+      ],
       "title": "bla",
       "subtitle": "bla",
       "textInformation": "bla",
@@ -85,7 +113,11 @@
       "HowManyVoters": 1,
       "CanYouVoteForParties": false,
       "DoVotesTransfer": false,
-      "Candidates": [0,1,2]
+      "Candidates": [
+        0,
+        1,
+        2
+      ]
     }
   },
   "ElectionCandidates": {
@@ -94,14 +126,20 @@
       "candidateName": "Bob",
       "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
       "Party": 0,
-      "Issues": [0,1]
+      "Issues": [
+        0,
+        1
+      ]
     },
     "1": {
       "id": 1,
       "candidateName": "Bob",
       "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
       "Party": 0,
-      "Issues": [0,1]
+      "Issues": [
+        0,
+        1
+      ]
     }
   },
   "CandidateIssues": {
@@ -110,11 +148,11 @@
       "issueName": "ICE-CREAM",
       "issueDescription": "Bob really likes ice-cream"
     },
-    "1":{
+    "1": {
       "id": 1,
       "issueName": "Lamas",
       "issueDescription": "Bob likes Lamas"
-      }
+    }
   },
   "ElectionParties": {
     "0": {
