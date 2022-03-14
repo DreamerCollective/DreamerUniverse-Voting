@@ -6,4 +6,8 @@ export default
   {
     return state.ElectionsMap.map(Elections => state.ElectionsVariables[Elections])
   },
+  GetOneElections: (state) => (id) =>
+  {
+    return state.ElectionsMap.map(state.ElectionsVariables[id])
+  },
 }

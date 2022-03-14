@@ -2,8 +2,8 @@ import axios from "axios"
 
 export default
 {
-  GetElectionsCandidatesFromElectionId: (state) => (Id) =>
+  GetElectionsCandidatesFromElectionId: (state) => (candidates) =>
   {
-    return state.ElectionCandidates
+    candidates.map(state.ElectionCandidates[candidates])
   }
 }

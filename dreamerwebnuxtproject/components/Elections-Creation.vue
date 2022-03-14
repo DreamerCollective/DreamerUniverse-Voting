@@ -170,7 +170,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in GetCandidatesForElections(parseInt(this.$route.params.id))"
+              <v-col  v-for="candidate in GetCandidatesForElections(GetOneElections(parseInt(this.$route.params.id)))"
                       :key="candidate.id"
                       :cols="3">
 
@@ -183,9 +183,9 @@
                   <v-list color="red lighten-1">
                     <v-list-item>
                       <v-list-item-content>
-                        <v-list-item-title class="text-h5 mb-1">{{candidate.ElectionCandidate.candidateName}}</v-list-item-title>
-                        <v-list-item-subtitle>{{candidate.ElectionCandidate.candidateDescription}}</v-list-item-subtitle>
-                        <v-list-item v-for="issue in candidate.ElectionCandidate.issues"
+                        <v-list-item-title class="text-h5 mb-1">{{candidate.candidateName}}</v-list-item-title>
+                        <v-list-item-subtitle>{{candidate.candidateDescription}}</v-list-item-subtitle>
+                        <v-list-item v-for="issue in candidate.issues"
                                      :key="issue.id"
                         >
                           <v-list-item-content>
@@ -245,13 +245,15 @@ export default {
     HowManyVoters: 1,
     CanYouVoteForParties: false,
     DoVotesTransfer: false,
+    specificElectionCandidates: [0],
+    voters: [0],
   }),
   computed: {
     ...mapState("Candidates",["ElectionCandidates"]),
     ...mapState("Options",["ElectionOptions"]),
     ...mapState("Elections",["ElectionsVariables"]),
     ...mapState("Users",["Users"]),
-    ...mapGetters({GetCandidatesForElections: "Candidates/GetElectionsCandidatesFromElectionId"})
+    ...mapGetters("Elections", ["GetOneElections"])
   },
   methods: {
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),
@@ -263,7 +265,7 @@ export default {
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      const electionCard = {
+      let electionCard = {
         id: parseInt(this.$route.params.id.toString()),
         authorId: 0,
         title: this.$data.title,
@@ -277,18 +279,8 @@ export default {
         HowManyVoters: this.$data.HowManyVoters,
         CanYouVoteForParties: this.$data.CanYouVoteForParties,
         DoVotesTransfer: this.$data.DoVotesTransfer,
-        specificElectionCandidates: [
-          {
-            electionCandidatesId: 0,
-            votedFor: false,
-          },
-        ],
-        voters: [
-          {
-            UserId: 0,
-            hasVoted: false,
-          }
-        ]
+        specificElectionCandidates: this.$data.specificElectionCandidates,
+        voters: this.$data.voters,
       }
       this.ChangeOptionSelectedStateAction(electionCard)
     }

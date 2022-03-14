@@ -48,63 +48,15 @@
     }
   },
   "ElectionsMap": [
-    0,
-    1,
-    2
+    0
   ],
   "ElectionsVariables": {
     "0": {
       "id": 0,
-      "authorId": [
-        0
-      ],
-      "title": "bla",
-      "subtitle": "bla bla",
-      "textInformation": "bla bla bla",
-      "HowManyCandidates": 2,
-      "HowManyCandidatesCanWin": 6,
-      "HowManyVotesDoVotersHave": 2,
-      "HowMuchOfAPercentageMustCandidatesNeedToWin": 16,
-      "HowManyElectionRounds": 2,
-      "HowManyVoters": 842,
-      "CanYouVoteForParties": false,
-      "DoVotesTransfer": false,
-      "Candidates": [
-        0,
-        1,
-        2
-      ]
-    },
-    "1": {
-      "id": 1,
-      "authorId": [
-        0
-      ],
-      "title": "bla bla",
-      "subtitle": "bla bla bla bla",
-      "textInformation": "bla",
-      "HowManyCandidates": 1,
-      "HowManyCandidatesCanWin": 6,
-      "HowManyVotesDoVotersHave": 2,
-      "HowMuchOfAPercentageMustCandidatesNeedToWin": 14,
-      "HowManyElectionRounds": 4,
-      "HowManyVoters": 189,
-      "CanYouVoteForParties": false,
-      "DoVotesTransfer": false,
-      "Candidates": [
-        0,
-        1,
-        2
-      ]
-    },
-    "2": {
-      "id": 2,
-      "authorId": [
-        0
-      ],
-      "title": "bla",
+      "authorId": [0],
+      "title": "bla bla bla",
       "subtitle": "bla",
-      "textInformation": "bla",
+      "textInformation": "bla bla ",
       "HowManyCandidates": 1,
       "HowManyCandidatesCanWin": 1,
       "HowManyVotesDoVotersHave": 1,
@@ -113,11 +65,7 @@
       "HowManyVoters": 1,
       "CanYouVoteForParties": false,
       "DoVotesTransfer": false,
-      "Candidates": [
-        0,
-        1,
-        2
-      ]
+      "Candidates": [0,1]
     }
   },
   "ElectionCandidates": {

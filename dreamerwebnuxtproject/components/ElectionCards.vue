@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in GetAllElections"
+          <v-col v-for="card in GetElections"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -16,10 +16,7 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div>
-                      Id {{card.id}}
-                    </div>
-                    <div class="text-overline mb-4" v-for="Author in GetAuthor(card)">
+                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card)">
                       By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
@@ -72,9 +69,6 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div>
-                      Id {{ElectionsMap.length}}
-                    </div>
                     <div class="text-overline mb-4">
                       By Unknown
                     </div>
@@ -111,7 +105,7 @@
                       outlined
                       rounded
                       text
-                      @click="AddElectionAction"
+                      @click="AddElectionOptions"
                     >
                         Add
                     </v-btn>
@@ -128,6 +122,7 @@
 
 <script>
 import {mapState, mapActions, mapGetters} from 'vuex';
+import nanoid from "nanoid"
 export default
 {
   name: "ElectionCards",
@@ -138,17 +133,17 @@ export default
   }),
   computed: {
     ...mapState("Elections",["ElectionsVariables", "ElectionsMap"]),
-    ...mapGetters({GetAuthor: 'Users/GetUserAuthorOfElectionCardsById'}),
-    ...mapGetters({GetAllElections: 'Elections/GetElections'}),
+    ...mapGetters("Users", ['GetUserAuthorOfElectionCardsById']),
+    ...mapGetters("Elections" ['GetElections']),
   },
   methods:{
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "DeleteElectionAction"]),
     AddElectionOptions(e)
     {
       e.preventDefault();
-      const electionCard = {
-        id: this.ElectionsVariables.length,
-        authorId: 0,
+      let electionCard = {
+        id: 0,
+        authorId: [0],
         title: this.$data.title,
         subtitle: this.$data.subtitle,
         textInformation: this.$data.textInformation,

@@ -1,4 +1,5 @@
 import axios from "axios"
+import {nanoid} from "nanoid/async"
 
 export default
 {
@@ -52,6 +53,7 @@ export default
   },
   async AddElectionAction({commit}, ElectionCard)
   {
+    ElectionCard.id = await nanoid()
     await axios.post("http://localhost:8000/ElectionsVariables", {ElectionCard})
       .then(data=>(commit("AddElectionStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
