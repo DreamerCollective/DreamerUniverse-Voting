@@ -134,7 +134,7 @@ export default
   computed: {
     ...mapState("Elections",["ElectionsVariables", "ElectionsMap"]),
     ...mapGetters("Users", ['GetUserAuthorOfElectionCardsById']),
-    ...mapGetters("Elections" ['GetElections']),
+    ...mapGetters("Elections", ['GetElections']),
   },
   methods:{
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "DeleteElectionAction"]),

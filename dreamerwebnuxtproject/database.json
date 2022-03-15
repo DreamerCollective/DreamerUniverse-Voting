@@ -70,13 +70,12 @@
   },
   "ElectionCandidates": {
     "0": {
-      "id": 1,
+      "id": 0,
       "candidateName": "Bob",
       "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
       "Party": 0,
       "Issues": [
-        0,
-        1
+        0, 1
       ]
     },
     "1": {
@@ -85,8 +84,7 @@
       "candidateDescription": "Bob likes ice-cream, bob will give everyone ice-cream if elected",
       "Party": 0,
       "Issues": [
-        0,
-        1
+        0, 1
       ]
     }
   },

@@ -170,7 +170,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in GetCandidatesForElections(GetOneElections(parseInt(this.$route.params.id)))"
+              <v-col  v-for="candidate in GetElectionsCandidatesFromElectionId(GetOneElections(parseInt(this.$route.params.id)))"
                       :key="candidate.id"
                       :cols="3">
 
@@ -185,11 +185,11 @@
                       <v-list-item-content>
                         <v-list-item-title class="text-h5 mb-1">{{candidate.candidateName}}</v-list-item-title>
                         <v-list-item-subtitle>{{candidate.candidateDescription}}</v-list-item-subtitle>
-                        <v-list-item v-for="issue in candidate.issues"
+                        <v-list-item v-for="issue in GetIssuesFromCandidates(candidate.Issues)"
                                      :key="issue.id"
                         >
                           <v-list-item-content>
-                            <v-list-item-title>Issue: {{issue.id + 1}} {{issue.issueName}}</v-list-item-title>
+                            <v-list-item-title>Issue: {{issue.issueName}}</v-list-item-title>
                             <v-list-item-subtitle>{{issue.issueDescription}}</v-list-item-subtitle>
                           </v-list-item-content>
                         </v-list-item>
@@ -253,7 +253,8 @@ export default {
     ...mapState("Options",["ElectionOptions"]),
     ...mapState("Elections",["ElectionsVariables"]),
     ...mapState("Users",["Users"]),
-    ...mapGetters("Elections", ["GetOneElections"])
+    ...mapGetters("Elections", ["GetOneElections"]),
+    ...mapGetters("Candidates", ["GetElectionsCandidatesFromElectionId", "GetIssuesFromCandidates"])
   },
   methods: {
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),

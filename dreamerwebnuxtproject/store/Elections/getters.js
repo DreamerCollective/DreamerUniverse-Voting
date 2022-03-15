@@ -1,4 +1,3 @@
-import axios from "axios"
 
 export default
 {
@@ -8,6 +7,14 @@ export default
   },
   GetOneElections: (state) => (id) =>
   {
-    return state.ElectionsMap.map(state.ElectionsVariables[id])
+    let Elections = [];
+    state.ElectionsMap.forEach((iterator, index) => {
+      if(iterator === id)
+      {
+        Elections.push(index)
+      }
+    })
+    let CandidateMap = Elections[0].Candidates
+    return CandidateMap
   },
 }
