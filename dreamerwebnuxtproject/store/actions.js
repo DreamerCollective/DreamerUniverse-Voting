@@ -55,21 +55,21 @@ export default
   {
     ElectionCard.id = await nanoid()
     await axios.post("http://localhost:8000/ElectionsVariables", {ElectionCard})
-      .then(data=>(commit("AddElectionStateMutation", data.data)))
+      .then(data=>(commit("AddElectionStateMutation", data.data.ElectionCard)))
       .catch (error=>{ console.log(error)});
-    const ElectionCardId = ElectionCard.id
-    await axios.post("http://localhost:8000/ElectionsMap", {ElectionCardId})
-      .then(data=>(commit("AddElectionMapStateMutation", data.data)))
-      .catch (error=>{ console.log(error)});
+    //const ElectionCardId = ElectionCard.id
+    //await axios.post("http://localhost:8000/ElectionsMap", {ElectionCardId})
+      //.then(data=>(commit("AddElectionMapStateMutation", data.data)))
+      //.catch (error=>{ console.log(error)});
   },
   async DeleteElectionAction({commit}, ElectionCard)
   {
-    await axios.delete("http://localhost:8000/ElectionsVariables/", {data: ElectionCard})
+    await axios.delete(`http://localhost:8000/ElectionsVariables/${ElectionCard.id}`)
       .then(data=>(commit("DeleteElectionStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
-    await axios.delete(`http://localhost:8000/ElectionsMap/${ElectionCard.id}`)
-      .then(data=>(commit("DeleteElectionMapStateMutation", data.data)))
-      .catch (error=>{ console.log(error)});
+    //await axios.delete(`http://localhost:8000/ElectionsMap/${ElectionCard.id}`)
+      //.then(data=>(commit("DeleteElectionMapStateMutation", data.data)))
+      //.catch (error=>{ console.log(error)});
   },
 
 }

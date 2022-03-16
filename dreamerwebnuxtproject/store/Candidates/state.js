@@ -1,4 +1,4 @@
 export default () => ({
-  ElectionCandidates: {},
-  CandidateIssues: {},
+  ElectionCandidates: [],
+  CandidateIssues: [],
 })

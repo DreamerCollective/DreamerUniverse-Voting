@@ -2,10 +2,6 @@ import axios from "axios"
 
 export default
 {
-  PopulateCandidateIssuesStateMutation(state, ElectionIssues)
-  {
-    state.Candidates.ElectionIssues = ElectionIssues;
-  },
   PopulateVotersStateMutation(state, Voters)
   {
     state.Users.Voters = Voters;
@@ -13,6 +9,10 @@ export default
   PopulateUsersMapStateMutation(state, UsersMap)
   {
     state.Users.UsersMap = UsersMap;
+  },
+  PopulateUsersStateMutation(state, Users)
+  {
+    state.Users.Users = Users;
   },
   PopulateElectionStateMutation(state, ElectionVariables)
   {
@@ -26,9 +26,9 @@ export default
   {
     state.Candidates.ElectionCandidates = ElectionCandidates;
   },
-  PopulateUsersStateMutation(state, Users)
+  PopulateCandidateIssuesStateMutation(state, ElectionIssues)
   {
-    state.Users.Users = Users;
+    state.Candidates.CandidateIssues = ElectionIssues;
   },
   PopulateElectionMetaOptionsStateMutation(state, ElectionOptions)
   {
@@ -38,13 +38,14 @@ export default
   {
     state.Parties.ElectionParties = Parties;
   },
+
   ChangeOptionSelectedStateMutation(state, Elections)
   {
     state.Elections.ElectionsVariables = Elections
   },
   AddElectionStateMutation(state, Elections)
   {
-    state.Elections.ElectionsVariables = Elections
+    state.Elections.ElectionsVariables.push(Elections)
   },
   AddElectionMapStateMutation(state, Elections)
   {

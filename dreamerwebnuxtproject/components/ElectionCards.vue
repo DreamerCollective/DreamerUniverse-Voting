@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in GetElections"
+          <v-col v-for="card in ElectionsVariables"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -16,16 +16,16 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card)">
+                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card.ElectionCard.authorId)">
                       By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
-                      {{card.title}}
+                      {{card.ElectionCard.title}}
                     </v-list-item-title>
                     <v-list-item-subtitle class="text-h7 mb-1">
-                      {{card.subtitle}}
+                      {{card.ElectionCard.subtitle}}
                     </v-list-item-subtitle>
-                    <v-list-item-subtitle> {{card.textInformation}}</v-list-item-subtitle>
+                    <v-list-item-subtitle> {{card.ElectionCard.textInformation}}</v-list-item-subtitle>
                   </v-list-item-content>
                   <v-list-item-avatar
                     size="80"
@@ -141,9 +141,9 @@ export default
     AddElectionOptions(e)
     {
       e.preventDefault();
-      let electionCard = {
+      this.AddElectionAction({
         id: 0,
-        authorId: [0],
+        authorId: 0,
         title: this.$data.title,
         subtitle: this.$data.subtitle,
         textInformation: this.$data.textInformation,
@@ -156,8 +156,7 @@ export default
         CanYouVoteForParties: false,
         DoVotesTransfer: false,
         Candidates:[]
-      }
-      this.AddElectionAction(electionCard)
+      })
     },
   },
   created()

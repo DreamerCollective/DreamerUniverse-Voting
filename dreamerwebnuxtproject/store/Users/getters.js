@@ -2,8 +2,8 @@ import axios from "axios"
 
 export default
 {
-  GetUserAuthorOfElectionCardsById: (state) => (Card) =>
+  GetUserAuthorOfElectionCardsById: (state) => (authorId) =>
   {
-    return Card.authorId.map(userId => state.Users[userId])
+   return state.Users.filter(function(a){return a.id === authorId})
   }
 }

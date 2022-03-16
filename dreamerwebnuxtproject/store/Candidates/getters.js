@@ -4,10 +4,10 @@ export default
 {
   GetElectionsCandidatesFromElectionId: (state) => (ElectionWithCandidates) =>
   {
-    return ElectionWithCandidates.map(Candidates => state.ElectionCandidates[Candidates])
+    return state.ElectionCandidates.filter(function(a){return a.id === ElectionWithCandidates.id})
   },
   GetIssuesFromCandidates: (state) => (CandidateIssues) =>
   {
-    return CandidateIssues.map(Issues => state.CandidateIssues[Issues])
+    return state.CandidateIssues.filter(function(a){return a.id === CandidateIssues.id})
   }
 }
