@@ -170,7 +170,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in GetElectionsCandidatesFromElectionId(GetOneElections(parseInt(this.$route.params.id)))"
+              <v-col  v-for="candidate in GetElectionsCandidatesFromElectionId(GetOneElections(this.$route.params.id))"
                       :key="candidate.id"
                       :cols="3">
 

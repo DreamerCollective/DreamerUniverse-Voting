@@ -67,7 +67,9 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": []
+        "Candidates": [
+          0
+        ]
       },
       "id": "nJ735kT"
     },
@@ -86,7 +88,9 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": []
+        "Candidates": [
+          0
+        ]
       },
       "id": "V8qTnbo"
     },
@@ -105,31 +109,55 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": []
+        "Candidates": [
+          0
+        ]
       },
       "id": "Lzy-8fC"
     }
   ],
   "ElectionCandidates": [
     {
-      "id": 0,
-      "candidateName": "Bob",
-      "candidateDescription": "Bob likes ice-cream, Bob will give everyone ice-cream if elected",
-      "Party": 0,
-      "Issues": [
-        0,
-        1
-      ]
+      "CandidateCard": {
+        "id": 0,
+        "authorId": 0,
+        "candidateName": "Bob",
+        "candidateDescription": "Bob likes ice-cream, Bob will give everyone ice-cream if elected",
+        "Party": 0,
+        "Issues": [
+          0,
+          1
+        ]
+      },
+      "id": 0
     },
     {
-      "id": 1,
-      "candidateName": "Bob 2",
-      "candidateDescription": "Bob 2 likes ice-cream, Bob 2 will give everyone ice-cream if elected",
-      "Party": 0,
-      "Issues": [
-        0,
-        1
-      ]
+      "CandidateCard": {
+        "id": 1,
+        "authorId": 0,
+        "candidateName": "Bob 2",
+        "candidateDescription": "Bob 2 also likes ice-cream, Bob will give more everyone ice-cream that the other guy if elected",
+        "Party": 0,
+        "Issues": [
+          0,
+          1
+        ]
+      },
+      "id": 1
+    },
+    {
+      "CandidateCard": {
+        "id": "JbFdcjPVlJN1ssAMn7twK",
+        "authorId": 0,
+        "candidateName": "Bob 3",
+        "candidateDescription": "Bobing along the ice-cream road",
+        "Party": 0,
+        "Issues": [
+          0,
+          1
+        ]
+      },
+      "id": 2
     }
   ],
   "CandidateIssues": [

@@ -2,8 +2,6 @@
   <div>
     <v-main>
       <v-app>
-        {{ /*GetElectionCardsById($route.params.)*/}}
-
         <ElectionsCreation/>
       </v-app>
     </v-main>

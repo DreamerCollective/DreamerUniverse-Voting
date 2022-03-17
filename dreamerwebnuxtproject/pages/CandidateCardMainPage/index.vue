@@ -2,9 +2,7 @@
   <div>
     <v-app>
       <v-main>
-        <div class="MainTitle">
-          Voting
-        </div>
+        <CandidateCards/>
       </v-main>
     </v-app>
   </div>
@@ -25,10 +23,6 @@ export default
 }
 </script>
 <style scoped>
-.MainTitle {
-  font-size: 200px;
-}
+
 
 </style>
-
-

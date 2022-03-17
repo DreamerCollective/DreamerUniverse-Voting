@@ -39,6 +39,19 @@ export default
     state.Parties.ElectionParties = Parties;
   },
 
+  ChangeCandidateSelectedStateMutation(state, Candidate)
+  {
+    state.Candidates.ElectionCandidates.splice(Candidate.id,1, Candidate)
+  },
+  AddCandidateStateMutation(state, Candidate)
+  {
+    state.Candidates.ElectionCandidates.push(Candidate)
+  },
+  DeleteCandidateStateMutation(state, Candidate)
+  {
+    state.Candidates.ElectionCandidates.splice(Candidate.id,1)
+  },
+
   ChangeOptionSelectedStateMutation(state, Elections)
   {
     state.Elections.ElectionsVariables = Elections
