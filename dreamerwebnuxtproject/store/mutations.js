@@ -39,9 +39,22 @@ export default
     state.Parties.ElectionParties = Parties;
   },
 
+  ChangePartySelectedStateMutation(state, PartyCard)
+  {
+    state.Parties.ElectoionParties = PartyCard
+  },
+  AddPartyStateMutation(state, PartyCard)
+  {
+    state.Parties.ElectoionParties.push(PartyCard)
+  },
+  DeletePartyStateMutation(state, PartyCard)
+  {
+    state.Parties.ElectoionParties = PartyCard
+  },
+
   ChangeCandidateSelectedStateMutation(state, Candidate)
   {
-    state.Candidates.ElectionCandidates.splice(Candidate.id,1, Candidate)
+    state.Candidates.ElectionCandidates = Candidate
   },
   AddCandidateStateMutation(state, Candidate)
   {
@@ -49,7 +62,7 @@ export default
   },
   DeleteCandidateStateMutation(state, Candidate)
   {
-    state.Candidates.ElectionCandidates.splice(Candidate.id,1)
+    state.Candidates.ElectionCandidates = Candidate
   },
 
   ChangeOptionSelectedStateMutation(state, Elections)
@@ -60,13 +73,14 @@ export default
   {
     state.Elections.ElectionsVariables.push(Elections)
   },
-  AddElectionMapStateMutation(state, Elections)
-  {
-    state.Elections.ElectionsMap.push(Elections)
-  },
   DeleteElectionStateMutation(state, Elections)
   {
     state.Elections.ElectionsVariables = Elections
+  },
+
+  AddElectionMapStateMutation(state, Elections)
+  {
+    state.Elections.ElectionsMap.push(Elections)
   },
   DeleteElectionMapStateMutation(state, Elections)
   {

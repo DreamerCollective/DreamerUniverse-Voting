@@ -46,9 +46,36 @@ export default
       .catch (error=>{ console.log(error)});
   },
 
+  async ChangePartySelectedStateAction({commit}, PartyCard)
+  {
+    await axios.put(`http://localhost:8000/ElectionCandidates/${PartyCard.id}`, { PartyCard})
+      .then(data=>(commit("ChangePartySelectedStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+  },
+  async AddPartyAction({commit}, PartyCard)
+  {
+    PartyCard.id = await nanoid()
+    await axios.post("http://localhost:8000/ElectionParties", {PartyCard})
+      .then(data=>(commit("AddPartyStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+    //const ElectionCardId = ElectionCard.id
+    //await axios.post("http://localhost:8000/ElectionsMap", {ElectionCardId})
+    //.then(data=>(commit("AddElectionMapStateMutation", data.data)))
+    //.catch (error=>{ console.log(error)});
+  },
+  async DeletePartyAction({commit}, PartyCard)
+  {
+    await axios.delete(`http://localhost:8000/ElectionParties/${PartyCard.id}`)
+      .then(data=>(commit("DeletePartyStateMutation", data.data)))
+      .catch (error=>{ console.log(error)});
+    //await axios.delete(`http://localhost:8000/ElectionsMap/${ElectionCard.id}`)
+    //.then(data=>(commit("DeleteElectionMapStateMutation", data.data)))
+    //.catch (error=>{ console.log(error)});
+  },
+
   async ChangeCandidateSelectedStateAction({commit}, CandidateCard)
   {
-    await axios.put(`http://localhost:8000/ElectionCandidates/${CandidateCard.id}`, { CandidateCard})
+    await axios.put(`http://localhost:8000/ElectionParties/${CandidateCard.id}`, { CandidateCard})
       .then(data=>(commit("ChangeCandidateSelectedStateMutation", data.data)))
       .catch (error=>{ console.log(error)});
   },

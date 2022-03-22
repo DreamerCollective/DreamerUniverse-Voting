@@ -2,9 +2,7 @@
   <div>
     <v-app>
       <v-main>
-        <div class="MainTitle">
-          Voting
-        </div>
+        <PartyCards/>
       </v-main>
     </v-app>
   </div>
@@ -20,19 +18,11 @@ export default
     ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
   },
   created() {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
+    this.FetchUsers()
   }
 }
 </script>
 <style scoped>
-.MainTitle {
-  font-size: 200px;
-}
+
 
 </style>
-
-

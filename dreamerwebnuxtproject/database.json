@@ -71,7 +71,7 @@
           0
         ]
       },
-      "id": "nJ735kT"
+      "id": 0
     },
     {
       "ElectionCard": {
@@ -92,15 +92,15 @@
           0
         ]
       },
-      "id": "V8qTnbo"
+      "id": 1
     },
     {
       "ElectionCard": {
-        "id": "pAbb4VazhsP-1SY0NZAPJ",
+        "id": "O0XTipXvbfz2QKGMCZNDA",
         "authorId": 0,
-        "title": "Bla ",
-        "subtitle": "Bla Bla",
-        "textInformation": "Bla Bla Bla Bla",
+        "title": "Bla Bla ",
+        "subtitle": "Bla Bla Bla ",
+        "textInformation": "Bla",
         "HowManyCandidates": 1,
         "HowManyCandidatesCanWin": 1,
         "HowManyVotesDoVotersHave": 1,
@@ -109,11 +109,9 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": [
-          0
-        ]
+        "Candidates": []
       },
-      "id": "Lzy-8fC"
+      "id": 2
     }
   ],
   "ElectionCandidates": [
@@ -174,9 +172,13 @@
   ],
   "ElectionParties": [
     {
-      "id": 0,
-      "PartyName": "Ice Cream Party",
-      "PartyDescription": "The Party for more Ice Creams for everyone"
+      "PartyCard": {
+        "id": 0,
+        "authorId": 0,
+        "PartyName": "Ice Cream Party",
+        "PartyDescription": "The Party for more Ice Creams for everyone"
+      },
+      "id": 0
     }
   ]
 }

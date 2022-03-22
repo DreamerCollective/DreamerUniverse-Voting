@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in ElectionCandidates"
+          <v-col v-for="card in ElectionParties"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -16,14 +16,14 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card.CandidateCard.authorId)">
+                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card.PartyCard.authorId)">
                       By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
-                      {{card.CandidateCard.candidateName}}
+                      {{card.PartyCard.PartyName}}
                     </v-list-item-title>
                     <v-list-item-subtitle class="text-h7 mb-1">
-                      {{card.CandidateCard.candidateDescription}}
+                      {{card.PartyCard.PartyDescription}}
                     </v-list-item-subtitle>
                   </v-list-item-content>
                   <v-list-item-avatar
@@ -38,7 +38,7 @@
                       rounded
                       text
                     >
-                      <Nuxt-link :to="`/CandidateCardMainPage/CandidateCard/${card.id}`">
+                      <Nuxt-link :to="`/PartyCardMainPage/PartyCard/${card.id}`">
                         Edit
                       </Nuxt-link>
                     </v-btn>
@@ -48,7 +48,7 @@
                       outlined
                       rounded
                       text
-                      @click="DeleteCandidateAction(card)"
+                      @click="DeletePartyAction(card)"
                     >
                       Delete
                     </v-btn>
@@ -73,16 +73,16 @@
                     </div>
                     <v-list-item>
                       <v-text-field
-                        label="Candidate Name"
+                        label="Election Name"
                         placeholder="Please type the name of the election"
-                        v-model="title"
+                        v-model="PartyName"
                       ></v-text-field>
                     </v-list-item>
                     <v-list-item>
                       <v-text-field
-                        label="Candidate Description"
+                        label="Election Subtitle"
                         placeholder="Please type the election subtitles"
-                        v-model="subtitle"
+                        v-model="PartyDescription"
                       ></v-text-field>
                     </v-list-item>
                   </v-list-item-content>
@@ -97,7 +97,7 @@
                       outlined
                       rounded
                       text
-                      @click="AddCandidate"
+                      @click="AddPartyOptions"
                     >
                       Add
                     </v-btn>
@@ -119,26 +119,24 @@ export default
 {
   name: "ElectionCards",
   data: () => ({
-    title: "",
-    subtitle: "",
+    PartyName: "",
+    PartyDescription: "",
   }),
   computed: {
-    ...mapState("Candidates",["ElectionCandidates", "CandidateIssues"]),
+    ...mapState("Parties",["ElectionParties"]),
     ...mapGetters("Users", ['GetUserAuthorOfElectionCardsById']),
     ...mapGetters("Elections", ['GetElections']),
   },
   methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddCandidateAction', "DeleteCandidateAction"]),
-    AddCandidate(e)
+    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddPartyAction', "DeletePartyAction"]),
+    AddPartyOptions(e)
     {
       e.preventDefault();
-      this.AddCandidateAction({
+      this.AddPartyAction({
         id: 0,
         authorId: 0,
-        candidateName: this.$data.title,
-        candidateDescription: this.$data.subtitle,
-        Party: 0,
-        Issues: [0,1]
+        PartyName: this.$data.PartyName,
+        PartyDescription: this.$data.PartyDescription,
       })
     },
   },
@@ -155,5 +153,6 @@ export default
 </script>
 
 <style scoped>
+
 
 </style>

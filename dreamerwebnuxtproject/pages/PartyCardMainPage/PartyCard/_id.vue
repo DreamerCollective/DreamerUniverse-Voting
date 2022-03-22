@@ -2,7 +2,7 @@
   <div>
     <v-main>
       <v-app>
-        <Candidates_Creation/>
+        <PartyCreation/>
       </v-app>
     </v-main>
   </div>

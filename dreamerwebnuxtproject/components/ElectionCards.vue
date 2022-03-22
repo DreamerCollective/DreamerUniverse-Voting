@@ -39,7 +39,7 @@
                       rounded
                       text
                     >
-                      <Nuxt-link :to="`/ElectionCard/${card.id}`">
+                      <Nuxt-link :to="`/ElectionCardMainPage/ElectionCard/${card.id}`">
                         Edit
                       </Nuxt-link>
                     </v-btn>

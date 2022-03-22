@@ -29,7 +29,7 @@
             >
               <v-list-item @click="ToElectionMainPage">
                 <v-list-item-icon>
-                  <v-icon>mdi-home</v-icon>
+                  <v-icon>mdi-account</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Elections</v-list-item-title>
               </v-list-item>
@@ -39,13 +39,13 @@
                 </v-list-item-icon>
                 <v-list-item-title>Candidates</v-list-item-title>
               </v-list-item>
-              <v-list-item @click="ToVoterMainPage">
+              <v-list-item @click="ToPartiesMainPage">
                 <v-list-item-icon>
                   <v-icon>mdi-account</v-icon>
                 </v-list-item-icon>
                 <v-list-item-title>Parties</v-list-item-title>
               </v-list-item>
-              <v-list-item @click="ToPartiesMainPage">
+              <v-list-item @click="">
                 <v-list-item-icon>
                   <v-icon>mdi-account</v-icon>
                 </v-list-item-icon>
@@ -87,7 +87,7 @@ export default
       },
       ToPartiesMainPage()
       {
-        this.$router.push("/PartiesCardMainPage")
+        this.$router.push("/PartyCardMainPage")
       }
     }
 }
