@@ -25,7 +25,7 @@
                     <v-list-item-subtitle class="text-h7 mb-1">
                       {{card.ElectionCard.subtitle}}
                     </v-list-item-subtitle>
-                    <v-list-item-subtitle> {{card.ElectionCard.textInformation}}</v-list-item-subtitle>
+                    <v-list-item-subtitle>{{card.ElectionCard.textInformation}}</v-list-item-subtitle>
                   </v-list-item-content>
                   <v-list-item-avatar
                     size="80"

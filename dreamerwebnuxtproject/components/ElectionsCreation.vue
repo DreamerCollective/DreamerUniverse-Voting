@@ -38,6 +38,7 @@
                   hint="Be honest"
                   :min="1"
                   :max="20"
+                  thumb-color="black"
                   thumb-label
                 >
                   <template v-slot:append>
@@ -57,30 +58,13 @@
                   hint="Be honest"
                   :min="1"
                   :max="10"
+                  :rules="[HowManyCandidatesCanWinRules]"
+                  thumb-color="black"
                   thumb-label
                 >
                   <template v-slot:append>
                     <v-text-field
                       v-model="HowManyCandidatesCanWin"
-                      type="number"
-                      style="width: 60px"
-                    ></v-text-field>
-                  </template>
-                </v-slider>
-              </v-list-item>
-              <v-list-item>
-                <v-slider
-                  v-model="HowManyVotesDoVotersHave"
-                  color="white"
-                  label="How Many Votes Do Voters Have?"
-                  hint="Be honest"
-                  :min="1"
-                  :max="10"
-                  thumb-label
-                >
-                  <template v-slot:append>
-                    <v-text-field
-                      v-model="HowManyVotesDoVotersHave"
                       type="number"
                       style="width: 60px"
                     ></v-text-field>
@@ -95,11 +79,32 @@
                   hint="Be honest"
                   :min="1"
                   :max="100"
+                  thumb-color="black"
                   thumb-label
                 >
                   <template v-slot:append>
                     <v-text-field
                       v-model="HowMuchOfAPercentageMustCandidatesNeedToWin"
+                      type="number"
+                      style="width: 60px"
+                    ></v-text-field>
+                  </template>
+                </v-slider>
+              </v-list-item>
+              <v-list-item>
+                <v-slider
+                  v-model="HowManyVotesDoVotersHave"
+                  color="white"
+                  label="How Many Votes Do Voters Have?"
+                  hint="Be honest"
+                  :min="1"
+                  :max="10"
+                  thumb-color="black"
+                  thumb-label
+                >
+                  <template v-slot:append>
+                    <v-text-field
+                      v-model="HowManyVotesDoVotersHave"
                       type="number"
                       style="width: 60px"
                     ></v-text-field>
@@ -114,6 +119,7 @@
                   hint="Be honest"
                   :min="1"
                   :max="10"
+                  thumb-color="black"
                   thumb-label
                 >
                   <template v-slot:append>
@@ -133,6 +139,7 @@
                   hint="Be honest"
                   :min="1"
                   :max="1000"
+                  thumb-color="black"
                   thumb-label
                 >
                   <template v-slot:append>
@@ -225,6 +232,17 @@ export default {
         voters: this.$data.voters,
       }
       this.ChangeOptionSelectedStateAction(electionCard)
+    },
+    HowManyCandidatesCanWinRules(value)
+    {
+      if(value <= this.$data.HowManyCandidates)
+      {
+        return true
+      }
+      else
+      {
+        return "You can't have more candidates that can win than candidates that are running"
+      }
     }
   },
   created()
