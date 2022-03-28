@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in ElectionsVariables"
+          <v-col v-for="card in $store.get('Elections/ElectionsVariables')"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -16,7 +16,7 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card.ElectionCard.authorId)">
+                    <div class="text-overline mb-4" v-for="Author in $store.get('Users/GetUserAuthorOfElectionCardsById' ,card.ElectionCard.authorId)">
                       By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
@@ -49,7 +49,7 @@
                       outlined
                       rounded
                       text
-                      @click="DeleteElectionAction(card)"
+                      @click="$store.set('DeleteElectionAction', card)"
                     >
                       Delete
                     </v-btn>
@@ -121,8 +121,6 @@
 </template>
 
 <script>
-import {mapState, mapActions, mapGetters} from 'vuex';
-import nanoid from "nanoid"
 export default
 {
   name: "ElectionCards",
@@ -132,16 +130,12 @@ export default
     textInformation: "",
   }),
   computed: {
-    ...mapState("Elections",["ElectionsVariables", "ElectionsMap"]),
-    ...mapGetters("Users", ['GetUserAuthorOfElectionCardsById']),
-    ...mapGetters("Elections", ['GetElections']),
   },
   methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "DeleteElectionAction"]),
     AddElectionOptions(e)
     {
       e.preventDefault();
-      this.AddElectionAction({
+      this.$store.set('AddElectionAction',{
         id: 0,
         authorId: 0,
         title: this.$data.title,
@@ -161,11 +155,11 @@ export default
   },
   created()
   {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
+    this.$store.set('FetchElections', null);
+    this.$store.set('FetchParty', null);
+    this.$store.set('FetchElectionCandidates', null);
+    this.$store.set('FetchSiteOptions', null);
+    this.$store.set('FetchUsers', null);
   }
 
 }
