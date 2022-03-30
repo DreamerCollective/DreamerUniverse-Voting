@@ -3,7 +3,7 @@
     <v-app>
       <v-main>
         <v-row dense>
-          <v-col v-for="card in ElectionCandidates"
+          <v-col v-for="card in this.$store.get('Elections/ElectionCandidates')"
                  :key="card.id"
                  :cols="3">
             <v-card
@@ -16,7 +16,7 @@
               <v-list color="red lighten-1">
                 <v-list-item three-line>
                   <v-list-item-content>
-                    <div class="text-overline mb-4" v-for="Author in GetUserAuthorOfElectionCardsById(card.CandidateCard.authorId)">
+                    <div class="text-overline mb-4" v-for="Author in this.$store.get('GetUserAuthorOfElectionCardsById', card.CandidateCard.authorId)">
                       By {{Author.Username}}
                     </div>
                     <v-list-item-title class="text-h5 mb-1">
@@ -48,7 +48,7 @@
                       outlined
                       rounded
                       text
-                      @click="DeleteCandidateAction(card)"
+                      @click="this.$store.set('DeleteCandidateAction', card)"
                     >
                       Delete
                     </v-btn>
@@ -123,16 +123,12 @@ export default
     subtitle: "",
   }),
   computed: {
-    ...mapState("Candidates",["ElectionCandidates", "CandidateIssues"]),
-    ...mapGetters("Users", ['GetUserAuthorOfElectionCardsById']),
-    ...mapGetters("Elections", ['GetElections']),
   },
   methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddCandidateAction', "DeleteCandidateAction"]),
     AddCandidate(e)
     {
       e.preventDefault();
-      this.AddCandidateAction({
+      this.$store.set('AddCandidateAction', {
         id: 0,
         authorId: 0,
         candidateName: this.$data.title,
@@ -144,11 +140,11 @@ export default
   },
   created()
   {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
+    this.$store.set('FetchElections', null);
+    this.$store.set('FetchParty', null);
+    this.$store.set('FetchElectionCandidates', null);
+    this.$store.set('FetchSiteOptions', null);
+    this.$store.set('FetchUsers', null);
   }
 
 }

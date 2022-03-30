@@ -10,7 +10,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in GetElectionsCandidatesFromElectionId(GetOneElections(this.$route.params.id))"
+              <v-col  v-for="candidate in this.$store.set('GetElectionsCandidatesFromElectionId', GetOneElections(this.$route.params.id))"
                       :key="candidate.id"
                       :cols="3">
 
@@ -95,13 +95,12 @@ export default {
     SaveElectionOptions(e)
     {
       e.preventDefault();
-      let CandidateCard = {
+      this.$store.set('ChangeOptionSelectedStateAction', {
         id: parseInt(this.$route.params.id.toString()),
         authorId: 0,
         candidateName: this.$data.candidateName,
         candidateDescription: this.$data.candidateDescription,
-      }
-      this.ChangeOptionSelectedStateAction(CandidateCard)
+      })
     }
   },
   created()

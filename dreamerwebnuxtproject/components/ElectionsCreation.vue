@@ -197,15 +197,8 @@ export default {
     voters: [0],
   }),
   computed: {
-    ...mapState("Candidates",["ElectionCandidates"]),
-    ...mapState("Options",["ElectionOptions"]),
-    ...mapState("Elections",["ElectionsVariables"]),
-    ...mapState("Users",["Users"]),
-    ...mapGetters("Elections", ["GetOneElections"]),
-    ...mapGetters("Candidates", ["GetElectionsCandidatesFromElectionId", "GetIssuesFromCandidates"])
   },
   methods: {
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions','AddElectionAction', "ChangeOptionSelectedStateAction"]),
     findCardId()
     {
       const electionCardRouteId = this.$route.params.id.toString()
@@ -231,7 +224,7 @@ export default {
         specificElectionCandidates: this.$data.specificElectionCandidates,
         voters: this.$data.voters,
       }
-      this.ChangeOptionSelectedStateAction(electionCard)
+      this.$store.set('ChangeOptionSelectedStateAction',(electionCard))
     },
     HowManyCandidatesCanWinRules(value)
     {
@@ -247,11 +240,11 @@ export default {
   },
   created()
   {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
+    this.$store.set('FetchElections', null);
+    this.$store.set('FetchParty', null);
+    this.$store.set('FetchElectionCandidates', null);
+    this.$store.set('FetchSiteOptions', null);
+    this.$store.set('FetchUsers', null);
   }
 }
 </script>
