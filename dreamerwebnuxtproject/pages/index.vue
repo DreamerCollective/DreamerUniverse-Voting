@@ -16,16 +16,6 @@ import {mapActions} from "vuex";
 export default
 {
   name: "index",
-  methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
-  },
-  created() {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
-  }
 }
 </script>
 <style scoped>

@@ -155,11 +155,11 @@ export default
   },
   created()
   {
-    this.$store.set('FetchElections', null);
-    this.$store.set('FetchParty', null);
-    this.$store.set('FetchElectionCandidates', null);
-    this.$store.set('FetchSiteOptions', null);
-    this.$store.set('FetchUsers', null);
+    this.$store.set('FetchElections!', null);
+    this.$store.set('FetchParty!', null);
+    this.$store.set('FetchElectionCandidates!', null);
+    this.$store.set('FetchSiteOptions!', null);
+    this.$store.set('FetchUsers!', null);
   }
 
 }

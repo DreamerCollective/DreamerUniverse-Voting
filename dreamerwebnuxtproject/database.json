@@ -54,20 +54,23 @@
   "ElectionsVariables": [
     {
       "ElectionCard": {
-        "id": "-qV44QICuC7TiVE8xmdwr",
+        "id": 0,
         "authorId": 0,
-        "title": "Bla",
-        "subtitle": "Bla Bla Bla Bla",
-        "textInformation": "Bla Bla",
-        "HowManyCandidates": 1,
-        "HowManyCandidatesCanWin": 1,
-        "HowManyVotesDoVotersHave": 1,
-        "HowMuchOfAPercentageMustCandidatesNeedToWin": 1,
-        "HowManyElectionRounds": 1,
-        "HowManyVoters": 1,
+        "title": "bla",
+        "subtitle": "bla",
+        "textInformation": "bla",
+        "HowManyCandidates": 13,
+        "HowManyCandidatesCanWin": 3,
+        "HowManyVotesDoVotersHave": 4,
+        "HowMuchOfAPercentageMustCandidatesNeedToWin": 21,
+        "HowManyElectionRounds": 3,
+        "HowManyVoters": 296,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": [
+        "specificElectionCandidates": [
+          0
+        ],
+        "voters": [
           0
         ]
       },
@@ -88,7 +91,10 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": [
+        "specificElectionCandidates": [
+          0
+        ],
+        "voters": [
           0
         ]
       },
@@ -109,7 +115,12 @@
         "HowManyVoters": 1,
         "CanYouVoteForParties": false,
         "DoVotesTransfer": false,
-        "Candidates": []
+        "specificElectionCandidates": [
+          0
+        ],
+        "voters": [
+          0
+        ]
       },
       "id": 2
     }

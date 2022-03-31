@@ -10,7 +10,7 @@
           >
             <v-subheader>Election Candidates</v-subheader>
             <v-row dense>
-              <v-col  v-for="candidate in this.$store.set('GetElectionsCandidatesFromElectionId', GetOneElections(this.$route.params.id))"
+              <v-col  v-for="candidate in this.$store.set('Candidates/GetElectionsCandidatesFromElectionId', this.$store.get('Elections/GetOneElections', this.$route.params.id))"
                       :key="candidate.id"
                       :cols="3">
 
@@ -25,7 +25,7 @@
                       <v-list-item-content>
                         <v-list-item-title class="text-h5 mb-1">{{candidate.candidateName}}</v-list-item-title>
                         <v-list-item-subtitle>{{candidate.candidateDescription}}</v-list-item-subtitle>
-                        <v-list-item v-for="issue in GetIssuesFromCandidates(candidate.Issues)"
+                        <v-list-item v-for="issue in this.$store.get('Candidates/GetIssuesFromCandidates', candidate.Issues)"
                                      :key="issue.id"
                         >
                           <v-list-item-content>
@@ -43,23 +43,6 @@
                 </v-card>
               </v-col>
             </v-row>
-          </v-list>
-          <v-card
-            class="mx-auto"
-            outlined
-            color="red lighten-1"
-          >
-            <v-list>
-              <select></select>
-            </v-list>
-          </v-card>
-
-          <v-divider></v-divider>
-          <v-list
-            three-line
-            subheader
-          >
-            <v-subheader>Election Voters</v-subheader>
           </v-list>
         </v-card>
       </v-main>
@@ -105,11 +88,11 @@ export default {
   },
   created()
   {
-    this.FetchElections();
-    this.FetchParty();
-    this.FetchElectionCandidates();
-    this.FetchSiteOptions();
-    this.FetchUsers();
+    this.$store.set('FetchElections!', null);
+    this.$store.set('FetchParty!', null);
+    this.$store.set('FetchElectionCandidates!', null);
+    this.$store.set('FetchSiteOptions!', null);
+    this.$store.set('FetchUsers!', null);
   }
 }
 </script>

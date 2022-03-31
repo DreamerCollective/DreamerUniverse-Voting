@@ -15,11 +15,7 @@ export default
 {
   name: "index",
   methods:{
-    ...mapActions(['FetchElections','FetchParty','FetchElectionCandidates','FetchUsers','FetchSiteOptions']),
   },
-  created() {
-    this.FetchUsers()
-  }
 }
 </script>
 <style scoped>

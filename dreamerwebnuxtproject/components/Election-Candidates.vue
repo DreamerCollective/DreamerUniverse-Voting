@@ -32,7 +32,7 @@
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item-title>Vote For</v-list-item-title>
-                    <v-checkbox v-model="candidate.votedFor">
+                    <v-checkbox>
                     </v-checkbox>
                   </v-list-item-content>
                   <v-list-item-avatar
