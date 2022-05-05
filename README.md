@@ -1,6 +1,8 @@
-# DreamerUniverse-Voting
+# Dreamer Web
 
-the repository for the website to allow users to set up any elections for a number of users to vote on.  
+the repository for the website to allow users to operate communities entirely on the web.
+
+Dreamer Web allows you to set up any elections for a number of users to vote on.  
 
 open the console for you editor and type in the following commands
 
