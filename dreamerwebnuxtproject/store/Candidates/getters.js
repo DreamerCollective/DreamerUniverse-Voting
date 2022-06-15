@@ -20,8 +20,11 @@ export default
         }
       }
     }
+
     console.log("Returnable ", CandidateArrayReturnable)
-    return CandidateArrayReturnable
+    //return CandidateArrayReturnable
+
+    return state.ElectionCandidates.map(Candidate => ElectionWithCandidates[Candidate])
   },
   GetIssuesFromCandidates: (state) => (CandidateIssues) =>
   {
