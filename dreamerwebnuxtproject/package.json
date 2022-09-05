@@ -15,23 +15,21 @@
     "eslint": "^8.23.0",
     "json-server": "^0.17.0",
     "nanoid": "^4.0.0",
-    "nuxt": "^3.0.0-rc.8",
-    "pinia": "^2.0.14",
-    "vuex-pathify": "1.5.1"
+    "nuxt": "^3.0.0-rc.9",
+    "pinia": "^2.0.21"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.5",
-    "@nuxt/builder": "^2.15.8",
-    "@nuxt/types": "~2.15.0",
-    "@nuxt/webpack": "^2.15.8",
-    "@nuxtjs/vuetify": "^1.12.3",
-    "babel-loader": "^8.2.3",
-    "chokidar": "^3.5.2",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.5.1",
-    "webpack": "^4.46.0"
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@nuxt/builder": "^2.13.3",
+    "@nuxt/types": "~2.15.8",
+    "@nuxtjs/vuetify": "^2.0.0-beta.2",
+    "babel-loader": "^8.2.5",
+    "chokidar": "^3.5.3",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "vite": "^3.1.0"
   }
 }
