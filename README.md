@@ -7,7 +7,7 @@ Dreamer Web allows you to set up any elections for a number of users to vote on.
 open the console for you editor and type in the following commands
 
 ```
-cd dreamerwebnextproject
+cd dreamerwebnuxtproject
 
 npm run dev
 ```
@@ -15,7 +15,7 @@ npm run dev
 and at then open another window in the console and type in this commands
 
 ```
-cd dreamerwebnextproject
+cd dreamerwebnuxtproject
 
 json-server --watch database.json --port 8000
 ```
