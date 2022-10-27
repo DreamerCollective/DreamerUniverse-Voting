@@ -1,12 +1,15 @@
 <script>
     import "../styles/global.css"
+
+    export let data
 </script>
 
 <div class="basis-1/3 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
     <div>
         <div>
-            <h1 class="px-3 block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0">Title</h1>
-            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">Description</p>
+            <h1 class="px-3 block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0">{data.title}</h1>
+            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.subtitle}</p>
+            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.textInformation}</p>
         </div>
 
         <!-- Spacer element to match the height of the toolbar -->
@@ -54,8 +57,10 @@
                 <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Run</button>
             </div>
             <div class="flex-shrink-0">
-                <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Edit
-                <a href="/Voting/Elections"></a></button>
+
+                <a href="Voting/Elections">
+                    <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Edit</button>
+                </a>
             </div>
         </div>
     </div>
