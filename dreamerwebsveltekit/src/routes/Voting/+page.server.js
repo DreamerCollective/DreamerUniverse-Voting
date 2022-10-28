@@ -1,8 +1,8 @@
-/** @type {import('./$types').PageLoad} */
 
 export async function load({ fetch }) {
-    const res = await fetch(`http://localhost:3000/ElectionsVariables`);
-    const data= await res.json();
-
-    return { data };
+    const response = await fetch("http://localhost:3000/ElectionsVariables");
+    console.log(response)
+    const metadata = await response.json();
+    const data = metadata.data;
+    return{data}
 }

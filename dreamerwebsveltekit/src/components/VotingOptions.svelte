@@ -1,5 +1,5 @@
 <script>
-    export let data
+    export const data;
 
     let button1 = false
     let button2 = false

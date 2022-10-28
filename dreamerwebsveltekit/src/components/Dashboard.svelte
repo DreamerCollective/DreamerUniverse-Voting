@@ -1,53 +1,13 @@
 <script>
     import "../styles/global.css"
-    import { onMount } from 'svelte';
 
-    onMount(() => {
-        function menuButtonActive()
-        {
-            const element = document.getElementById("user-menu-button");
-            let display = element.style.display;
-            if(element)
-            {
 
-                if(display === "block")
-                {
-                    document.getElementById("user-menu-button").style.display="none"
-                }
-                else
-                {
-                    document.getElementById("user-menu-button").style.display="block"
-                }
-            }
-        }
-        document.getElementById("user-menu-button-none").onclick = menuButtonActive;
-
-        function menuButtonActiveMobile()
-        {
-            const element = document.getElementById("user-menu-button-mobile");
-            let display = element.style.display;
-            if(element)
-            {
-
-                if(display === "block")
-                {
-                    document.getElementById("user-menu-button-mobile").style.display="none"
-                }
-                else
-                {
-                    document.getElementById("user-menu-button-mobile").style.display="block"
-                }
-            }
-        }
-        document.getElementById("user-menu-button-none-mobile").onclick = menuButtonActiveMobile;
-    });
 
     const user = {
         name: 'Tom Cook',
         email: 'tom@example.com',
         imageUrl:
-            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    }
+            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',}
 
 /* Entering: ""
     From: ""
