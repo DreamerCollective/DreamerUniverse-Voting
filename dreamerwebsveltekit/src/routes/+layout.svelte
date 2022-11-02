@@ -1,7 +1,7 @@
 <script>
     import "../styles/global.css"
-    import Dashboard from "../components/Dashboard.svelte";
-    import Footer from "../components/Footer.svelte";
+    import Dashboard from "../lib/components/Dashboard.svelte";
+    import Footer from "../lib/components/Footer.svelte";
 </script>
 
 <Dashboard/>

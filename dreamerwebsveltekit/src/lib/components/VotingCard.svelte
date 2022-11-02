@@ -1,5 +1,5 @@
 <script>
-    import "../styles/global.css"
+    import "../../styles/global.css"
 
     export let data
 </script>
@@ -7,9 +7,9 @@
 <div class="basis-1/3 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
     <div>
         <div>
-            <h1 class="px-3 block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0">{data.title}</h1>
-            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.subtitle}</p>
-            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.textInformation}</p>
+            <h1 class="px-3 block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0">Bla</h1>
+            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">Bla</p>
+            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">Bla</p>
         </div>
 
         <!-- Spacer element to match the height of the toolbar -->

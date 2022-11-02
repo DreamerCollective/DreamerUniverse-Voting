@@ -1,5 +1,5 @@
 <script>
-    import VotingOptions from "../../../components/VotingOptions.svelte";
+    import VotingOptions from "../../../lib/components/VotingOptions.svelte";
 </script>
 <div class="flex flex-1 flex-col md:pl-64">
     <main class="flex-1">

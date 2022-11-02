@@ -1,5 +1,5 @@
 <script>
-    import "../styles/global.css"
+    import "../../styles/global.css"
     import { fade, blur, fly, slide, scale } from "svelte/transition";
     import { quintOut } from "svelte/easing";
     import { onMount } from 'svelte';

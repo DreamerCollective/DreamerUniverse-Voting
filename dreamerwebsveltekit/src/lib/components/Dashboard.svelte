@@ -1,5 +1,5 @@
 <script>
-    import "../styles/global.css"
+    import "../../styles/global.css"
 
 
 
@@ -72,7 +72,7 @@
                     </div>
                     <nav class="mt-5 space-y-1 px-2">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                        <a href="/dreamerwebsveltekit/static" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
                             <!--
                               Heroicon name: outline/home
 
@@ -111,7 +111,7 @@
                     </nav>
                 </div>
                 <div class="flex flex-shrink-0 bg-gray-700 p-4">
-                    <a href="/" class="group block flex-shrink-0">
+                    <a href="/dreamerwebsveltekit/static" class="group block flex-shrink-0">
                         <div class="flex items-center">
                             <div>
                                 <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
@@ -141,7 +141,7 @@
                 </div>
                 <nav class="mt-5 flex-1 space-y-1 px-2">
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                    <a href="/" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
+                    <a href="/dreamerwebsveltekit/static" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md">
                         <!--
                           Heroicon name: outline/home
 
@@ -180,7 +180,7 @@
                 </nav>
             </div>
             <div class="flex flex-shrink-0 bg-gray-700 p-4">
-                <a href="/" class="group block w-full flex-shrink-0">
+                <a href="/dreamerwebsveltekit/static" class="group block w-full flex-shrink-0">
                     <div class="flex items-center">
                         <div>
                             <img class="inline-block h-9 w-9 rounded-full" src="{user.imageUrl}" alt="">
