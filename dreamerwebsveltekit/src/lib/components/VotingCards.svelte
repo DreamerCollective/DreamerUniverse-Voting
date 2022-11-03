@@ -5,10 +5,10 @@
 
     export let data
 </script>
-<!--<div class="flex flex-wrap">
+<div class="flex flex-wrap">
     {#each data as votingCard}
         <VotingCard data="{votingCard}"/>
     {/each}
-</div> -->
+</div>
 
 <NewVotingCard/>
