@@ -6,7 +6,7 @@
     export let data
 </script>
 <div class="flex flex-wrap">
-    {#each data as votingCard}
+    {#each data.cards as votingCard}
         <VotingCard data="{votingCard}"/>
     {/each}
 </div>

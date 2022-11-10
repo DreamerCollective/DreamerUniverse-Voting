@@ -20,6 +20,7 @@
             <span class="text-sm text-gray-500" id="email-optional">Please type the name of the election</span>
         </div>
         <div class="mt-1">
+
             <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
@@ -40,7 +41,7 @@
         </div>
 
         <div class="flex justify-between">
-            <label for="email" class="block text-sm font-medium text-gray-700">Number of Candidates</label>
+            <label for="email" class="block text-sm font-medium text-gray-700">Number of Candidates {data.HowManyCandidates}</label>
             <span class="text-sm text-gray-500" id="email-optional">How many candidates?</span>
         </div>
         <div class="mt-1">

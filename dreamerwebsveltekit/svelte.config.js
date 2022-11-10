@@ -3,6 +3,7 @@ import preprocess from "svelte-preprocess";
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	extensions: ['.svelte'],
 	preprocess: [
 		preprocess({
 			postcss: true,
@@ -10,7 +11,7 @@ const config = {
 	],
 	kit: {
 		adapter: adapter()
-	}
+	},
 };
 
 export default config;
