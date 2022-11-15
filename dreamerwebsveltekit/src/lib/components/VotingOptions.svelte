@@ -14,14 +14,14 @@
 </script>
 
 <div>
-    <form method="POST">
+    <form method="POST" class="z-10 px-6 py-1">
         <div class="flex justify-between">
             <label for="email" class="block text-sm font-medium text-gray-700">Election Name</label>
             <span class="text-sm text-gray-500" id="email-optional">Please type the name of the election</span>
         </div>
         <div class="mt-1">
 
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.title}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -29,7 +29,7 @@
             <span class="text-sm text-gray-500" id="email-optional">Please type the election subtitles</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.subtitle}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -37,15 +37,15 @@
             <span class="text-sm text-gray-500" id="email-optional">Please type any election information</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.textInformation}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
-            <label for="email" class="block text-sm font-medium text-gray-700">Number of Candidates {data.HowManyCandidates}</label>
+            <label for="email" class="block text-sm font-medium text-gray-700">Number of Candidates</label>
             <span class="text-sm text-gray-500" id="email-optional">How many candidates?</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowManyCandidates}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -53,7 +53,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many candidates can win?</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowManyCandidatesCanWin}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -61,7 +61,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How much of a percentage candidates needs to win</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowManyVotesDoVotersHave}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -69,7 +69,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many voters are voting in this election</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowMuchOfAPercentageMustCandidatesNeedToWin}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -77,7 +77,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many votes to voters have in this election</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowManyElectionRounds}" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -85,7 +85,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many rounds need to happen </span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.HowManyVoters}" aria-describedby="email-optional">
         </div>
 
         <div class="flex items-center justify-between">

@@ -47,10 +47,6 @@
       ]
     }
   ],
-  "ElectionsMap": [
-    0,
-    1
-  ],
   "ElectionsVariables": [
     {
       "authorId": 0,
@@ -135,12 +131,6 @@
         0
       ],
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
     }
   ],
   "ElectionCandidates": [

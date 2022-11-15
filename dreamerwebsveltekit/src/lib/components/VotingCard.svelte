@@ -5,14 +5,31 @@
     export let data
 </script>
 
-<div class="basis-1/3 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
+<div class="basis-1/2 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
     <div>
-        <div>
-            <h1 class="px-3 block w-full border-0 pt-2.5 text-lg font-medium placeholder-gray-500 focus:ring-0">{data.title}</h1>
-            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.subtitle}</p>
-            <p class="px-3 block w-full resize-none border-0 py-0 placeholder-gray-500 focus:ring-0 sm:text-sm">{data.textInformation}</p>
+        <div class="sticky top-0 z-10 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
+            <h3>Voting Options</h3>
         </div>
+
         <VotingOptions data="{data}" />
+
+        <div class="sticky top-0 z-10 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
+            <h3>Candidates</h3>
+        </div>
+
+        <div class="relative flex items-center space-x-3 px-6 py-5 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500 hover:bg-gray-50">
+            <div class="flex-shrink-0">
+                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </div>
+            <div class="min-w-0 flex-1">
+                <a href="#" class="focus:outline-none">
+                    <!-- Extend touch target to entire panel -->
+                    <span class="absolute inset-0" aria-hidden="true"></span>
+                    <p class="text-sm font-medium text-gray-900">Emma Young</p>
+                    <p class="truncate text-sm text-gray-500">Senior Front-end Developer</p>
+                </a>
+            </div>
+        </div>
 
         <!-- Spacer element to match the height of the toolbar -->
         <div aria-hidden="true">
