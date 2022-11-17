@@ -1,6 +1,9 @@
 <script>
     import "../../styles/global.css"
     import VotingOptions from "$lib/components/VotingOptions.svelte";
+    import VotingCandidates from "$lib/components/VotingCandidates.svelte";
+    import VotingParties from "$lib/components/VotingParties.svelte";
+    import VotingVoters from "$lib/components/VotingVoters.svelte";
 
     export let data
 </script>
@@ -13,23 +16,11 @@
 
         <VotingOptions data="{data}" />
 
-        <div class="sticky top-0 z-10 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
-            <h3>Candidates</h3>
-        </div>
+        <VotingCandidates />
 
-        <div class="relative flex items-center space-x-3 px-6 py-5 focus-within:ring-2 focus-within:ring-inset focus-within:ring-pink-500 hover:bg-gray-50">
-            <div class="flex-shrink-0">
-                <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1505840717430-882ce147ef2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </div>
-            <div class="min-w-0 flex-1">
-                <a href="#" class="focus:outline-none">
-                    <!-- Extend touch target to entire panel -->
-                    <span class="absolute inset-0" aria-hidden="true"></span>
-                    <p class="text-sm font-medium text-gray-900">Emma Young</p>
-                    <p class="truncate text-sm text-gray-500">Senior Front-end Developer</p>
-                </a>
-            </div>
-        </div>
+        <VotingParties />
+
+        <VotingVoters />
 
         <!-- Spacer element to match the height of the toolbar -->
         <div aria-hidden="true">
@@ -76,10 +67,7 @@
                 <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Run</button>
             </div>
             <div class="flex-shrink-0">
-
-                <a href="Voting/[data.slug]">
-                    <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Edit</button>
-                </a>
+                <button type="submit" class="inline-flex items-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Edit</button>
             </div>
         </div>
     </div>

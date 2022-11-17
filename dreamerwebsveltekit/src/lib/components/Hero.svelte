@@ -4,7 +4,7 @@
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
                     <a href="#">
-                        <span class="sr-only">Your Company</span>
+                        <span class="sr-only">Dreamer Universe</span>
                         <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?from-color=purple&from-shade=600&to-color=indigo&to-shade=600&toShade=600" alt="">
                     </a>
                 </div>
@@ -101,9 +101,9 @@
                         </div>
                     </div>
 
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Pricing</a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Partners</a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Company</a>
+                    <a href="/Blog" class="text-base font-medium text-gray-500 hover:text-gray-900">Blog</a>
+                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Patreon</a>
+                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">EpicCycle</a>
                 </nav>
                 <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
                     <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Sign in</a>
