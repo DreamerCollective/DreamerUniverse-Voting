@@ -1,9 +1,18 @@
+<script>
+    let heroButton1 = false
+
+    function toggleButton1()
+    {
+        heroButton1 = heroButton1 !== true;
+    }
+</script>
+
 <div class="bg-white">
     <header>
         <div class="relative bg-white">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 md:justify-start md:space-x-10 lg:px-8">
                 <div class="flex justify-start lg:w-0 lg:flex-1">
-                    <a href="#">
+                    <a href="/">
                         <span class="sr-only">Dreamer Universe</span>
                         <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/mark.svg?from-color=purple&from-shade=600&to-color=indigo&to-shade=600&toShade=600" alt="">
                     </a>
@@ -19,18 +28,36 @@
                 </div>
                 <nav class="hidden space-x-10 md:flex">
                     <div class="relative">
+                        {#if !heroButton1}
                         <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-                        <button type="button" class="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
+                        <button type="button" on:click={toggleButton1} class="text-gray-400 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
                             <span>Solutions</span>
                             <!--
                               Heroicon name: mini/chevron-down
 
                               Item active: "text-gray-600", Item inactive: "text-gray-400"
                             -->
+
+
+
                             <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M14.77 12.79a.75.75 0 01-1.06-.02L10 8.832 6.29 12.77a.75.75 0 11-1.08-1.04l4.25-4.5a.75.75 0 011.08 0l4.25 4.5a.75.75 0 01-.02 1.06z" clip-rule="evenodd" />
                             </svg>
                         </button>
+                        {/if}
+                        {#if heroButton1}
+                            <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
+                            <button type="button" on:click={toggleButton1} class="text-gray-500 group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" aria-expanded="false">
+                                <span>Solutions</span>
+                                <!--
+
+                                  Item active: "text-gray-600", Item inactive: "text-gray-400"
+                                -->
+                                <svg class="text-gray-400 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+
 
                         <!--
                           'Solutions' flyout menu, show/hide based on flyout menu state.
@@ -99,15 +126,16 @@
                                 </div>
                             </div>
                         </div>
+                        {/if}
                     </div>
 
                     <a href="/Blog" class="text-base font-medium text-gray-500 hover:text-gray-900">Blog</a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">Patreon</a>
-                    <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">EpicCycle</a>
+                    <a href="/Patreon" class="text-base font-medium text-gray-500 hover:text-gray-900">Patreon</a>
+                    <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">EpicCycle</a>
                 </nav>
                 <div class="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-                    <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Sign in</a>
-                    <a href="#" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Sign up</a>
+                    <a href="/" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">Sign in</a>
+                    <a href="/" class="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Sign up</a>
                 </div>
             </div>
 
