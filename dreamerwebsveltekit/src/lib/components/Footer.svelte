@@ -50,7 +50,7 @@
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
                         <h3 class="text-base font-medium text-gray-900">Solutions</h3>
-                        <ul role="list" class="mt-4 space-y-4">
+                        <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="/dreamerwebsveltekit/static" class="text-base text-gray-500 hover:text-gray-900">Marketing</a>
                             </li>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="mt-12 md:mt-0">
                         <h3 class="text-base font-medium text-gray-900">Support</h3>
-                        <ul role="list" class="mt-4 space-y-4">
+                        <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="/dreamerwebsveltekit/static" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
                             </li>
@@ -92,7 +92,7 @@
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
                         <h3 class="text-base font-medium text-gray-900">Company</h3>
-                        <ul role="list" class="mt-4 space-y-4">
+                        <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="/dreamerwebsveltekit/static" class="text-base text-gray-500 hover:text-gray-900">About</a>
                             </li>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="mt-12 md:mt-0">
                         <h3 class="text-base font-medium text-gray-900">Legal</h3>
-                        <ul role="list" class="mt-4 space-y-4">
+                        <ul class="mt-4 space-y-4">
                             <li>
                                 <a href="/dreamerwebsveltekit/static" class="text-base text-gray-500 hover:text-gray-900">Claim</a>
                             </li>

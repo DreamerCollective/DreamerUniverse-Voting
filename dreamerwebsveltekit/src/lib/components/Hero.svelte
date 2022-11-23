@@ -72,7 +72,7 @@
                         <div class="absolute z-10 -ml-4 mt-3 w-screen max-w-md transform lg:left-1/2 lg:ml-0 lg:max-w-2xl lg:-translate-x-1/2">
                             <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                 <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 lg:grid-cols-2">
-                                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                    <a href="/Voting" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
                                         <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white sm:h-12 sm:w-12">
                                             <!-- Heroicon name: outline/inbox -->
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -80,12 +80,12 @@
                                             </svg>
                                         </div>
                                         <div class="ml-4">
-                                            <p class="text-base font-medium text-gray-900">Inbox</p>
+                                            <p class="text-base font-medium text-gray-900">Voting</p>
                                             <p class="mt-1 text-sm text-gray-500">Get a better understanding of where your traffic is coming from.</p>
                                         </div>
                                     </a>
 
-                                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                    <a href="/Execution" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
                                         <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white sm:h-12 sm:w-12">
                                             <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -93,12 +93,12 @@
                                             </svg>
                                         </div>
                                         <div class="ml-4">
-                                            <p class="text-base font-medium text-gray-900">Messaging</p>
+                                            <p class="text-base font-medium text-gray-900">Execution</p>
                                             <p class="mt-1 text-sm text-gray-500">Speak directly to your customers in a more meaningful way.</p>
                                         </div>
                                     </a>
 
-                                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                    <a href="/Discuss" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
                                         <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white sm:h-12 sm:w-12">
                                             <!-- Heroicon name: outline/chat-bubble-left-right -->
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -106,12 +106,12 @@
                                             </svg>
                                         </div>
                                         <div class="ml-4">
-                                            <p class="text-base font-medium text-gray-900">Live Chat</p>
+                                            <p class="text-base font-medium text-gray-900">Discuss</p>
                                             <p class="mt-1 text-sm text-gray-500">Your customers&#039; data will be safe and secure.</p>
                                         </div>
                                     </a>
 
-                                    <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                                    <a href="/" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
                                         <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white sm:h-12 sm:w-12">
                                             <!-- Heroicon name: outline/question-mark-circle -->
                                             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -168,7 +168,7 @@
                         </div>
                         <div class="mt-6">
                             <nav class="grid grid-cols-1 gap-7">
-                                <a href="#" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                                <a href="/" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                                     <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                         <!-- Heroicon name: outline/inbox -->
                                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -178,7 +178,7 @@
                                     <div class="ml-4 text-base font-medium text-gray-900">Inbox</div>
                                 </a>
 
-                                <a href="#" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                                <a href="/" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                                     <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                         <!-- Heroicon name: outline/chat-bubble-bottom-center-text -->
                                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -188,7 +188,7 @@
                                     <div class="ml-4 text-base font-medium text-gray-900">Messaging</div>
                                 </a>
 
-                                <a href="#" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                                <a href="/" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                                     <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                         <!-- Heroicon name: outline/chat-bubble-left-right -->
                                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -198,7 +198,7 @@
                                     <div class="ml-4 text-base font-medium text-gray-900">Live Chat</div>
                                 </a>
 
-                                <a href="#" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
+                                <a href="/" class="-m-3 flex items-center rounded-lg p-3 hover:bg-gray-50">
                                     <div class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
                                         <!-- Heroicon name: outline/question-mark-circle -->
                                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -212,15 +212,15 @@
                     </div>
                     <div class="py-6 px-5">
                         <div class="grid grid-cols-2 gap-4">
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">Pricing</a>
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">Partners</a>
-                            <a href="#" class="text-base font-medium text-gray-900 hover:text-gray-700">Company</a>
+                            <a href="/" class="text-base font-medium text-gray-900 hover:text-gray-700">Pricing</a>
+                            <a href="/" class="text-base font-medium text-gray-900 hover:text-gray-700">Partners</a>
+                            <a href="/" class="text-base font-medium text-gray-900 hover:text-gray-700">Company</a>
                         </div>
                         <div class="mt-6">
-                            <a href="#" class="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Sign up</a>
+                            <a href="/" class="flex w-full items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Sign up</a>
                             <p class="mt-6 text-center text-base font-medium text-gray-500">
                                 Existing customer?
-                                <a href="#" class="text-gray-900">Sign in</a>
+                                <a href="/" class="text-gray-900">Sign in</a>
                             </p>
                         </div>
                     </div>
@@ -247,8 +247,8 @@
                         <p class="mx-auto mt-6 max-w-lg text-center text-xl text-indigo-200 sm:max-w-3xl">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
                         <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                             <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
-                                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 sm:px-8">Get started</a>
-                                <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">Live demo</a>
+                                <a href="/" class="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-indigo-700 shadow-sm hover:bg-indigo-50 sm:px-8">Get started</a>
+                                <a href="/" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-500 bg-opacity-60 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-opacity-70 sm:px-8">Live demo</a>
                             </div>
                         </div>
                     </div>
@@ -299,7 +299,7 @@
                                 <h2 class="text-3xl font-bold tracking-tight text-gray-900">Stay on top of customer support</h2>
                                 <p class="mt-4 text-lg text-gray-500">Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.</p>
                                 <div class="mt-6">
-                                    <a href="#" class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Get started</a>
+                                    <a href="/" class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Get started</a>
                                 </div>
                             </div>
                         </div>
@@ -342,7 +342,7 @@
                                 <h2 class="text-3xl font-bold tracking-tight text-gray-900">Better understand your customers</h2>
                                 <p class="mt-4 text-lg text-gray-500">Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus viverra dui tellus ornare pharetra.</p>
                                 <div class="mt-6">
-                                    <a href="#" class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Get started</a>
+                                    <a href="/" class="inline-flex rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-2 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Get started</a>
                                 </div>
                             </div>
                         </div>
@@ -535,8 +535,8 @@
                     <span class="-mb-1 block bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text pb-1 text-transparent">Get in touch or create an account.</span>
                 </h2>
                 <div class="mt-6 space-y-4 sm:flex sm:space-y-0 sm:space-x-5">
-                    <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Learn more</a>
-                    <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100">Get started</a>
+                    <a href="/" class="flex items-center justify-center rounded-md border border-transparent bg-gradient-to-r from-purple-600 to-indigo-600 bg-origin-border px-4 py-3 text-base font-medium text-white shadow-sm hover:from-purple-700 hover:to-indigo-700">Learn more</a>
+                    <a href="/" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-50 px-4 py-3 text-base font-medium text-indigo-800 shadow-sm hover:bg-indigo-100">Get started</a>
                 </div>
             </div>
         </div>
