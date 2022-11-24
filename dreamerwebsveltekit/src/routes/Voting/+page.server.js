@@ -1,16 +1,24 @@
-export async function load({ data, fetch }) {
+import { error, redirect } from '@sveltejs/kit';
+import { serializeNonPOJOs } from '$lib/utils';
+
+export async function load({ locals, fetch }) {
     const fetchElectionVariables = async () => {
-        const res = await fetch('/api/Voting')
-        const data = res.json();
-        console.log(data);
-        return data
+        try {
+            const projects = serializeNonPOJOs(
+                await locals.pb.collection('electionsettings').getFullList()
+            );
+            return projects;
+        } catch (err) {
+            console.log('Error: ', err);
+            throw error(err.status, err.message);
+        }
     }
     return {
         cards: fetchElectionVariables()
     };
 }
 
-export const actions = {
+/*export const actions = {
     default: async ({request}) => {
         const formdata = await request.formData()
 
@@ -18,4 +26,4 @@ export const actions = {
 
 
     }
-}
+}*/

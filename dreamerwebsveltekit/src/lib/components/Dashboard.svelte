@@ -3,7 +3,7 @@
 
 
 
-    const user = {
+    export const user = {
         name: 'Tom Cook',
         email: 'tom@example.com',
         imageUrl:
@@ -72,7 +72,7 @@
                     </div>
                     <nav class="mt-5 space-y-1 px-2">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="/dreamerwebsveltekit/static" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
+                        <a href="/" class="bg-gray-900 text-white group flex items-center px-2 py-2 text-base font-medium rounded-md">
                             <!--
                               Heroicon name: outline/home
 
