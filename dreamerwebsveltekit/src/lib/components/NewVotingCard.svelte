@@ -1,7 +1,5 @@
 <script>
     import "../../styles/global.css"
-    import { fade, blur, fly, slide, scale } from "svelte/transition";
-    import { quintOut } from "svelte/easing";
     import { onMount } from 'svelte';
     let list1 = false;
     let list2 = false;
