@@ -3,7 +3,7 @@ import { registerUserSchema } from '$lib/schemas';
 import { validateData } from '$lib/utils';
 
 export const actions = {
-    createaccount: async ({ locals, request }) => {
+    default: async ({ locals, request }) => {
         const { formData, errors } = await validateData(await request.formData(), registerUserSchema);
 
         if (errors) {

@@ -6,7 +6,7 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form class="space-y-6" action="?/createaccount" method="POST">
+            <form class="space-y-6" method="POST">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
                     <div class="mt-1">
@@ -24,7 +24,7 @@
                 <div>
                     <label for="2text" class="block text-sm font-medium text-gray-700">Real name</label>
                     <div class="mt-1">
-                        <input id="2text" name="realname" type="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="2text" name="realname" type="text" autocomplete="text" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
@@ -38,7 +38,7 @@
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700">Conform Password</label>
                     <div class="mt-1">
-                        <input id="password" name="conformpassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="conformpassword" name="conformpassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
