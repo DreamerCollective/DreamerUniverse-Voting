@@ -35,7 +35,7 @@ bower_components
 build/Release
 
 # Dependency directories
-votingnuxtproject/node_modules/
+dreamerwebsveltekit/node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -78,4 +78,6 @@ sw.*
 *.swp
 
 # PocketBase data file
+dreamerwebbackend/
+
 dreamerwebbackend/pb_data/
