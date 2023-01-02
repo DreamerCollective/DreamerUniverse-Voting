@@ -81,3 +81,5 @@ sw.*
 dreamerwebbackend/
 
 dreamerwebbackend/pb_data/
+
+.db
