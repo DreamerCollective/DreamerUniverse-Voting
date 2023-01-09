@@ -1,13 +1,8 @@
 <script>
     import "../../styles/global.css"
+    import { getImageURL } from '$lib/utils';
 
-
-
-    export const user = {
-        name: 'Tom Cook',
-        email: 'tom@example.com',
-        imageUrl:
-            'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',}
+    export let userload;
 
 /* Entering: ""
     From: ""
@@ -215,10 +210,13 @@
                 <a href="/dreamerwebsveltekit/static" class="group block w-full flex-shrink-0">
                     <div class="flex items-center">
                         <div>
-                            <img class="inline-block h-9 w-9 rounded-full" src="{user.imageUrl}" alt="">
+                            <img class="inline-block h-9 w-9 rounded-full" src={userload.user?.avatar
+									? getImageURL(userload.user?.collectionId, userload.user?.id, userload.user?.avatar)
+									: `https://ui-avatars.com/api/?name=${userload.user?.name}`}
+                                 alt="User avatar">
                         </div>
                         <div class="ml-3">
-                            <p class="text-sm font-medium text-white">{user.name}</p>
+                            <p class="text-sm font-medium text-white">{userload.user.name}</p>
                             <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
                         </div>
                     </div>

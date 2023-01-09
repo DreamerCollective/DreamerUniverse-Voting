@@ -1,10 +1,10 @@
 export const load = ({locals}) => {
     if(locals.user){
         return {
-            user: locals.user
+            userload: locals.user
         }
     }
     return{
-        user: undefined
+        userload: undefined
     }
 }
