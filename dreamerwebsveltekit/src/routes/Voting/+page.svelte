@@ -1,8 +1,15 @@
 <script>
-    import VotingCards from "../../lib/components/VotingCards.svelte";
-    export let data
-    console.log(data);
-</script>
-{@debug data}
+  import VotingCard from "../../lib/components/VotingCard.svelte";
+  import "../../styles/global.css"
+  import NewVotingCard from "../../lib/components/NewVotingCard.svelte";
 
-<VotingCards data="{data}"/>
+  //export let data
+  //console.log(data);
+</script>
+
+<div class="flex flex-wrap">
+    <VotingCard />
+    <VotingCard />
+</div>
+
+<NewVotingCard/>

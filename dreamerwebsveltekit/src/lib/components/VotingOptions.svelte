@@ -1,5 +1,4 @@
 <script>
-    export let data;
 
     let button1 = false
     let button2 = false
@@ -21,7 +20,7 @@
         </div>
         <div class="mt-1">
 
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.title}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -29,7 +28,7 @@
             <span class="text-sm text-gray-500" id="email-optional">Please type the election subtitles</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.subtitle}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -37,7 +36,7 @@
             <span class="text-sm text-gray-500" id="email-optional">Please type any election information</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.textinformation}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -45,7 +44,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many candidates?</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howManyCandidates}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -53,7 +52,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many candidates can win?</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howManyCandidatesCanWin}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -61,7 +60,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How much of a percentage candidates needs to win</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howManyVotesDoVotersHave}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -69,7 +68,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many voters are voting in this election</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howMuchOfAPercentageMustCandidatesNeedToWin}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -77,7 +76,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many votes to voters have in this election</span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howManyElectionRounds}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex justify-between">
@@ -85,7 +84,7 @@
             <span class="text-sm text-gray-500" id="email-optional">How many rounds need to happen </span>
         </div>
         <div class="mt-1">
-            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{data.howManyVoters}" aria-describedby="email-optional">
+            <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="0" aria-describedby="email-optional">
         </div>
 
         <div class="flex items-center justify-between">

@@ -1,6 +1,7 @@
 <script>
     import Footer from "../lib/components/Footer.svelte";
-    import "../../styles/global.css"
+    import "../styles/global.css"
+
     import { getImageURL } from '$lib/utils';
 
     export let userload;
@@ -211,13 +212,11 @@
                 <a href="/dreamerwebsveltekit/static" class="group block w-full flex-shrink-0">
                     <div class="flex items-center">
                         <div>
-                            <img class="inline-block h-9 w-9 rounded-full" src={userload.user?.avatar
-									? getImageURL(userload.user?.collectionId, userload.user?.id, userload.user?.avatar)
-									: `https://ui-avatars.com/api/?name=${userload.user?.name}`}
+                            <img class="inline-block h-9 w-9 rounded-full"
                                  alt="User avatar">
                         </div>
                         <div class="ml-3">
-                            <p class="text-sm font-medium text-white">{userload.user.name}</p>
+                            <p class="text-sm font-medium text-white">David Lawson</p>
                             <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
                         </div>
                     </div>
