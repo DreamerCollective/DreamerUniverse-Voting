@@ -23,27 +23,10 @@
         <VotingVoters />
 
         <!-- Spacer element to match the height of the toolbar -->
-        <div aria-hidden="true">
-            <div class="py-2">
-                <div class="h-9"></div>
-            </div>
-            <div class="h-px"></div>
-            <div class="py-2">
-                <div class="py-px">
-                    <div class="h-9"></div>
-                </div>
-            </div>
-        </div>
+
     </div>
     <div class=" inset-x-px">
         <div class="flex flex-nowrap justify-end space-x-2 py-2 px-2 sm:px-3">
-                <div class="relative">
-                    <div class="relative inline-flex items-center whitespace-nowrap rounded-full bg-gray-50 py-2 px-2 text-sm font-medium text-gray-500 hover:bg-gray-100 sm:px-3" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                        <img src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="h-5 w-5 flex-shrink-0 rounded-full">
-
-                        <span class="hidden truncate sm:ml-2 sm:block">Assign</span>
-                    </div>
-                </div>
 
                 <div class="relative">
                     <div class="relative inline-flex items-center whitespace-nowrap rounded-full bg-gray-50 py-2 px-2 text-sm font-medium text-gray-500 hover:bg-gray-100 sm:px-3" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
