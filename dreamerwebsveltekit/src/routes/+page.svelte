@@ -7,9 +7,9 @@
     <main class="flex-1">
         <div class="py-6">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                <!-- Replace with your content -->
+
                 <Hero />
-                <!-- /End replace -->
+
             </div>
         </div>
     </main>

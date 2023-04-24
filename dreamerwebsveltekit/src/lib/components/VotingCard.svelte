@@ -5,10 +5,12 @@
     import VotingParties from "$lib/components/VotingParties.svelte";
     import VotingVoters from "$lib/components/VotingVoters.svelte";
 
+    export let data;
+
 
 </script>
 
-<div class="basis-1/2 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
+<div class="relative inline-block basis-1/2 overflow-hidden rounded-lg border border-gray-300 shadow-sm focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500">
     <div>
         <div class="sticky top-0 z-10 border-t border-b border-gray-200 bg-gray-50 px-6 py-1 text-sm font-medium text-gray-500">
             <h3>Voting Options</h3>
