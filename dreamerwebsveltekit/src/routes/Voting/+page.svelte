@@ -3,16 +3,16 @@
   import "../../styles/global.css"
   import NewVotingCard from "../../lib/components/NewVotingCard.svelte";
 
-  let VotingCards = [{id: 1, number: 1}, {id: 2, number: 2}];
+
+
 </script>
 
 <div class="flex flex-wrap">
-    <VotingCard />
-    <!--
-        {#each VotingCards as VotingCard}
-            <VotingCard data={VotingCard.number} />
-        {/each}
-         -->
+
+    {#each VotingCards as VotingCard}
+        <VotingCard data={VotingCard.data} />
+    {/each}
+
 </div>
 
 <div>

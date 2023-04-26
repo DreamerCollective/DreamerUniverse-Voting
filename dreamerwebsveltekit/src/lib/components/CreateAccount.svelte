@@ -1,3 +1,37 @@
+<script>
+    import {pb} from './pocketbase';
+    let username;
+    let realname;
+    let email;
+    let password;
+    async function login() {
+        await pb.collection('users').authWithPassword(username, password)
+    }
+
+    async function createaccount()
+    {
+
+        try{
+        const data = {
+            username,
+            realname,
+            email,
+            password,
+            passwordConfirm: password,
+        };
+        const createdUser = await pb.collection('user').create(data);
+        await login();
+        }
+        catch(err){
+            console.error(err)
+        }
+    }
+    function signOut(){
+        pb.authStore.clear();
+    }
+
+</script>
+
 <div class="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
         <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
@@ -6,39 +40,39 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div class="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form class="space-y-6" action="?/createaccount" method="POST">
+            <form on:submit|preventDefault class="space-y-6" action="?/createaccount" method="POST">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>
                     <div class="mt-1">
-                        <input id="email" name="email" type="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="email" name="email" type="email" autocomplete="email" bind:value={email} required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label for="1text" class="block text-sm font-medium text-gray-700">Username</label>
                     <div class="mt-1">
-                        <input id="1text" name="username" type="email" autocomplete="email" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="1text" name="username" type="email" autocomplete="email" bind:value={username} required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label for="2text" class="block text-sm font-medium text-gray-700">Real name</label>
                     <div class="mt-1">
-                        <input id="2text" name="realname" type="text" autocomplete="text" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="2text" name="realname" type="text" autocomplete="text" bind:value={realname} required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                     <div class="mt-1">
-                        <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="password" name="password" type="password" autocomplete="current-password" bind:value={password} required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700">Conform Password</label>
                     <div class="mt-1">
-                        <input id="password" name="conformpassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                        <input id="conformpassword" name="conformpassword" type="password" autocomplete="current-password" required class="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                     </div>
                 </div>
 
@@ -50,7 +84,7 @@
                 </div>
 
                 <div>
-                    <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign up</button>
+                    <button on:click={createaccount()} type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign up</button>
                 </div>
             </form>
         </div>

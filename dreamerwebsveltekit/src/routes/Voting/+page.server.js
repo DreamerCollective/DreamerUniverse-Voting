@@ -1,29 +1,13 @@
 import { error, redirect } from '@sveltejs/kit';
-import { serializeNonPOJOs } from '$lib/utils';
 
-// export async function load({ locals, fetch }) {
-//     const fetchElectionVariables = async () => {
-//         try {
-//             const projects = serializeNonPOJOs(
-//                 await locals.pb.collection('electionsettings').getFullList()
-//             );
-//             return projects;
-//         } catch (err) {
-//             console.log('Error: ', err);
-//             throw error(err.status, err.message);
-//         }
-//     }
-//     return {
-//         cards: fetchElectionVariables()
-//     };
-// }
-
-/*export const actions = {
-    default: async ({request}) => {
-        const formdata = await request.formData()
-
-        const name = formData.get('name')
+import {pb} from './pocketbase'
+import {onMount} from 'svelte'
 
 
-    }
-}*/
+let VotingCards = [];
+onMount(async () =>{
+  const resultList = await pb.collection('users').collection('votingOptions').getList(1,50);
+  VotingCards = resultList.items;
+});
+
+export VotingCards

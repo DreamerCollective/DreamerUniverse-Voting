@@ -2,6 +2,8 @@
     import "../../styles/global.css"
     import { getImageURL } from '$lib/utils';
 
+    import {currentUser} from './pocketbase';
+
     export let userload;
 
 /* Entering: ""
@@ -209,14 +211,20 @@
             <div class="flex flex-shrink-0 bg-gray-700 p-4">
                 <a href="/dreamerwebsveltekit/static" class="group block w-full flex-shrink-0">
                     <div class="flex items-center">
+                        {#if $currentUser}
+                            <div>
+                                <img class="inline-block h-9 w-9 rounded-full" alt="User avatar">
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-white">{$currentUser.username}</p>
+                                <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
+                            </div>
+                        {/if}
                         <div>
-                            <img class="inline-block h-9 w-9 rounded-full" src={userload.user?.avatar
-									? getImageURL(userload.user?.collectionId, userload.user?.id, userload.user?.avatar)
-									: `https://ui-avatars.com/api/?name=${userload.user?.name}`}
-                                 alt="User avatar">
+                            <img class="inline-block h-9 w-9 rounded-full" alt="User avatar">
                         </div>
                         <div class="ml-3">
-                            <p class="text-sm font-medium text-white">{userload.user.name}</p>
+                            <p class="text-sm font-medium text-white">Not signed in</p>
                             <p class="text-xs font-medium text-gray-300 group-hover:text-gray-200">View profile</p>
                         </div>
                     </div>
