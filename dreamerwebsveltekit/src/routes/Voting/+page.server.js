@@ -13,5 +13,6 @@ async function getAllElectionRecords(){
     sort: 'created',
     expand: 'electionoptions, electioncandidates, electioncandidates.candidateIssues, electionparties, electionparties.partyIssues, electionvoters',
   });
+  return resultList
 
 }
