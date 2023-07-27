@@ -1,10 +1,13 @@
 import {pb} from '$lib/pocketbase'
-import {onMount} from 'svelte'
 
 export async function load(){
   const resultList = await getAllElectionRecords()
+  console.log("resultList")
+  console.log(resultList)
   return{
-    resultList
+    records: {
+      resultList: resultList
+    }
   }
 }
 
@@ -13,6 +16,36 @@ async function getAllElectionRecords(){
     sort: 'created',
     expand: 'electionoptions, electioncandidates, electioncandidates.candidateIssues, electionparties, electionparties.partyIssues, electionvoters',
   });
-  return resultList
+  console.log(resultList)
+
+  const ElectionRecordResult = resultList.map((record) =>
+    {
+      if(record.electionoptions.length > 0){
+        const returnObject = {
+          electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
+          ElectionOptions: record.expand.electionoptions,
+          ElectionCandidates: [],
+          ElectionParties: [],
+          ElectionVoters: []
+        }
+        console.log(returnObject)
+        return returnObject;
+      }
+      if(record.electioncandidates.length > 0){
+        const returnObject = {
+          electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
+          ElectionOptions: record.expand.electionoptions,
+          ElectionCandidates: [],
+          ElectionParties: [],
+          ElectionVoters: []
+        }
+        console.log(returnObject)
+        return returnObject;
+      }
+
+    }
+  )
+  console.log(ElectionRecordResult)
+  return ElectionRecordResult
 
 }

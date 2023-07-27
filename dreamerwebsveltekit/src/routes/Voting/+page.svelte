@@ -1,16 +1,16 @@
 <script>
-  import VotingCard from "../../lib/components/VotingCard.svelte";
+  import VotingCard from "$lib/components/VotingCard.svelte";
   import "../../styles/global.css"
-  import NewVotingCard from "../../lib/components/NewVotingCard.svelte";
-
-
+  import NewVotingCard from "$lib/components/NewVotingCard.svelte";
+  export let VotingCards;
+  console.log(VotingCards)
 
 </script>
 
 <div class="flex flex-wrap">
 
-    {#each VotingCards as VotingCard}
-        <VotingCard data={VotingCard.data} />
+    {#each VotingCards.records.resultList as VotingCard}
+        <VotingCard data={VotingCard} />
     {/each}
 
 </div>

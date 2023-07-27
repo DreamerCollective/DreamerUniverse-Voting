@@ -1,5 +1,5 @@
 <script>
-    import {pb} from './pocketbase';
+    import {pb} from '$lib/pocketbase';
     let username;
     let password;
     async function login() {

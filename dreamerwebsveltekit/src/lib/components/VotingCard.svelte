@@ -16,7 +16,7 @@
             <h3>Voting Options</h3>
         </div>
 
-        <VotingOptions />
+        <VotingOptions Votingdata="{data.ElectionOptions}" />
 
         <VotingCandidates />
 

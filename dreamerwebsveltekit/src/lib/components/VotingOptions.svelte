@@ -36,7 +36,7 @@
             </div>
             <div class="mt-1">
 
-                <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{Votingdata.electionName}" aria-describedby="email-optional">
+                <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="{Votingdata.electionName}" value="{Votingdata.electionName}" aria-describedby="email-optional">
             </div>
 
             <div class="flex justify-between">
