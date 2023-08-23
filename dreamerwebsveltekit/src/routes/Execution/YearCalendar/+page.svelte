@@ -1,5 +1,5 @@
 <script>
-    import YearCalendar from "$lib/components/YearCalendar.svelte";
+    import YearCalendar from "$lib/components/execution/YearCalendar.svelte";
 
 
 </script>

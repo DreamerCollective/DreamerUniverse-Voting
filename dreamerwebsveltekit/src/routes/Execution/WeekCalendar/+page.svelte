@@ -1,5 +1,5 @@
 <script>
-    import WeekCalendar from "$lib/components/WeekCalendar.svelte";
+    import WeekCalendar from "$lib/components/execution/WeekCalendar.svelte";
 
 
 </script>

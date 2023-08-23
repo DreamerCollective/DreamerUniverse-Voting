@@ -2,8 +2,6 @@
     import Footer from "../lib/components/Footer.svelte";
     import "../styles/global.css"
 
-    import { getImageURL } from '$lib/utils';
-
     //export let userload;
 
     /* Entering: ""
