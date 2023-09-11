@@ -16,11 +16,11 @@ export async function getAllElectionRecords(){
         howManyRounds: record.howManyRounds, howManyVoters: record.howManyVoters, howManyVotesPerVoter: record.howManyVotesPerVoter,
         canYouVoteForParties: record.canYouVoteForParties, doVotesTransfer: record.doVotesTransfer, votersMustVote: record.votersMustVote, dateElectionStarts : record.dateElectionStarts,
         electioncandidates: record.expand.electioncandidates.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return { id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription, candidateIssues: [] }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription,
@@ -31,14 +31,14 @@ export async function getAllElectionRecords(){
           }
         }),
         electionparties: record.expand.electionparties.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
               partyIssues: []
             }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
@@ -49,11 +49,11 @@ export async function getAllElectionRecords(){
           }
         }),
         electionvoters: record.expand.electionvoters.map((record)=>{
-          return{ id: record.id, attachedUser: null, voterName: record.voterName }
+          return{ id: record.id, attachedUser: [], voterName: record.voterName }
         })
       }
     }
-    if(record.electioncandidates.length === 0 && record.electionparties.length > 0 && record.electionvoters.length > 0){
+    else if(record.electioncandidates.length === 0 && record.electionparties.length > 0 && record.electionvoters.length > 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -62,14 +62,14 @@ export async function getAllElectionRecords(){
         canYouVoteForParties: record.canYouVoteForParties, doVotesTransfer: record.doVotesTransfer, votersMustVote: record.votersMustVote, dateElectionStarts : record.dateElectionStarts,
         electioncandidates: [],
         electionparties: record.expand.electionparties.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
               partyIssues: []
             }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
@@ -84,7 +84,7 @@ export async function getAllElectionRecords(){
         })
       }
     }
-    if(record.electioncandidates.length > 0 && record.electionparties.length === 0 && record.electionvoters.length > 0){
+    else if(record.electioncandidates.length > 0 && record.electionparties.length === 0 && record.electionvoters.length > 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -92,11 +92,11 @@ export async function getAllElectionRecords(){
         howManyRounds: record.howManyRounds, howManyVoters: record.howManyVoters, howManyVotesPerVoter: record.howManyVotesPerVoter,
         canYouVoteForParties: record.canYouVoteForParties, doVotesTransfer: record.doVotesTransfer, votersMustVote: record.votersMustVote, dateElectionStarts : record.dateElectionStarts,
         electioncandidates: record.expand.electioncandidates.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return { id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription, candidateIssues: [] }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription,
@@ -112,7 +112,7 @@ export async function getAllElectionRecords(){
         })
       }
     }
-    if(record.electioncandidates.length > 0 && record.electionparties.length > 0 && record.electionvoters.length === 0){
+    else if(record.electioncandidates.length > 0 && record.electionparties.length > 0 && record.electionvoters.length === 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -120,11 +120,11 @@ export async function getAllElectionRecords(){
         howManyRounds: record.howManyRounds, howManyVoters: record.howManyVoters, howManyVotesPerVoter: record.howManyVotesPerVoter,
         canYouVoteForParties: record.canYouVoteForParties, doVotesTransfer: record.doVotesTransfer, votersMustVote: record.votersMustVote, dateElectionStarts : record.dateElectionStarts,
         electioncandidates: record.expand.electioncandidates.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return { id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription, candidateIssues: [] }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription,
@@ -135,14 +135,14 @@ export async function getAllElectionRecords(){
           }
         }),
         electionparties: record.expand.electionparties.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
               partyIssues: []
             }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
@@ -155,7 +155,7 @@ export async function getAllElectionRecords(){
         electionvoters: [],
       }
     }
-    if(record.electioncandidates.length === 0 && record.electionparties.length === 0 && record.electionvoters.length > 0){
+    else if(record.electioncandidates.length === 0 && record.electionparties.length === 0 && record.electionvoters.length > 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -169,7 +169,7 @@ export async function getAllElectionRecords(){
         })
       }
     }
-    if(record.electioncandidates.length > 0 && record.electionparties.length === 0 && record.electionvoters.length === 0){
+    else if(record.electioncandidates.length > 0 && record.electionparties.length === 0 && record.electionvoters.length === 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -177,11 +177,11 @@ export async function getAllElectionRecords(){
         howManyRounds: record.howManyRounds, howManyVoters: record.howManyVoters, howManyVotesPerVoter: record.howManyVotesPerVoter,
         canYouVoteForParties: record.canYouVoteForParties, doVotesTransfer: record.doVotesTransfer, votersMustVote: record.votersMustVote, dateElectionStarts : record.dateElectionStarts,
         electioncandidates: record.expand.electioncandidates.map((record)=>{
-          if(record.issues === null)
+          if(record.issues.length === 0)
           {
             return { id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription, candidateIssues: [] }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, attachedUser: null, candidateName: record.candidateName, candidateDescription: record.candidateDescription,
@@ -195,7 +195,7 @@ export async function getAllElectionRecords(){
         electionvoters: []
       }
     }
-    if(record.electioncandidates.length === 0 && record.electionparties.length > 0 && record.electionvoters.length === 0){
+    else if(record.electioncandidates.length === 0 && record.electionparties.length > 0 && record.electionvoters.length === 0){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
@@ -211,7 +211,7 @@ export async function getAllElectionRecords(){
               partyIssues: []
             }
           }
-          if(record.issues.length > 0)
+          else if(record.issues.length > 0)
           {
             return {
               id: record.id, partyName: record.partyName, partyDescription: record.partyDescription,
@@ -224,7 +224,7 @@ export async function getAllElectionRecords(){
         electionvoters: []
       }
     }
-    if(record.electioncandidates === null && record.electionparties === null && record.electionvoters === null){
+    else if(record.electioncandidates === null && record.electionparties === null && record.electionvoters === null){
       return {
         id: record.id,
         electionname: record.electionname, electionsubtitle: record.electionsubtitle, electiondescription: record.electiondescription,
