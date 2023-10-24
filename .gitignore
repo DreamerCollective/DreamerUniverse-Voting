@@ -78,7 +78,6 @@ sw.*
 *.swp
 
 # PocketBase data file
-dreamerwebbackend/pb_migrations/
 
 dreamerwebbackend/pb_data/
 
