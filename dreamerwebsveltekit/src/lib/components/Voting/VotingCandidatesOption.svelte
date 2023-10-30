@@ -12,8 +12,8 @@
     <a href="#" class="focus:outline-none">
       <!-- Extend touch target to entire panel -->
       <span class="absolute inset-0" aria-hidden="true"></span>
-      <p class="text-sm font-medium text-gray-900">Emma Young</p>
-      <p class="truncate text-sm text-gray-500">Senior Front-end Developer</p>
+      <p class="text-sm font-medium text-gray-900">{Candidate.candidateName}</p>
+      <p class="truncate text-sm text-gray-500">{Candidate.candidateDescription}</p>
     </a>
   </div>
 </div>
