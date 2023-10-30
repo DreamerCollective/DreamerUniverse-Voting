@@ -1,5 +1,5 @@
 <div>
-    <main class="pl-40 sm:pl-40 py-1 flex flex-col">
+    <main class="pl-10 sm:pl-10 py-1 flex flex-col">
         <slot />
     </main>
 </div>
