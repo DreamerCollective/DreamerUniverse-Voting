@@ -1,5 +1,5 @@
 <script>
-    import MonthCalendar from "$lib/components/execution/MonthCalendar.svelte";
+    import MonthCalendar from "$lib/components/Execution/MonthCalendar.svelte";
 
 
 </script>

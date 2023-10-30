@@ -1,5 +1,5 @@
 <script>
-    import DayCalendar from "$lib/components/execution/DayCalendar.svelte";
+    import DayCalendar from "$lib/components/Execution/DayCalendar.svelte";
 
 
 </script>
